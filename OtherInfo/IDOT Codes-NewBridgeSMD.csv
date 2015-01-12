@@ -1,0 +1,19 @@
+Alpha,Pcode,description,Comment
+"BAB" => "615", #The outline of the face and sides of the bridge abutment.  A 3D line.,LOCATION
+"BAL" => "613", #"The outline of the face of the abutment and the face of the wingwalls.  A 2D line usually collected ""prismless"".",ABUT LOCATION ONLY
+"BBS" => "620", #"The bridge seat elevation.  Used only for elevation and usually collected with ""hook""",ELEV ONLY
+"BBW" => "612", #The outline of the face and sides of the bridge back wall.  A 3D line.,BACKWALL
+"BCB" => "611", #The top-back of any curb or median on a bridge.,
+"BDB" => "619", #The line of a bituminous bridge deck.  A 3D line.,HMA
+"BDC" => "619", #The line of a concrete bridge deck.  A 3D line.,CONC
+"BEX" => "623", #The location of a bridge expansion joint.  A 3D line.,
+"BLC" => "626", #"The bottom of the concrete bridge beams.  Usually taken at the begininning, middle and end of each span of the bridge beams.  Usually only required on the outside (upstream and downstream) beams. ",
+"BLS" => "627", #"The bottom of the steel bridge beams.  Usually taken at the begininning, middle and end of each span of the bridge beams.  Usually only required on the outside (upstream and downstream) beams. ",
+"BLT" => "628", #"The bottom of the timber bridge beams.  Usually taken at the begininning, middle and end of each span of the bridge beams.  Usually only required on the outside (upstream and downstream) beams. ",
+"BPA" => "624", #The parapet or handrail on the bridge.  A 3D line.,
+"BPC" => "629", #"The outline of the face of the pier cap.  A 2D line usually collected ""prismless"".",PIER LOCATION ONLY
+"BPR" => "615", #The outline of the face and sides of the pier cap.  A 3D line.,PIER CAP
+"BPT" => "631", #"The pier cap elevation.  Used only for elevation and usually collected with ""hook""",ELEV ONLY
+"BWW" => "635", #The outline of the face and sides of the bridge wing wall.  A 3D line with points at each elevation change.,
+"PBB" => "666", #A spot elevation on a bituminous bridge deck.,HMA
+"PBC" => "666", #A spot elevation on a concrete bridge deck.,CONC
