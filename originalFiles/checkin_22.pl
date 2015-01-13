@@ -1,11 +1,62 @@
-#---------------------------------------
-#
-# chkMtoH_21.pl
-# Fork of checkin_21process.pl - convert MPS codes to Hoelscher codes
-#
-#
-#----------------------------------------
-# checkin_21.pl
+# checkin_22.pl
+# added various codes to maintain the detail of Hoelscher's code list
+# added	'N' - Stone/Rock
+# 	'O' - Oil and Chip
+# to Material Modifiers List
+# added Monitoring/Inspection Well 'MWL' IDOT 640
+# added a material modifier to Gutter GU*
+# added a material modifier to CURB "CR*" which causes a conflict with CRB which is our standard concrete back of curb code
+# 'curb bit' becomes CUB instead????
+# add RR mile Post 'RMP'
+# add RR switch heater 'RSH'
+# add RR tie 'RTI'
+# add RR derailer RDR
+# add additional modifier to building.  there are conflicts in the B** series due to bridge codes
+# so I'm moving Building codes to G**
+# G<OM> the first modifiier is the ownership.  This is needed for IDOT.  The second modifier is the material type
+# I added M as a material type for Masonry
+# added PA<M> for patio
+# added SL<M> for slab
+# added RW<M> for Retaining wall material type
+# added WA<M> for Wall material type
+# added ACU for air conditioning unit
+# added COL for column
+# added DCK for deck
+# added V for a material type for vinyl
+# Added a list of Survey Point types using a combination Hoelscher codes and IDOT codes SP<P>
+# A	Traverse Point
+# B	Axle
+# C	Cut Cross
+# D	Concrete Monument
+# E	Crimp Pipe
+# F	Bench Mark
+# G	GPS Monument
+# H	Control Point
+# I	Iron Pipe
+# J	Nail
+# k	Nail & Washer\shiner
+# L	PK Nail
+# M	Mag Nail
+# N	ROW Marker
+# O	RR Spike
+# P	Pole Barn Spike
+# Q	Stone
+# R	Cotton Picker Spindle
+# S	Hub
+# T	Cut Square
+# U	Rebar
+# V	Drill Hole
+# W	Brass Marker
+# X	Iron Rod/Pin
+# Y
+# Z	other
+# Removed the SPC - Special misc code - more confusion
+# Changed a few of the Railroad Related codes so that they all start with RR
+# Added some Railroad related codes too 
+# Added Riser/Feed for the Utilities RS*
+########################################
+####################################
+# Hoelscher # checkin_21.pl
 # 20131107
 # added (modified):
 #      MHM Storm Manhole 351
@@ -40,10 +91,10 @@
 # changed BPA from 624 to 633 and eliminated 'Required Comment' "PARAPET"
 # depreciated edge of pavement/edge of shoulder combinations used on IL-83 (fail). ERB-EWC.
 # depreciated RNW Runway
-# depreciated 667 as IDOT code for crown (CRB/CRC) using breakline 607 with material comments for 
+# depreciated 667 as IDOT code for crown (CRB/CRC) using breakline 607 with material comments for
 #    pavement areas with no stripeing - use stripeing as breakline where possible
 # Crown now has material types: CNB = HMA, CNC = CONC, etc. - see 667 above
-# I'm going to stop using the B6B codes and start using CRB on all curbs unless they are 
+# I'm going to stop using the B6B codes and start using CRB on all curbs unless they are
 #    odd (not B6.12 or B6.24).  Use the IDOT codes of odd curbs. - LV - The B6B and B62 will still
 #    work.
 # added BUC - Building Commercial - BLD is being depreciated
@@ -52,7 +103,7 @@
 # Changed BBA/BBB/BBC/BBR from 619 to 621 so that spots land on the Topo_BridgeStructures level
 # changed RR centerline from CLR to RCL
 # added BRR Barrier Wall - base
-# added SBW for weird sprinkler system splice box on US14 
+# added SBW for weird sprinkler system splice box on US14
 ####################################
 ##################################
 # checkin_18.pl
@@ -66,9 +117,11 @@
 # added BBA,BBB,BBC.BBR - Bridge Deck with AGG,BIT.Conc,Bridk
 # added BSW - Bridge Sidewalk
 # added RCK - Rock/boulder
-#                 
+#################################
+#################################
 %legalCodes = (
- "AEM" => "legal", # Electric Above Ground Main - Center of Tower 
+ "ACU" => "legal", # Air Conditioning Unit
+ "AEM" => "legal", # Electric Above Ground Main - Center of Tower
  #"AGE" => "legal",
  "B62" => "legal", # B6-24 Curb - added v6 - depreciated
  "B6B" => "legal", # B6-12 Top Back Curb - depreciated
@@ -108,7 +161,6 @@
  "BLT" => "legal", # The bottom of the timber bridge beams.  Usually taken at
                    # the beginning middle and end oof each span of the bridge beams.
                    # Usually only required on the outside (upstream and downstream) beams.
- "BMK" => "legal", #H Benchmark
  "BOL" => "legal", # Bollard
  "BOR" => "legal", # Boring/Coring
  "BPA" => "legal", # The bridge parapet. A 3d line.
@@ -134,20 +186,21 @@
  "BWW" => "legal", # The outline of the face and sides of the wingwall.  A 3d line with
                    # points at each elevation change.
  "CBM" => "legal", # Catch Basin - Round Open
- "CDE" => "legal", #H Conduit - Electrical
  "CKH" => "legal", # Control Point Check - Horizontal
  "CKV" => "legal", # Control Point Check - Vertical
  "CLR" => "legal", # Centerline Railroad Track - depreciated
  #"CMA" => "legal",
  "CNP" => "legal", # Canopy
  "CNT" => "legal", # Traffic Signal Cantelever/Mast Arm
- "CPH" => "legal", # Control Point Horizontal
- "CRB" => "legal", # Curb - Top Back
  "CNA" => "legal", # Crown of roadway - Agg - use where there is no stripeing
  "CNB" => "legal", # Crown of roadway - HMA - use where there is no stripeing
  "CNC" => "legal", # Crown of roadway - CONC - use where there is no stripeing
  "CNR" => "legal", # Crown of roadway - BRICK - use where there is no stripeing
- #"CRN" => "legal", # Crown Line
+ "COL" => "legal", # Column
+ "CPH" => "legal", # Control Point Horizontal
+ "CRB" => "legal", # Curb - Top Back - Bit - this is a change and is going to cause confusion - forewarned
+ "CRC" => "legal", # Curb - Top Back Concrete
+ "CRN" => "legal", # Curb - Top Back - Stone - more confusion - this was Crown Line
  "CRP" => "legal", # Crop Line
  "CRW" => "legal", # Crosswalk
  "CUB" => "legal", # Culvert - Box
@@ -158,6 +211,7 @@
  "DCB" => "legal", # Driveway/Commercial BIT/HMA
  "DCC" => "legal", # Driveway/Commercial Concrete
  "DCG" => "legal", # Driveway/Commercial Ground
+ "DCK" => "legal", # Deck
  "DCR" => "legal", # Driveway/Commercial Brick
  "DFA" => "legal", # Driveway/Field Aggregate
  "DFB" => "legal", # Driveway/Field BIT/HMA
@@ -177,14 +231,14 @@
  "DRG" => "legal", # Field Entrance
  "DRR" => "legal", # Driveway/Entrance Brick
  "DSP" => "legal", # Downspout
- "DTH" => "legal", # Ditch Flowline 
+ "DTH" => "legal", # Ditch Flowline
  "DTP" => "legal", # Paved Ditch Centerline
  "EOA" => "legal", # Edge of Pavement - Aggregate
  "EOB" => "legal", # Edge of Pavement - BIT/HMA
  "EOC" => "legal", # Edge of Pavement - Concrete
  "EOL" => "legal", # Edge of Lanes - added v6
  #"EOP" => "legal", # Edge of Pavement
- "EOR" => "legal", # Edge of Pavement - Brick 
+ "EOR" => "legal", # Edge of Pavement - Brick
  #"ERB" => "legal", # Edge of Bit Pavement - Bit Shoulder - no curb
  #"ERC" => "legal", # Edge of Conc Pavement - Bit Shoulder - no curb
  #"ESC" => "legal", # Edge of Conc Pavement - Concrete Shoulder - no curb
@@ -200,9 +254,37 @@
  "FNC" => "legal", # Fence Line
  "FND" => "legal", # Found Survey Evidence
  "FNG" => "legal", # Fence Gate Post
+ "FNI" => "legal", # Fence Line - Iron
+ "FNL" => "legal", # Fence Line - Chain Link
+ "FNT" => "legal", # Fence Line - Wood
+ "FNV" => "legal", # Fence Line - Vinyl
+ "FNW" => "legal", # Fence Line - Wire
+ "FNX" => "legal", # Fence Line - Barbed Wire
  "FOU" => "legal", # Foundation
+ "GCC" => "legal", # Building Commercial Concrete
+ "GCF" => "legal", # Building Commercial Wood Frame
+ "GCM" => "legal", # Building Commercial Masonry
+ "GCR" => "legal", # Building Commercial Brick
+ "GCS" => "legal", # Building Commercial Steel
+ "GCT" => "legal", # Building Commercial Timber/Log
  "GND" => "legal", # Ground Shot
+ "GPC" => "legal", # Building Public Concrete
+ "GPF" => "legal", # Building Public Wood Frame
+ "GPM" => "legal", # Building Public Masonry
+ "GPR" => "legal", # Building Public Brick
+ "GPS" => "legal", # Building Public Steel
+ "GPT" => "legal", # Building Public Timber/Log
+ "GRC" => "legal", # Building Residential Concrete
+ "GRF" => "legal", # Building Residential Wood Frame
  "GRL" => "legal", # Guard Rail
+ "GRM" => "legal", # Building Residential Masonry
+ "GRR" => "legal", # Building Residential Brick
+ "GRS" => "legal", # Building Residential Steel
+ "GRT" => "legal", # Building Residential Timber/Log
+ "GUB" => "legal", # Gutter Bit
+ "GUC" => "legal", # Gutter Concrete
+ "GUN" => "legal", # Gutter Stone
+ "GUP" => "legal", # Guy Pole
  "GUT" => "legal", # Gutter/Flowline
  "GUY" => "legal", # Guy Wire
  "H2O" => "legal", # Edge of Water
@@ -211,14 +293,14 @@
  "HHF" => "legal", # Handhole - Fiber Optic
  "HHR" => "legal", # Handhole - Traffic
  "HHT" => "legal", # Handhole - Telephone
- "HHV" => "legal", # Handhole - TV 
+ "HHV" => "legal", # Handhole - TV
  "HWL" => "legal", # Headwall
  "HYD" => "legal", # Hydrant
  "INL" => "legal", # Inlet - Rectangular
  "JUE" => "legal", # QL-B Paint Mark Line - Electric
  "JUF" => "legal", # QL-B Paint Mark Line - Fiber Optic
  "JUG" => "legal", # QL-B Paint Mark Line - Gas
- "JUM" => "legal", # QL-B Paint Mark Line - Storm    
+ "JUM" => "legal", # QL-B Paint Mark Line - Storm
  "JUN" => "legal", # QL-B Paint Mark Line - Sanitary
  #"JUO" => "legal",
  "JUR" => "legal", # QL-B Paint Mark Line - Traffic Signal
@@ -227,7 +309,7 @@
  "JUV" => "legal", # QL-B Paint Mark Line - Television
  "JUW" => "legal", # QL-B Paint Mark Line - Water
  "LNB" => "legal", # Lane Line - BIT/HMA
- "LNC" => "legal", # Lane Line - Concrete 
+ "LNC" => "legal", # Lane Line - Concrete
  "LND" => "legal", # Landscape Edge
  "LNM" => "legal", # Lane Paint Mark
  "MBX" => "legal", # Mailbox
@@ -247,13 +329,20 @@
  "MTE" => "legal", # Meter Electrical
  "MTG" => "legal", # Meter Gas
  "MTW" => "legal", # Meter Water
+ "MWL" => "legal", # Monitoring/Inspection Well
  "NPS" => "legal", # No Pass Stripe
+ "PAA" => "legal", # Patio Edge - Aggregate/Gravel
+ "PAB" => "legal", # Patio Edge - Bit
+ "PAC" => "legal", # Patio Edge - Conc
+ "PAN" => "legal", # Patio Edge - Stone
+ "PAR" => "legal", # Patio Edge - Brick
  "PBB" => "legal", # A spot elevation on a bit bridge deck
  "PBC" => "legal", # A spot elevation on a conc bridge deck
  "PDE" => "legal", # Pedestal Electric
  "PDF" => "legal", # Pedestal Fiber Optic
  "PDT" => "legal", # Pedestal Telephone/Communications
  "PDV" => "legal", # Pedestal Cable TV
+ "PHB" => "legal", # Phone Booth
  "PLF" => "legal", # Flag Pole
  "PLT" => "legal", # Pole Light Only
  "PMA" => "legal", # Spot - Aggregate
@@ -264,30 +353,62 @@
  "PPL" => "legal", # Pole Utility with Light
  "PPT" => "legal", # Pole Utility with Transformer
  "PPU" => "legal", # Pole Utility
+ "PUG" => "legal", # Gas Pump
  "RCK" => "legal", # Rock or Boulder
  "PRK" => "legal", # Parking Meter
  "RCL" => "legal", # Railroad Centerline
+ "RDR" => "legal", # RR Derailer
  "RGG" => "legal", # Regulator Gas
  "RIP" => "legal", # Rip Rap
  #"RNW" => "legal",
  "ROW" => "legal", # ROW Monument
- "RPF" => "legal", # RR Point of Frog - 1" point
- "RPS" => "legal", # RR Point of Switch take shot on side of switch box
+ "RPB" => "legal", # Ramp - Bit
+ "RPC" => "legal", # Ramp - Conc
+ "RPN" => "legal", # Ramp - Stone
+ "RPR" => "legal", # Ramp - Brick
+ "RPS" => "legal", # Ramp - Steel
+ "RPT" => "legal", # Ramp - Wood
+ "RRF" => "legal", # RR Point of Frog - 1" point
  "RRC" => "legal", # RR Signal Cabinet
  "RRG" => "legal", # RR Crossing Gate
+ "RRH" => "legal", # RR Switch Heater
+ "RRM" => "legal", # RR Mile Post
+ "RRP" => "legal", # RR Semaphore
  "RRR" => "legal", # RR Rail - Top
- "RRS" => "legal", # RR Semaphore
- "RSW" => "legal", # RR Switch Box 
+ "RRS" => "legal", # RR Point of Switch take shot on side of switch box
+ "RRT" => "legal", # RR Tie/Sleeper
+ "RRW" => "legal", # RR Switch Box
+ "RSE" => "legal", # Riser - Electricial
+ "RSF" => "legal", # Riser - Fiber optic
+ "RSG" => "legal", # Riser - Gas
+ "RSM" => "legal", # Riser - Storm
+ "RSN" => "legal", # Riser - Sanitary
+ "RSR" => "legal", # Riser - Traffic 
+ "RSS" => "legal", # Riser - Traffic Fiber Optic
+ "RST" => "legal", # Riser - Telephone
+ "RSV" => "legal", # Riser - TV
+ "RSW" => "legal", # Riser - Water
  "RVT" => "legal", # Revetment Mat
+ "RWC" => "legal", # Retaining Wall - Concrete
  "RWL" => "legal", # Retaining Wall
+ "RWN" => "legal", # Retaining Wall - Stone/Rock
+ "RWM" => "legal", # Retaining Wall - Masonry
+ "RWR" => "legal", # Retaining Wall - Brick
+ "RWS" => "legal", # Retaining Wall - Steel
+ "RWT" => "legal", # Retaining Wall - Timber
  "SBE" => "legal", # Splice Box - Electrical
  "SBR" => "legal", # Splice Box - Traffic Signals
  "SBT" => "legal", # Splice Box - Telephone
  "SBV" => "legal", # Splice Box - Television
  "SBW" => "legal", # Splice Box - Water Sprinkler
- "SHA" => "legal", # Shoulder - Aggregate 
+ "SHA" => "legal", # Shoulder - Aggregate
  "SHB" => "legal", # Shoulder - HMA/BIT
  "SHC" => "legal", # Shoulder - Concrete
+ "SLA" => "legal", # Slab - Aggregate/Gravel
+ "SLB" => "legal", # Slab - Bit
+ "SLC" => "legal", # Slab  - Conc
+ "SLN" => "legal", # Slab  - Stone
+ "SLR" => "legal", # Slab  - Brick
  "SNC" => "legal", # Sign - Commercial
  "SNE" => "legal", # Sign - Warning - UG Electric
  "SNF" => "legal", # Sign - Warning - Fiber Optic
@@ -300,7 +421,32 @@
  "SNT" => "legal", # Sign - Warning - Telephone/Communications
  "SNV" => "legal", # Sign - Warning - Cable TV
  "SNW" => "legal", # Sign - Warning - Water line
- "SPC" => "legal", # Special - Misc
+ "SPA" => "legal", # Survey Point - Traverse Point
+ "SPB" => "legal", # Survey Point - Axle
+ "SPC" => "legal", # Survey Point - Cut Cross
+ "SPD" => "legal", # Survey Point - Concrete Monument
+ "SPE" => "legal", # Survey Point - Crimp Pipe
+ "SPF" => "legal", # Survey Point - Benchmark
+ "SPG" => "legal", # Survey Point - GPS Monument
+ "SPH" => "legal", # Survey Point - Control Point
+ "SPI" => "legal", # Survey Point - Iron Pipe
+ "SPJ" => "legal", # Survey Point - Nail
+ "SPK" => "legal", # Survey Point - Nail & Washer/Shiner
+ "SPL" => "legal", # Survey Point - PK Nail
+ "SPM" => "legal", # Survey Point - Mag Nail
+ "SPN" => "legal", # Survey Point - ROW Marker
+ "SPO" => "legal", # Survey Point - RR Spike
+ "SPP" => "legal", # Survey Point - Pole Barn Spike
+ "SPQ" => "legal", # Survey Point - Stone
+ "SPR" => "legal", # Survey Point - Cotton Picker Spindle
+ "SPS" => "legal", # Survey Point - Hub
+ "SPT" => "legal", # Survey Point - Cut Square
+ "SPU" => "legal", # Survey Point - Rebar
+ "SPV" => "legal", # Survey Point - Drill Hole
+ "SPW" => "legal", # Survey Point - Brass Marker
+ "SPX" => "legal", # Survey Point - Iron Rod/Pin
+ "SPY" => "legal", # Survey Point -
+ "SPZ" => "legal", # Survey Point - Other
  "STR" => "legal", # Stairs/Porch
  "SWK" => "legal", # Sidewalk
  "SWA" => "legal", # Sidewalk - Agg
@@ -309,13 +455,17 @@
  "SWR" => "legal", # Sidewalk - Brick
  "TIL" => "legal", # Tile
  #"TOB" => "legal",
+ "TNG" => "legal", # Gas Tank
+ "TNP" => "legal", # Oil Tank
  "TOE" => "legal", # Toe of Slope
  "TOP" => "legal", # Top of Slope
  "TRC" => "legal", # Tree - Coniferous
  "TRD" => "legal", # Tree - Deciduous
+ "TRE" => "legal", # Transformer
  "TRF" => "legal", # Traffic Signal
  "TRL" => "legal", # Traffic Loop Detector
  "THW" => "legal", # Thalweg - Lowest Point
+ "TWR" => "legal", # Transmission Tower
  "UND" => "legal", # Underdrain
  "VLB" => "legal", # Valve - Box
  "VLG" => "legal", # Valve - Gas
@@ -325,7 +475,14 @@
  "VNG" => "legal", # Vent - Gas
  "VNT" => "legal", # Vent - Gas
  "VNN" => "legal", # Vent - Sanitary
+ "WAC" => "legal", # Wall - Not Retaining -Concrete
+ "WAF" => "legal", # Wall - Not Retaining -Frame
  "WAL" => "legal", # Wall - Not Retaining
+ "WAN" => "legal", # Wall - Not Retaining -Stone/Rock
+ "WAM" => "legal", # Wall - Not Retaining -Masonry
+ "WAR" => "legal", # Wall - Not Retaining -Brick
+ "WAS" => "legal", # Wall - Not Retaining -Steel
+ "WAT" => "legal", # Wall - Not Retaining -Timber
  "WDE" => "legal", # Wooded Edge
  "WEL" => "legal", # Well
  "WET" => "legal", # Wetland
@@ -481,8 +638,8 @@
  "694" => "legal",
  "695" => "legal",
  "699" => "legal", # Misc - added v6
- "760" => "legal", # V14 
- "776" => "legal", # 
+ "760" => "legal", # V14
+ "776" => "legal", #
  "795" => "legal",
  "858" => "legal",
  "860" => "legal",
@@ -495,10 +652,10 @@
  "962" => "legal",
 );
 %requiredComments = (
+ "ACU" => "AC UNIT",
  "AEM" => "MAIN",
  "BAB" => "ABUTMENT CAP",
  "BAL" => "LOCATION ONLY",
- "BAR" => "White", #H
  "BBA" => "AGG",
  "BBB" => "HMA",
  "BBC" => "CONC",
@@ -517,36 +674,36 @@
  "BPT" => "ELEV ONLY",
  "BSC" => "SCUPPER",
  "BSS" => "STRUCTURAL STEEL",
- "BUC" => "Commercial", #H
  "BWC" => "SIDEWALK CONC",
  "BWL" => "BACKWALL",
- "CDE" => "Conduit" #H
  "CNA" => "AGG",
  "CNB" => "HMA",
  "CNC" => "CONC",
  "CNR" => "BRICK",
- "CRW" => "White", #H
- "CUP" => "Culvert", #H
+ "COL" => "COLUMN",
+ "CRB" => "HMA",
+ "CRC" => "CONC",
+ "CRN" => "STONE",
  "DRA" => "AGG",
  "DRB" => "HMA",
  "DRC" => "CONC",
  "DRG" => "FIELD ENTRANCE",
  "DRR" => "BRICK",
- "DCA" => "AGG",           
- "DCB" => "HMA",           
- "DCC" => "CONC",          
+ "DCA" => "AGG",
+ "DCB" => "HMA",
+ "DCC" => "CONC",
  "DCG" => "FIELD ENTRANCE",
- "DCR" => "BRICK",         
- "DFA" => "AGG",           
- "DFB" => "HMA",           
- "DFC" => "CONC",          
+ "DCR" => "BRICK",
+ "DFA" => "AGG",
+ "DFB" => "HMA",
+ "DFC" => "CONC",
  "DFG" => "FIELD ENTRANCE",
- "DFR" => "BRICK",         
- "DPA" => "AGG",           
- "DPB" => "HMA",           
- "DPC" => "CONC",          
+ "DFR" => "BRICK",
+ "DPA" => "AGG",
+ "DPB" => "HMA",
+ "DPC" => "CONC",
  "DPG" => "FIELD ENTRANCE",
- "DPR" => "BRICK",         
+ "DPR" => "BRICK",
  "DSP" => "DOWNSPOUT",
  "EOA" => "AGG",
  "EOB" => "HMA",
@@ -561,20 +718,45 @@
  "EUC" => "CONC W/ CURB",
  "EWC" => "CONC W/ CONC SHLD & CURB",
  "FFL" => "FINISH FLOOR",
+ "FNI" => "IRON",
+ "FNL" => "CHAIN LINK",
+ "FNT" => "WOOD",
+ "FNV" => "VINYL",
+ "FNW" => "WIRE",
+ "FNX" => "BARBED WIRE",
+ "GCC" => "CONC",
+ "GCF" => "FRAME",
+ "GCM" => "MASONRY",
+ "GCR" => "BRICK",
+ "GCS" => "STEEL",
+ "GCT" => "TIMBER",
+ "GPC" => "CONC",
+ "GPF" => "FRAME",
+ "GPM" => "MASONRY",
+ "GPR" => "BRICK",
+ "GPS" => "STEEL",
+ "GPT" => "TIMBER",
+ "GRC" => "CONC",
+ "GRF" => "FRAME",
+ "GRM" => "MASONRY",
+ "GRR" => "BRICK",
+ "GRS" => "STEEL",
+ "GRT" => "TIMBER",
+ "GUB" => "HMA",
+ "GUC" => "CONC",
+ "GUN" => "HMA",
  "HHE" => "ELECTRIC",
  "HHF" => "FIBER OPTIC",
  "HHR" => "TRAFFIC SIGNAL",
  "HHT" => "TELEPHONE",
  "HHV" => "CABLE TV",
- "JUF" => "Fiber", #H
  "JUN" => "SANITARY QL-B",
  "JUT" => "COMM QL-B",
  "JUS" => "FIBER OPTIC QL-B",
- "JUV" => "TV QL-B", 
+ "JUV" => "TV QL-B",
  "JUW" => "WATER QL-B",
  "LNB" => "HMA",
  "LNC" => "CONC",
- "LNM" => "White", #H
  "MHM" => "STORM",
  "MHT" => "COMM",
  "MHE" => "ELEC",
@@ -586,7 +768,11 @@
  "MHW" => "H2O",
  "MTE" => "ELEC",
  "MTW" => "H2O",
- "NPS" => "Yellow", #H
+ "PAA" => "PATIO - AGG",
+ "PAB" => "PATIO - HMA",
+ "PAC" => "PATIO - CONC",
+ "PAN" => "PATIO - STONE",
+ "PAR" => "PATIO - BRICK",
  "PBB" => "HMA",
  "PBC" => "CONC",
  "PDE" => "ELEC",
@@ -596,7 +782,20 @@
  "PMC" => "CONC",
  "PMR" => "BRICK",
  "RCK" => "BOULDER",
- "RWL" => "Retaining Wall", #H
+ "RPB" => "HMA",
+ "RPC" => "CONC",
+ "RPN" => "STONE",
+ "RPR" => "BRICK",
+ "RPS" => "STEEL",
+ "RPT" => "WOOD",
+ "RRH" => "RR SWITCH HEATER",
+ "RRT" => "RR TIE",
+ "RWC" => "CONC",
+ "RWN" => "STONE",
+ "RWM" => "MASONRY",
+ "RWR" => "BRICK",
+ "RWS" => "STEEL",
+ "RWT" => "TIMBER",
  "SBT" => "TELEPHONE",
  "SBW" => "SPRINKLER SYSTEM",
  "SHA" => "AGG",
@@ -606,20 +805,53 @@
  "SNF" => "FIBER",
  "SNG" => "GAS",
  "SNN" => "SANITARY",
- "SNP" => "PETRL", 
+ "SNP" => "PETRL",
  "SNT" => "COMM",
  "SNV" => "TV",
  "SNW" => "WATER",
+ "SPA" => "TRAVERSE POINT",
+ "SPB" => "AXLE",
+ "SPC" => "CUT CROSS",
+ "SPD" => "CONC MONUMENT",
+ "SPE" => "CRIMP PIPE",
+ "SPF" => "BENCHMARK",
+ "SPG" => "GPS MONUMENT",
+ "SPH" => "CONTROL POINT",
+ "SPI" => "IRON PIPE",
+ "SPJ" => "NAIL",
+ "SPK" => "NAIL & WASHER",
+ "SPL" => "PK NAIL",
+ "SPM" => "MAG NAIL",
+ "SPN" => "ROW MARKER",
+ "SPO" => "RR SPIKE",
+ "SPP" => "POLE BARN SPIKE",
+ "SPQ" => "STONE",
+ "SPR" => "COTTON PICKER SPINDLE",
+ "SPS" => "HUB",
+ "SPT" => "CUT SQUARE",
+ "SPU" => "REBAR",
+ "SPV" => "DRILL HOLE",
+ "SPW" => "BRASS MARKER",
+ "SPX" => "IRON ROD",
+ "SPZ" => "AXLE",
  "SWA" => "AGG",
  "SWB" => "HMA",
  "SWC" => "CONC",
  "SWR" => "BRICK",
  "TIL" => "TILE",
+ "TRE" => "TRANSFORMER",
  "VLB" => "VALVE BOX",
  "VLN" => "VALVE SANITARY",
  "VNG" => "GAS VALVE",
  "VLW" => "WATER VALVE",
- "WTR" => "TOP ELEV", 
+ "WAC" => "CONC",
+ "WAF" => "FRAME",
+ "WAN" => "STONE",
+ "WAM" => "MASONRY",
+ "WAR" => "BRICK",
+ "WAS" => "STEEL",
+ "WAT" => "TIMBER",
+ "WTR" => "TOP ELEV",
 );
 @flagCodes = (
  "RANDOM",
@@ -627,141 +859,141 @@
  "CKV",
  "TMP",
 );
-%IDOTmiscCodes = ( 
- "701" => "Traverse Survey Point", 
+%IDOTmiscCodes = (
+ "701" => "Traverse Survey Point",
  "702" => "X-Section Survey Point",
- "703" => "Topo Survey Point", 
- "707" => "Cut Square", 
+ "703" => "Topo Survey Point",
+ "707" => "Cut Square",
  "711" => "Close Figure",
  "741" => "Broken",
- "742" => "Tubeco", 
+ "742" => "Tubeco",
  "743" => "App. Line of Poss.",
- "744" => "Possible", 
+ "744" => "Possible",
  "745" => "On-Skew",
- "746" => "Bent", 
- "748" => "Aboveground", 
+ "746" => "Bent",
+ "748" => "Aboveground",
  "749" => "Underground",
- "750" => "Abandoned", 
+ "750" => "Abandoned",
  "751" => "Aerial",
- "752" => "AGG", 
+ "752" => "AGG",
  "753" => "Aluminum",
- "754" => "Axle", 
+ "754" => "Axle",
  "755" => "Back",
- "756" => "Barb", 
+ "756" => "Barb",
  "757" => "BL",
- "758" => "Beginning", 
+ "758" => "Beginning",
  "759" => "BIT",
- "760" => "Bolt", 
+ "760" => "Bolt",
  "761" => "Bottom",
- "762" => "BRK", 
+ "762" => "BRK",
  "763" => "Buried",
- "764" => "Cable", 
+ "764" => "Cable",
  "765" => "Cable TV",
- "766" => "Cast Iron", 
+ "766" => "Cast Iron",
  "767" => "Center",
- "768" => "CL", 
+ "768" => "CL",
  "769" => "Chain Link",
- "770" => "Chiseled X", 
+ "770" => "Chiseled X",
  "771" => "Clay",
- "772" => "CMP", 
+ "772" => "CMP",
  "773" => "CMPA",
- "774" => "CONC", 
+ "774" => "CONC",
  "775" => "Concrete Block",
- "776" => "Corner", 
+ "776" => "Corner",
  "777" => "Cross Cut",
- "778" => "Crushed Stone", 
+ "778" => "Crushed Stone",
  "779" => "CS",
- "780" => "Dirt", 
+ "780" => "Dirt",
  "781" => "Disk",
- "782" => "Door Sill", 
+ "782" => "Door Sill",
  "783" => "Drill Hole",
- "784" => "Duct. Iron Pipe", 
+ "784" => "Duct. Iron Pipe",
  "785" => "Edge",
- "786" => "Edge of Water", 
+ "786" => "Edge of Water",
  "787" => "Electrical",
- "788" => "End", 
+ "788" => "End",
  "789" => "Face",
- "790" => "Field", 
+ "790" => "Field",
  "791" => "Flag",
- "792" => "Floor", 
+ "792" => "Floor",
  "793" => "FL",
- "794" => "Found", 
+ "794" => "Found",
  "795" => "Foundation",
- "796" => "Front", 
+ "796" => "Front",
  "797" => "Garage",
- "798" => "Gas", 
+ "798" => "Gas",
  "799" => "Gasoline",
- "800" => "Gravel", 
+ "800" => "Gravel",
  "801" => "HSE",
- "802" => "Inside", 
+ "802" => "Inside",
  "803" => "Intersection",
- "804" => "Iron", 
+ "804" => "Iron",
  "805" => "Meanderline",
- "806" => "Metal", 
+ "806" => "Metal",
  "807" => "Midpoint",
- "808" => "Multiple Use", 
+ "808" => "Multiple Use",
  "809" => "Nail",
- "810" => "Oiled Earth", 
+ "810" => "Oiled Earth",
  "811" => "Oil & Chips",
- "812" => "Ornamental", 
+ "812" => "Ornamental",
  "813" => "Outside",
- "814" => "Overhang", 
+ "814" => "Overhang",
  "815" => "Painted",
- "816" => "PC", 
+ "816" => "PC",
  "817" => "PCC",
- "818" => "Perm. Survey Marker", 
+ "818" => "Perm. Survey Marker",
  "819" => "Petro",
- "820" => "PI", 
+ "820" => "PI",
  "821" => "Pin",
- "822" => "Pinch Pipe", 
+ "822" => "Pinch Pipe",
  "823" => "Pipe",
- "824" => "PK Nail", 
+ "824" => "PK Nail",
  "825" => "Plate",
- "826" => "Plug", 
+ "826" => "Plug",
  "827" => "POBTE",
- "828" => "Rebar", 
+ "828" => "Rebar",
  "829" => "POC",
- "830" => "POFT", 
+ "830" => "POFT",
  "831" => "POFTE",
- "832" => "POT", 
+ "832" => "POT",
  "833" => "PRC",
- "834" => "Private", 
+ "834" => "Private",
  "835" => "PT",
- "836" => "PVC", 
+ "836" => "PVC",
  "837" => "PVC Pipe",
- "838" => "Rail Road Spike", 
+ "838" => "Rail Road Spike",
  "839" => "Ramp",
- "840" => "RCP", 
+ "840" => "RCP",
  "841" => "RCPA",
- "842" => "Roof Bolt", 
+ "842" => "Roof Bolt",
  "843" => "Rubber",
- "844" => "Transitline", 
+ "844" => "Transitline",
  "845" => "Sanitary",
- "846" => "SC", 
+ "846" => "SC",
  "847" => "Set",
- "848" => "Shed", 
+ "848" => "Shed",
  "849" => "Square Rod",
- "850" => "ST", 
+ "850" => "ST",
  "851" => "Steel",
- "852" => "Step", 
+ "852" => "Step",
  "853" => "Stone",
- "854" => "Storm", 
+ "854" => "Storm",
  "855" => "Structure Entrance",
- "856" => "Survey", 
+ "856" => "Survey",
  "857" => "Telephone",
- "858" => "Thalweg", 
+ "858" => "Thalweg",
  "859" => "Timber",
- "860" => "Toe", 
+ "860" => "Toe",
  "861" => "Top",
- "862" => "Top of Bank", 
+ "862" => "Top of Bank",
  "863" => "TS",
- "864" => "Vegetation Line", 
+ "864" => "Vegetation Line",
  "865" => "Vitrified Clay",
- "866" => "Vit. Clay Encased", 
+ "866" => "Vit. Clay Encased",
  "867" => "Water",
- "868" => "Wood Stake", 
+ "868" => "Wood Stake",
  "869" => "Wood",
- "870" => "Woven Wire", 
+ "870" => "Woven Wire",
 ) ;
 $cflag = "XXXcontrolXXX";
 $aflag = "XXXalphaXXX";
@@ -808,20 +1040,20 @@ while (<IN>) {
  @in = split(/,/, substr(uc, 0, -1), 5); #note: forces text to be uppercase
  my @fsplit = split(/\s+/,$in[4],2); #added lv - this separates the code from the comments
      #using the first? whitespace as the separator so $fplit[0] is the full code and $fsplit[1] = the comment
-        my @ssplit = ($fsplit[0] =~ /(\w+)*(\W+)/); 
+        my @ssplit = ($fsplit[0] =~ /(\w+)*(\W+)/);
 #    print OUT "ssplit[0] = $ssplit[0]\n";
-#    print OUT "ssplit[1] = $ssplit[1]\n"; 
+#    print OUT "ssplit[1] = $ssplit[1]\n";
     if ($ssplit[1]) {
  } else {
   $ssplit[0] = $fsplit[0];
-  $ssplit[1] = "";       
+  $ssplit[1] = "";
  }
-# print OUT "ssplit[0] = $ssplit[0]\n";    
-# print OUT "ssplit[1] = $ssplit[1]\n"; 
-    #added lv - this separates the 3 letter and 
+# print OUT "ssplit[0] = $ssplit[0]\n";
+# print OUT "ssplit[1] = $ssplit[1]\n";
+    #added lv - this separates the 3 letter and
     # line number from the line coding symbol; \w is alpha
     # or numeric - \W is non alpha or numeric
-    # $ssplit[0] is the code and line number; ssplit[1] is the line code 
+    # $ssplit[0] is the code and line number; ssplit[1] is the line code
  $tok[0] = $ssplit[1]; #added lv - this is the line code
  $tok[1] = "$ssplit[0] $fsplit[1]"; #added lv - this is the code and the comment, no line code
  # @tok = split(/\s+/, $in[4], 2);
@@ -864,7 +1096,7 @@ while (<IN>) {
   $mcomment = $commentText;
 # }
 
-####3.A. sEARCH FOR ALPHA POINT NUMBERS  
+####3.A. sEARCH FOR ALPHA POINT NUMBERS
 # if ($in[0] =~ /[^0-9]/) {
 ##  $commentFlag = $aflag;
 # }
@@ -904,40 +1136,40 @@ while (<IN>) {
  $checkInCode =~ s/  / /g;
 
 ########################### Print Section
- 
+
  print OUT "$in[0],$in[1],$in[2],$in[3],$checkInCode\n";
- 
+
 ####################### TEST SECTION
 # print OUT "in[0] point number             = $in[0]\n";
-# print OUT "in[1] northing                 = $in[1]\n";  
-# print OUT "in[2] easting                  = $in[2]\n";  
-# print OUT "in[3] elevation                = $in[3]\n";  
-# print OUT "in[4] full code & comment      = $in[4]\n";  
-# print OUT "fsplit[0] full code no comment = $fsplit[0]\n";  
-# print OUT "fsplit[1] comment              = $fsplit[1]\n";  
-# print OUT "ssplit[0] code and line no.    = $ssplit[0]\n";  
-# print OUT "ssplit[1] line code            = $ssplit[1]\n";  
-# print OUT "tok[0] line code               = $tok[0]\n";  
-# print OUT "tok[1] code, line no., comment = $tok[1]\n";  
-# print OUT "csplit[0] code                 = $csplit[0]\n";  
-# print OUT "csplit[1] line number          = $csplit[1]\n";  
-# print OUT "possibleMiscCode               = $possibleMiscCode\n";  
-# print OUT "description                    = $description\n";  
-# print OUT "field comment                  = $fieldComment\n";  
-# print OUT "C1                             = $C1\n";  
+# print OUT "in[1] northing                 = $in[1]\n";
+# print OUT "in[2] easting                  = $in[2]\n";
+# print OUT "in[3] elevation                = $in[3]\n";
+# print OUT "in[4] full code & comment      = $in[4]\n";
+# print OUT "fsplit[0] full code no comment = $fsplit[0]\n";
+# print OUT "fsplit[1] comment              = $fsplit[1]\n";
+# print OUT "ssplit[0] code and line no.    = $ssplit[0]\n";
+# print OUT "ssplit[1] line code            = $ssplit[1]\n";
+# print OUT "tok[0] line code               = $tok[0]\n";
+# print OUT "tok[1] code, line no., comment = $tok[1]\n";
+# print OUT "csplit[0] code                 = $csplit[0]\n";
+# print OUT "csplit[1] line number          = $csplit[1]\n";
+# print OUT "possibleMiscCode               = $possibleMiscCode\n";
+# print OUT "description                    = $description\n";
+# print OUT "field comment                  = $fieldComment\n";
+# print OUT "C1                             = $C1\n";
 # print OUT "commentFlag                    = $commentFlag\n";
 # print OUT "cFlag  control                 = $cflag\n";
-# print OUT "aFlag  alpha                   = $aflag\n";    
-# print OUT "oFlag  outlier                 = $oflag\n";    
-# print OUT "C2                             = $C2\n";  
-# print OUT "mComment                       = $mComment\n";  
-# print OUT "C3                             = $C3\n";  
-# print OUT "C4                             = $C4\n";  
-# print OUT "linecode                       = $linecode\n";  
-# print OUT "comment                        = $comment\n";  
-# print OUT "checkInCode                    = $checkInCode\n\n";  
-  
- 
+# print OUT "aFlag  alpha                   = $aflag\n";
+# print OUT "oFlag  outlier                 = $oflag\n";
+# print OUT "C2                             = $C2\n";
+# print OUT "mComment                       = $mComment\n";
+# print OUT "C3                             = $C3\n";
+# print OUT "C4                             = $C4\n";
+# print OUT "linecode                       = $linecode\n";
+# print OUT "comment                        = $comment\n";
+# print OUT "checkInCode                    = $checkInCode\n\n";
+
+
  #prepare for next loop
  if ($curIsString) {
   $activeStrings{$figname}=1; #make sure the list contains an entry for this string
@@ -946,11 +1178,11 @@ while (<IN>) {
  $lastFigname=$figname;
  $lastPtNum=$in[0];
  $figname="";
- $comment="";  #### added lv 
+ $comment="";  #### added lv
  $globalcomment="";  #### added lv to make comment $fsplit[1] available to processpoint()
  $ssplit[0]="";
- $fsplit[0]=""; 
- $ssplit[1]=""; 
+ $fsplit[0]="";
+ $ssplit[1]="";
  $fsplit[1]="";
  $csplit[0]="";
  $csplit[1]="";
