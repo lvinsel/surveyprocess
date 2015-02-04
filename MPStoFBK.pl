@@ -558,7 +558,7 @@
  "UND" => "381", # Underdrain
  "VLB" => "342", # Valve Box
  "VLG" => "344", # Gas Valve
- "VLe" => "344",
+ "VLE" => "344",
  "VLN" => "337", # Valve for sanitary force main
  "VLW" => "343", # Water Valve By Hydrant
  "VNG" => "354", # Gas Vent Pipe
@@ -2358,6 +2358,246 @@
  "UND" => "NOLINE", # 381 - UNDERDRAIN
  "WTR" => "NOLINE", # 649 - TOP OF WATER ELEVATION
 );
+####################################################
+# Abbott Labs Section
+################################################
+%abb_bldg = (
+"CNP" => "bldg", #
+"COL" => "bldg", #
+"DCK" => "bldg", #
+"FOU" => "bldg", #
+"GCC" => "bldg", #
+"GCF" => "bldg", #
+"GCM" => "bldg", #
+"GCR" => "bldg", #
+"GCS" => "bldg", #
+"GCT" => "bldg", #
+"GPC" => "bldg", #
+"GPF" => "bldg", #
+"GPM" => "bldg", #
+"GPR" => "bldg", #
+"GPS" => "bldg", #
+"GPT" => "bldg", #
+"GRC" => "bldg", #
+"GRF" => "bldg", #
+"GRL" => "bldg", #
+"GRM" => "bldg", #
+"GRR" => "bldg", #
+"GRS" => "bldg", #
+"GRT" => "bldg", #
+"MCS" => "bldg", #
+"PAA" => "bldg", #
+"PAB" => "bldg", #
+"PAC" => "bldg", #
+"PAN" => "bldg", #
+"PAR" => "bldg", #
+"PAT" => "bldg", #
+"SLB" => "bldg", #
+"SLC" => "bldg", #
+"SLN" => "bldg", #
+"STR" => "bldg", #
+"WAC" => "bldg", #
+"WAF" => "bldg", #
+"WAL" => "bldg", #
+"WAM" => "bldg", #
+"WAN" => "bldg", #
+"WAR" => "bldg", #
+);
+%abb_elec = (
+"ACU" => "elec", #
+"GUP" => "elec", #
+"GUY" => "elec", #
+"HHE" => "elec", #
+"JUE" => "elec", #
+"JUF" => "elec", #
+"JUT" => "elec", #
+"JUV" => "elec", #
+"MHE" => "elec", #
+"MHT" => "elec", #
+"MTE" => "elec", #
+"PDE" => "elec", #
+"PDV" => "elec", #
+"PHB" => "elec", #
+"PLT" => "elec", #
+"PPL" => "elec", #
+"PPT" => "elec", #
+"PPU" => "elec", #
+"SBT" => "elec", #
+"TRE" => "elec", #
+"TRF" => "elec", #
+"TWR" => "elec", #
+);
+%abb_frsh = (
+"JUW" => "frsh", #
+"MHW" => "frsh", #
+"MTW" => "frsh", #
+"MWL" => "frsh", #
+"VLW" => "frsh", #
+"WEL" => "frsh", #
+);
+%abb_gas = (
+"JUG" => "gas ", #
+"MHG" => "gas ", #
+"MTG" => "gas ", #
+"PUG" => "gas ", #
+"RSG" => "gas ", #
+"TNG" => "gas ", #
+"TNP" => "gas ", #
+"VLG" => "gas ", #
+);
+%abb_lake = (
+"BBW" => "lake", #
+"HYD" => "lake", #
+);
+%abb_sand = (
+"JUN" => "sand", #
+"MHN" => "sand", #
+"RSN" => "sand", #
+);
+%abb_site = (
+"BAB" => "site", #
+"BAR" => "site", #
+"BBA" => "site", #
+"BBB" => "site", #
+"BBC" => "site", #
+"BBT" => "site", #
+"BCH" => "site", #
+"BHR" => "site", #
+"BLC" => "site", #
+"BLS" => "site", #
+"BOL" => "site", #
+"BPR" => "site", #
+"BWW" => "site", #
+"CNA" => "site", #
+"CNB" => "site", #
+"CNC" => "site", #
+"CNG" => "site", #
+"CNN" => "site", #
+"CNO" => "site", #
+"CNR" => "site", #
+"CNW" => "site", #
+"CRB" => "site", #
+"CRC" => "site", #
+"CRN" => "site", #
+"CRR" => "site", #
+"EOA" => "site", #
+"EOB" => "site", #
+"EOC" => "site", #
+"EOG" => "site", #
+"EON" => "site", #
+"EOO" => "site", #
+"EOP" => "site", #
+"EOR" => "site", #
+"FNG" => "site", #
+"FNI" => "site", #
+"FNC" => "site", #
+"FNL" => "site", #
+"FNT" => "site", #
+"FNV" => "site", #
+"FNW" => "site", #
+"FNX" => "site", #
+"GND" => "site", #
+"GUB" => "site", #
+"GUC" => "site", #
+"GUN" => "site", #
+"GUR" => "site", #
+"GUT" => "site", #
+"H2O" => "site", #
+"HHR" => "site", #
+"HWL" => "site", #
+"LNM" => "site", #
+"MBX" => "site", #
+"NPS" => "site", #
+"PLF" => "site", #
+"PMA" => "site", #
+"PMC" => "site", #
+"PMO" => "site", #
+"PMR" => "site", #
+"PMT" => "site", #
+"PRK" => "site", #
+"RCL" => "site", #
+"RDR" => "site", #
+"RIP" => "site", #
+"RMP" => "site", #
+"RPA" => "site", #
+"RPB" => "site", #
+"RPC" => "site", #
+"RPG" => "site", #
+"RPM" => "site", #
+"RPN" => "site", #
+"RPR" => "site", #
+"RPS" => "site", #
+"RPT" => "site", #
+"RRC" => "site", #
+"RRF" => "site", #
+"RRG" => "site", #
+"RRH" => "site", #
+"RRR" => "site", #
+"RRS" => "site", #
+"RWC" => "site", #
+"SNC" => "site", #
+"SNE" => "site", #
+"SNG" => "site", #
+"SNL" => "site", #
+"SNR" => "site", #
+"SNT" => "site", #
+"SNW" => "site", #
+"SWA" => "site", #
+"SWB" => "site", #
+"SWC" => "site", #
+"SWG" => "site", #
+"SWN" => "site", #
+"SWO" => "site", #
+"SWR" => "site", #
+"SWW" => "site", #
+"WET" => "site", #
+);
+%abb_srvy = (
+"BOR" => "srvy", #
+"BRK" => "srvy", #
+"CKH" => "srvy", #
+"CKV" => "srvy", #
+"DTH" => "srvy", #
+"SPA" => "srvy", #
+"SPB" => "srvy", #
+"SPC" => "srvy", #
+"SPD" => "srvy", #
+"SPE" => "srvy", #
+"SPF" => "srvy", #
+"SPG" => "srvy", #
+"SPI" => "srvy", #
+"SPJ" => "srvy", #
+"SPK" => "srvy", #
+"SPL" => "srvy", #
+"SPM" => "srvy", #
+"SPN" => "srvy", #
+"SPO" => "srvy", #
+"SPQ" => "srvy", #
+"SPR" => "srvy", #
+"SPS" => "srvy", #
+"SPW" => "srvy", #
+"SPX" => "srvy", #
+"SPZ" => "srvy", #
+);
+%abb_stmd = (
+"CBM" => "stmd", #
+"CUB" => "stmd", #
+"CUE" => "stmd", #
+"CUP" => "stmd", #
+"FES" => "stmd", #
+"FFL" => "stmd", #
+"INL" => "stmd", #
+"JUM" => "stmd", #
+"MHM" => "stmd", #
+"TIL" => "stmd", #
+);
+%abb_vege = (
+"BSH" => "vege", #
+"BSL" => "vege", #
+"TRC" => "vege", #
+"TRD" => "vege", #
+"WDE" => "vege", #
+);
 #########################################################################################################
 #####################
 # Some Global Vars
@@ -2398,14 +2638,16 @@ open(OUT1,">${filename}_all.cor");
 open(OUT2,">${filename}_bridge.cor");
 open(OUT3,">${filename}_ptln.cor");
 open(OUT4,">${filename}_cell.cor");
-# open(OUT5,">${filename}_qc_spots.cor");
-# open(OUT6,">${filename}_topo.cor");
-# if ($#ARGV>0) {
-#  $_nextAutogenPtNum=$ARGV[1];
-# }
-# else {
-#  $_nextAutogenPtNum=100000;
-# }
+open(OUT5,">${filename}_bldg.cor");
+open(OUT6,">${filename}_elec.cor");
+open(OUT7,">${filename}_frsh.cor");
+open(OUT8,">${filename}_gas.cor");
+open(OUT9,">${filename}_lake.cor");
+open(OUT10,">${filename}_sand.cor");
+open(OUT11,">${filename}_site.cor");
+open(OUT12,">${filename}_srvy.cor");
+open(OUT13,">${filename}_stmd.cor");
+open(OUT14,">${filename}_vege.cor");
 while (<IN>) {
  $curIsString=0;
  @in = split(/,/, substr(uc, 0, -1), 5); #note: the substr forces text to be uppercase; the split creates:
@@ -2433,9 +2675,9 @@ while (<IN>) {
  my @csplit = ($ssplit[0] =~ /(\w\w\w)(\d*)/); # this is for QAQC
    # $csplit[0] = 3 letter code
    # $csplit[1] = line number
- if (length($fsplit[1])>0) {##############lv
-  $fsplit[1]="\;$fsplit[1]"; ########lv - adds the semi-colon before the Comment
- }
+#if (length($fsplit[1])>0) {##############lv
+#  $fsplit[1]="\;$fsplit[1]"; ########lv - adds the semi-colon before the Comment
+# }
  $Icode=$pointCodes{$csplit[0]}; ## if the three letter code matches any of the codes
 
 ##############Test Section
@@ -2468,47 +2710,165 @@ while (<IN>) {
  ########################################Begin sorting and printing
  #################################################
 
-  $fsplit[1] =~ s/^\s+//;
  if  (exists ($bridgeCodes{$csplit[0]}))
    {
    if ($c = $idotcommands{$tok[0]})
      {
-     print OUT2 "$in[0],$in[1],$in[2],$in[3],$csplit[0]$csplit[1] $c\/$fsplit[1],\n";
-     print OUT1 "$in[0],$in[1],$in[2],$in[3],$csplit[0]$csplit[1] $c\/$fsplit[1],\n";
+     print OUT2 "$in[0],$in[1],$in[2],$in[3],$csplit[0]$csplit[1] $c\/ $fsplit[1]\n";
+     print OUT1 "$in[0],$in[1],$in[2],$in[3],$csplit[0]$csplit[1] $c\/ $fsplit[1]\n";
      }
    else
      {
-     print OUT2 "$in[0],$in[1],$in[2],$in[3],$csplit[0]$csplit[1] \/$fsplit[1],\n";
-     print OUT1 "$in[0],$in[1],$in[2],$in[3],$csplit[0]$csplit[1] \/$fsplit[1],\n";
+     print OUT2 "$in[0],$in[1],$in[2],$in[3],$csplit[0]$csplit[1] \/ $fsplit[1]\n";
+     print OUT1 "$in[0],$in[1],$in[2],$in[3],$csplit[0]$csplit[1] \/ $fsplit[1]\n";
      }
    }
  elsif (exists ($symbolCodes{$Icode}))  # Check against symbolCodes list for cells
    {
    if ($c = $idotcommands{$tok[0]})
      {
-     print OUT4 "$in[0],$in[1],$in[2],$in[3],$csplit[0]$csplit[1] $c\/$fsplit[1],\n";
-     print OUT1 "$in[0],$in[1],$in[2],$in[3],$csplit[0]$csplit[1] $c\/$fsplit[1],\n";
+     print OUT4 "$in[0],$in[1],$in[2],$in[3],$csplit[0]$csplit[1] $c\/ $fsplit[1]\n";
+     print OUT1 "$in[0],$in[1],$in[2],$in[3],$csplit[0]$csplit[1] $c\/ $fsplit[1]\n";
      }
    else
      {
-     print OUT4 "$in[0],$in[1],$in[2],$in[3],$csplit[0]$csplit[1] \/$fsplit[1],\n";
-     print OUT1 "$in[0],$in[1],$in[2],$in[3],$csplit[0]$csplit[1] \/$fsplit[1],\n";
+     print OUT4 "$in[0],$in[1],$in[2],$in[3],$csplit[0]$csplit[1] \/ $fsplit[1]\n";
+     print OUT1 "$in[0],$in[1],$in[2],$in[3],$csplit[0]$csplit[1] \/ $fsplit[1]\n";
      }
    }
  elsif (exists ($lineCodes{$Icode}))
    {
    if ($c = $idotcommands{$tok[0]})
      {
-     print OUT3 "$in[0],$in[1],$in[2],$in[3],$csplit[0]$csplit[1] $c\/$fsplit[1],\n";
-     print OUT1 "$in[0],$in[1],$in[2],$in[3],$csplit[0]$csplit[1] $c\/$fsplit[1],\n";
+     print OUT3 "$in[0],$in[1],$in[2],$in[3],$csplit[0]$csplit[1] $c\/ $fsplit[1]\n";
+     print OUT1 "$in[0],$in[1],$in[2],$in[3],$csplit[0]$csplit[1] $c\/ $fsplit[1]\n";
      }
    else
      {
-     print OUT3 "$in[0],$in[1],$in[2],$in[3],$csplit[0]$csplit[1] \/$fsplit[1],\n";
-     print OUT1 "$in[0],$in[1],$in[2],$in[3],$csplit[0]$csplit[1] \/$fsplit[1],\n";
+     print OUT3 "$in[0],$in[1],$in[2],$in[3],$csplit[0]$csplit[1] \/ $fsplit[1]\n";
+     print OUT1 "$in[0],$in[1],$in[2],$in[3],$csplit[0]$csplit[1] \/ $fsplit[1]\n";
      }
    }
-
+# abb_bldg
+ if  (exists ($abb_bldg{$csplit[0]}))
+   {
+   if ($c = $idotcommands{$tok[0]})
+     {
+     print OUT5 "$in[0],$in[1],$in[2],$in[3],$csplit[0]$csplit[1] $c\/ $fsplit[1]\n";
+     }
+   else
+     {
+     print OUT5 "$in[0],$in[1],$in[2],$in[3],$csplit[0]$csplit[1] \/ $fsplit[1]\n";
+     }
+   }
+# abb_elec
+ if  (exists ($abb_elec{$csplit[0]}))
+   {
+   if ($c = $idotcommands{$tok[0]})
+     {
+     print OUT6 "$in[0],$in[1],$in[2],$in[3],$csplit[0]$csplit[1] $c\/ $fsplit[1]\n";
+     }
+   else
+     {
+     print OUT6 "$in[0],$in[1],$in[2],$in[3],$csplit[0]$csplit[1] \/ $fsplit[1]\n";
+     }
+   }
+# abb_frsh
+ if  (exists ($abb_frsh{$csplit[0]}))
+   {
+   if ($c = $idotcommands{$tok[0]})
+     {
+     print OUT7 "$in[0],$in[1],$in[2],$in[3],$csplit[0]$csplit[1] $c\/ $fsplit[1]\n";
+     }
+   else
+     {
+     print OUT7 "$in[0],$in[1],$in[2],$in[3],$csplit[0]$csplit[1] \/ $fsplit[1]\n";
+     }
+   }
+# abb_gas
+ if  (exists ($abb_gas{$csplit[0]}))
+   {
+   if ($c = $idotcommands{$tok[0]})
+     {
+     print OUT8 "$in[0],$in[1],$in[2],$in[3],$csplit[0]$csplit[1] $c\/ $fsplit[1]\n";
+     }
+   else
+     {
+     print OUT8 "$in[0],$in[1],$in[2],$in[3],$csplit[0]$csplit[1] \/ $fsplit[1]\n";
+     }
+   }
+# abb_lake
+ if  (exists ($abb_lake{$csplit[0]}))
+   {
+   if ($c = $idotcommands{$tok[0]})
+     {
+     print OUT9 "$in[0],$in[1],$in[2],$in[3],$csplit[0]$csplit[1] $c\/ $fsplit[1]\n";
+     }
+   else
+     {
+     print OUT9 "$in[0],$in[1],$in[2],$in[3],$csplit[0]$csplit[1] \/ $fsplit[1]\n";
+     }
+   }
+# abb_sand
+ if  (exists ($abb_sand{$csplit[0]}))
+   {
+   if ($c = $idotcommands{$tok[0]})
+     {
+     print OUT10 "$in[0],$in[1],$in[2],$in[3],$csplit[0]$csplit[1] $c\/ $fsplit[1]\n";
+     }
+   else
+     {
+     print OUT10 "$in[0],$in[1],$in[2],$in[3],$csplit[0]$csplit[1] \/ $fsplit[1]\n";
+     }
+   }
+# abb_site
+ if  (exists ($abb_site{$csplit[0]}))
+   {
+   if ($c = $idotcommands{$tok[0]})
+     {
+     print OUT11 "$in[0],$in[1],$in[2],$in[3],$csplit[0]$csplit[1] $c\/ $fsplit[1]\n";
+     }
+   else
+     {
+     print OUT11 "$in[0],$in[1],$in[2],$in[3],$csplit[0]$csplit[1] \/ $fsplit[1]\n";
+     }
+   }
+# abb_srvy
+ if  (exists ($abb_srvy{$csplit[0]}))
+   {
+   if ($c = $idotcommands{$tok[0]})
+     {
+     print OUT12 "$in[0],$in[1],$in[2],$in[3],$csplit[0]$csplit[1] $c\/ $fsplit[1]\n";
+     }
+   else
+     {
+     print OUT12 "$in[0],$in[1],$in[2],$in[3],$csplit[0]$csplit[1] \/ $fsplit[1]\n";
+     }
+   }
+# abb_stmd
+ if  (exists ($abb_stmd{$csplit[0]}))
+   {
+   if ($c = $idotcommands{$tok[0]})
+     {
+     print OUT13 "$in[0],$in[1],$in[2],$in[3],$csplit[0]$csplit[1] $c\/ $fsplit[1]\n";
+     }
+   else
+     {
+     print OUT13 "$in[0],$in[1],$in[2],$in[3],$csplit[0]$csplit[1] \/ $fsplit[1]\n";
+     }
+   }
+# abb_vege
+ if  (exists ($abb_vege{$csplit[0]}))
+   {
+   if ($c = $idotcommands{$tok[0]})
+     {
+     print OUT14 "$in[0],$in[1],$in[2],$in[3],$csplit[0]$csplit[1] $c\/ $fsplit[1]\n";
+     }
+   else
+     {
+     print OUT14 "$in[0],$in[1],$in[2],$in[3],$csplit[0]$csplit[1] \/ $fsplit[1]\n";
+     }
+   }
 
 
 
@@ -2563,3 +2923,11 @@ close(OUT3);
 close(OUT4);
 close(OUT5);
 close(OUT6);
+close(OUT7);
+close(OUT8);
+close(OUT9);
+close(OUT10);
+close(OUT11);
+close(OUT12);
+close(OUT13);
+close(OUT14);
