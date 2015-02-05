@@ -238,7 +238,6 @@
  "BBW" => "320", # Buffalo Box - Water
  #"BBX" => "320", # Water Buffalo Box
  "BCB" => "611", # Bridge Curb.  The top back of any curb or median on a bridge.
- "BCH" => "699", # Bench - like park bench
  "BDB" => "619", # Bridge Deck. The line of the bit bridge deck.  A 3d line.
  "BDC" => "619", # Bridge Deck. The line of the concrete bridge deck.  A 3d line.
  "BDP" => "619", # Bridge Deck Plate
