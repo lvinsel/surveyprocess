@@ -292,10 +292,10 @@
  "CNT" => "225", # Traffic Signal Cantilever/Mast Arm
  "COL" => "609", # Column
  "CPH" => "103", # Control Point - modified v6
- "CRB" => "501", # Curb Top - Bit
- "CRC" => "501", # Curb Top - Conc
- "CRN" => "501", # Curb Top - Stone
-# "CRN" => "667", # Depreciated see CNA-CNR
+ "CRB" => "501", # Curb Top - Conc - restored to original meaning 
+# "CRC" => "501", # Curb Top - Conc - removed after confused period
+# "CRN" => "501", # Curb Top - Stone - removed after confused period
+ "CRN" => "667", # Crown Line - restored to original meaning
  "CRP" => "411", # Crop Line
  "CRW" => "279", # Crosswalk
  "CUB" => "303",
@@ -553,7 +553,7 @@
  "UND" => "381", # Underdrain
  "VLB" => "342", # Valve Box
  "VLG" => "344", # Gas Valve
- "VLe" => "344",
+ "VLE" => "344",
  "VLN" => "337", # Valve for sanitary force main
  "VLW" => "343", # Water Valve By Hydrant
  "VNG" => "354", # Gas Vent Pipe
@@ -2241,13 +2241,6 @@
  "SNC" => "1", # 423 - Sign - Commercial
  "TIL" => "1", # 304 - TILE
  "DSP" => "2", # 304 - DOWNSPOUT
- "CRB" => "1", # 501 - Curb Top - Bit
- "CRC" => "2", # 501 - Curb Top - Conc
- "CRN" => "3", # 501 - Curb Top - Stone
- "GUB" => "1", # 575 - Gutter/Flowline - HMA
- "GUC" => "2", # 575 - Gutter/Flowline - CONC
- "GUN" => "3", # 575 - Gutter/Flowline - Stone
- "GUT" => "4", # 575 - Gutter/Flowline
  "GCC" => "1", # 600 - Building - Commercial - Concrete
  "GCF" => "2", # 600 - Building - Commercial - Wood Frame
  "GCM" => "3", # 600 - Building - Commercial - Masonry
