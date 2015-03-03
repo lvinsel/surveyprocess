@@ -1547,7 +1547,7 @@ while (<IN>) {
    # $csplit[0] = 3 letter code
    # $csplit[1] = line number
  if (length($fsplit[1])>0) {##############lv
-  $fsplit[1]="\;$fsplit[1]"; ########lv - adds the semi-colon before the Comment
+  $fsplit[1]="\/$fsplit[1]"; ########lv - adds the semi-colon before the Comment
  }
  $Icode=$pointCodes{$csplit[0]}; ## if the three letter code matches any of the codes
 
