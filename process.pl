@@ -1577,7 +1577,7 @@ while (<IN>) {
  #################################################
    if ($c = $idotcommands{$tok[0]})
      {
-     print OUT1 "$in[0],$in[1],$in[2],$in[3],$Icode$csplit[1]$fsplit[1]$c\n";
+     print OUT1 "$in[0],$in[1],$in[2],$in[3],$Icode$csplit[1]$c$fsplit[1]\n";
      }
    else
      {
