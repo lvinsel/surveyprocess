@@ -1575,7 +1575,12 @@ while (<IN>) {
  #
  ########################################Begin sorting and printing
  #################################################
-   if ($c = $idotcommands{$tok[0]})
+   if(($csplit[0] eq 'TRC') || ( $csplit[0] eq 'TRD'))
+     {
+     $fsplit[1] =~ s/\D//g;
+     print OUT1 "$in[0],$in[1],$in[2],$in[3],$Icode$fsplit[1]$c\n";
+     }
+   elsif ($c = $idotcommands{$tok[0]})
      {
      print OUT1 "$in[0],$in[1],$in[2],$in[3],$Icode$csplit[1]$c\n";
      }
