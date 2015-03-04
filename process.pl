@@ -226,7 +226,7 @@
                   # and top of the abutment.  A 3d line.
  "BAL" => "613", # The outline of the face of the abutment and the face of the
                   # wingwalls.  A 2d line, usually collected prismless.
- "BAR" => "695", # Stop Bar
+ "BAR" => "STR", # Stop Bar
  "BAS" => "618", # Bridge Approach Slab
  #"BAT" => "615", # Bridge Abutment Top
  "BBA" => "619", # Bridge Deck - AGG - Spots only
@@ -247,7 +247,7 @@
  #"BDK" => "619", # Bridge Deck
  "BEX" => "623", # Bridge Expansion Joint.  A 3d line.
  "BHR" => "HRAIL", # Bridge Handrail
- "BLD" => "601", # v16 start of depreciation
+ "BLD" => "BLDG", # v16 start of depreciation
  "BLC" => "626", # The bottom of the concrete bridge beams.  Usually taken at
                   # the beginning middle and end oof each span of the bridge beams.
                   # Usually only required on the outside (upstream and downstream) beams.
@@ -266,7 +266,7 @@
  "BPT" => "631", # The pier cap elevation,  For elevation only.  Usually collected
                   # with the "hook".
  #"BRC" => "611", # Bridge Curb
- "BRK" => "607", # Breakline
+ "BRK" => "TOE", # Breakline
  "BRR" => "579", # Barrier Wall
  "BSC" => "641", # Bridge Scupper
  "BSH" => "BUSH",
@@ -329,7 +329,7 @@
  "DTP" => "FLS", # Ditch - Paved - Centerline
  "EOA" => "AGG", # Edge of pavement - aggregate
  "EOB" => "BIT", # Edge of pavement - bit/hma
- "EOC" => "CONC", # Edge of pavement - concrete
+ "EOC" => "EP", # Edge of pavement - concrete
  "EOL" => "EP", # Edge of Lanes - added v6
  "EOR" => "EP", # Edge of pavement - Brick
  #"EOP" => "668", # Edge of pavement
@@ -1577,7 +1577,7 @@ while (<IN>) {
  #################################################
    if ($c = $idotcommands{$tok[0]})
      {
-     print OUT1 "$in[0],$in[1],$in[2],$in[3],$Icode$csplit[1]$c$fsplit[1]\n";
+     print OUT1 "$in[0],$in[1],$in[2],$in[3],$Icode$csplit[1]$c\n";
      }
    else
      {
