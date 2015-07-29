@@ -397,6 +397,7 @@
  "RWS" => "legal", # Retaining Wall - Steel
  "RWT" => "legal", # Retaining Wall - Timber
  "SBE" => "legal", # Splice Box - Electrical
+ "SBF" => "legal", # Splice Box - Fiber Optic
  "SBR" => "legal", # Splice Box - Traffic Signals
  "SBT" => "legal", # Splice Box - Telephone
  "SBV" => "legal", # Splice Box - Television
@@ -798,6 +799,7 @@
  "RWT" => "TIMBER",
  "SBT" => "TELEPHONE",
  "SBW" => "SPRINKLER SYSTEM",
+ "SBF" => "FIBER OPTIC",
  "SHA" => "AGG",
  "SHB" => "HMA",
  "SHC" => "CONC",

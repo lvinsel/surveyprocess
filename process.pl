@@ -481,6 +481,7 @@
  "RWS" => "296", # Retaining Wall - Steel
  "RWT" => "296", # Retaining Wall - Timber
  "SBE" => "282",
+ "SBF" => "283", # Splice Box fiber optic
  "SBR" => "223", # Traffic Signal Controller - changed v6
  "SBT" => "281", # SPLICE BOX TELEPHONE
  "SBV" => "281", # SPLICE BOX TELEVISION
