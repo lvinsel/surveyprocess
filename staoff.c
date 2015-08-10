@@ -27,6 +27,15 @@ float OffsetPointOffset;
 float OffsetPointElevation;
 char  OffsetPointCode[];
 
+/* Initialize variables */
+chainName = argv;
+/* Read one line of input file */
+/* use point number to search for point number in origData and return variables */
+/* use fieldCode to search for IDOTcode in ??? and return offsetPointCode */
+/* Do calculations */
+/* print results */
+
+ *
 FILE *origData = fopen("geopakStaOff.txt",r);
 FILE *fieldData = fopen("inputFieldData.csv",r);
 
