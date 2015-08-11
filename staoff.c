@@ -19,7 +19,7 @@ float foresightMinus;
 float fsDistFromPoint;
 char  fieldCode[4];
 /* Input variables from argument */
-char  chainName[] = "IL113";
+const char  chainName[] = "IL113";
 /* Interior variables */
 char  alphaCode[4];
 char  idotCode[4];
@@ -46,6 +46,7 @@ FILE *idotCodeList = fopen("mpsIdotCodes.txt","r");
 /* Read one line of input file */
 	while (fscanf(fieldData,"%s %s %f %f %f %f %s",&fieldPointNo,leftRight,&backsightPlus,&bsDistFromPoint,\
 			&foresightMinus,&fsDistFromPoint,fieldCode) == 7) {
+		printf("chainName = %s\n",chainName);
 		//printf("fieldPointNo = %s\n",fieldPointNo);
 		//printf("leftRight = %s\n",leftRight);
 		/* use point number to search for point number in origData and return variables */
@@ -71,7 +72,7 @@ FILE *idotCodeList = fopen("mpsIdotCodes.txt","r");
 						}
 					}
 				/* print results */
-				fprintf(outputFile,"Locate %s ON Chain %s STA %.1f Offset  %.1f\n", &offsetPointNo, chainName, offsetPointStation, offsetPointOffset); 
+				fprintf(outputFile,"Locate %s ON Chain %s STA %.1f Offset  %.1f\n", origPointNo, chainName, offsetPointStation, offsetPointOffset); 
 				fprintf(outputFile,"Store Point %s Elevation %.1f\n", offsetPointNo, offsetPointElevation);
 				fprintf(outputFile,"Store Point %s Feature \"%s\"\n", offsetPointNo, offsetPointCode);
 			}
