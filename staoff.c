@@ -54,7 +54,7 @@ FILE *idotCodeList = fopen("mpsIdotCodes.txt","r");
 				/* use fieldCode to search for IDOTcode in ??? and return offsetPointCode */
 					while (fscanf(idotCodeList,"%s,%s",&alphaCode,&idotCode) == 2) {
 						if (strcmp(alphaCode,fieldCode) == 0) {
-							offsetPointCode = idotCode;
+							char *strcpy(char *offsetPointCode, const char *idotCode);
 							break;
 						}
 					}
