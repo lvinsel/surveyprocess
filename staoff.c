@@ -7,7 +7,7 @@ int main()
 {
 /* Input variables from geopakStaOff.txt */
 char  origPointNo[11];
-float PointStation;
+float pointStation;
 float origPointOffset;
 float origPointElevation;
 /* Input variables from inputFieldData.csv */
@@ -55,12 +55,13 @@ FILE *idotCodeList = fopen("mpsIdotCodes.txt","r");
 		printf("fsDistFromPoint = %f\n",fsDistFromPoint);
 		printf("fieldCode = %s\n",fieldCode);
 		/* use point number to search for point number in origData and return variables */
-		while (fscanf(origData,"%s %f %f %f",&origPointNo,&PointStation,&origPointOffset,&origPointElevation) == 4) {
+		while (fscanf(origData,"%s %f %f %f",&origPointNo,&pointStation,&origPointOffset,&origPointElevation) == 4) {
 			printf("\nchainName2 = %s\n",chainName);
 			printf("fieldPointNo = %s\n",fieldPointNo);
 			printf("origPointNo = %s\n",origPointNo);
-			//printf("%s \n","testing1");
-			//printf("origPointElevation = %f\n",origPointElevation);
+			printf("pointStation = %f\n",pointStation);
+			printf("origPointOffset = %f\n",origPointOffset);
+			printf("origPointElevation = %f\n",origPointElevation);
 			if (strcmp(fieldPointNo,origPointNo) == 0) {
 			printf("fieldPointNo22 = %s\n",fieldPointNo);
 			printf("origPointNo23 = %s\n",origPointNo);
@@ -82,9 +83,10 @@ FILE *idotCodeList = fopen("mpsIdotCodes.txt","r");
 //					}
 //				}
 //			/* print results */
-			fprintf(outputFile,"Locate %s ON Chain %s STA %.1f Offset  %.1f\n", origPointNo, chainName, offsetPointStation, offsetPointOffset); 
+			fprintf(outputFile,"Locate %s ON Chain %s STA %.1f Offset  %.1f\n", origPointNo, chainName, pointStation, offsetPointOffset); 
 			fprintf(outputFile,"Store Point %s Elevation %.1f\n", offsetPointNo, offsetPointElevation);
 			fprintf(outputFile,"Store Point %s Feature \"%s\"\n", offsetPointNo, offsetPointCode);
+			break;
 			}
 		}
 	}
