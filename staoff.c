@@ -78,7 +78,7 @@ FILE *idotCodeList = fopen("mpsIdotCodes.txt","r");
 //			printf("origPointOffset = %f\n",origPointOffset);
 //			printf("origPointElevation = %f\n",origPointElevation);
 			if (strcmp(fieldPointNo,origPointNo) == 0) {
-//				printf("fieldPointNo22 = %s\n",fieldPointNo);
+				printf("fieldPointNo22 = %s\n",fieldPointNo);
 //				printf("origPointNo23 = %s\n",origPointNo);
 //				printf("origPointElevation24 = %f\n",origPointElevation);
 				/* Do calculations */
@@ -103,12 +103,14 @@ FILE *idotCodeList = fopen("mpsIdotCodes.txt","r");
 						printf("offsetPointCode = %s\n",offsetPointCode);
 //						break;
 					}
+//					break;
 				}
 				/* print results */
 				fprintf(outputFile,"Locate %s ON Chain %s STA %.1f Offset  %.1f\n", offsetPointNo, chainName, pointStation, offsetPointOffset); 
 				fprintf(outputFile,"Store Point %s Elevation %.1f\n", offsetPointNo, offsetPointElevation);
 				fprintf(outputFile,"Store Point %s Feature \"%s\"\n", offsetPointNo, offsetPointCode);
-//				break;
+				fieldPointNo[0] = 'x';
+				break;
 			}
 //			break;
 		}
