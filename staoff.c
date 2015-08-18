@@ -37,7 +37,6 @@ float elevationCalc(float oldElev,float BS,float FS);
 float offsetCalc(float oldOS,float bsDist,float fsDist,char leftRight[]);
 
 /* open files */
-FILE *origData = fopen("geopakStaOff.txt","r");
 FILE *fieldData = fopen("inputFieldData.csv","r");
 FILE *outputFile = fopen("out.txt","a");
 FILE *idotCodeList = fopen("mpsIdotCodes.txt","r");
@@ -55,6 +54,7 @@ FILE *idotCodeList = fopen("mpsIdotCodes.txt","r");
 		printf("fsDistFromPoint = %f\n",fsDistFromPoint);
 		printf("fieldCode = %s\n",fieldCode);
 		/* use point number to search for point number in origData and return variables */
+		FILE *origData = fopen("geopakStaOff.txt","r");
 		while (fscanf(origData,"%s %f %f %f",&origPointNo,&pointStation,&origPointOffset,&origPointElevation) == 4) {
 			printf("\nchainName2 = %s\n",chainName);
 			printf("fieldPointNo = %s\n",fieldPointNo);
@@ -63,32 +63,35 @@ FILE *idotCodeList = fopen("mpsIdotCodes.txt","r");
 			printf("origPointOffset = %f\n",origPointOffset);
 			printf("origPointElevation = %f\n",origPointElevation);
 			if (strcmp(fieldPointNo,origPointNo) == 0) {
-			printf("fieldPointNo22 = %s\n",fieldPointNo);
-			printf("origPointNo23 = %s\n",origPointNo);
-			printf("origPointElevation24 = %f\n",origPointElevation);
-//			/* Do calculations */
-			offsetPointElevation = elevationCalc(origPointElevation,backsightPlus,foresightMinus);
-			printf("\noffsetPointElevation = %f\n",offsetPointElevation);
-			printf("\n\n%s \n","testing variables for offsetCalc");
-			printf("origPointOffset = %f\n",origPointOffset);
-			printf("bsDistFromPoint = %f\n",bsDistFromPoint);
-			printf("fsDistFromPoint = %f\n",fsDistFromPoint);
-			printf("leftRight = %s\n",leftRight);
-			offsetPointOffset = offsetCalc(origPointOffset,bsDistFromPoint,fsDistFromPoint,leftRight);
-//			/* use fieldCode to search for IDOTcode in ??? and return offsetPointCode */
-//				while (fscanf(idotCodeList,"%s,%s",&alphaCode,&idotCode) == 2) {
-//					if (strcmp(alphaCode,fieldCode) == 0) {
-//						char *strcpy(char *offsetPointCode, const char *idotCode);
-//						break;
-//					}
-//				}
-//			/* print results */
-			fprintf(outputFile,"Locate %s ON Chain %s STA %.1f Offset  %.1f\n", origPointNo, chainName, pointStation, offsetPointOffset); 
-			fprintf(outputFile,"Store Point %s Elevation %.1f\n", offsetPointNo, offsetPointElevation);
-			fprintf(outputFile,"Store Point %s Feature \"%s\"\n", offsetPointNo, offsetPointCode);
-			break;
+				printf("fieldPointNo22 = %s\n",fieldPointNo);
+				printf("origPointNo23 = %s\n",origPointNo);
+				printf("origPointElevation24 = %f\n",origPointElevation);
+//				/* Do calculations */
+				offsetPointElevation = elevationCalc(origPointElevation,backsightPlus,foresightMinus);
+				printf("\noffsetPointElevation = %f\n",offsetPointElevation);
+				printf("\n\n%s \n","testing variables for offsetCalc");
+				printf("origPointOffset = %f\n",origPointOffset);
+				printf("bsDistFromPoint = %f\n",bsDistFromPoint);
+				printf("fsDistFromPoint = %f\n",fsDistFromPoint);
+				printf("leftRight = %s\n",leftRight);
+				offsetPointOffset = offsetCalc(origPointOffset,bsDistFromPoint,fsDistFromPoint,leftRight);
+//				/* use fieldCode to search for IDOTcode in ??? and return offsetPointCode */
+				while (fscanf(idotCodeList,"%s,%s",&alphaCode,&idotCode) == 2) {
+					printf("alphaCode = %s\n",alphaCode);
+					printf("idotCode = %s\n",idotCode);
+					if (strcmp(alphaCode,fieldCode) == 0) {
+						char *strcpy(char *offsetPointCode, const char *idotCode);
+						break;
+					}
+				}
+				/* print results */
+				fprintf(outputFile,"Locate %s ON Chain %s STA %.1f Offset  %.1f\n", origPointNo, chainName, pointStation, offsetPointOffset); 
+				fprintf(outputFile,"Store Point %s Elevation %.1f\n", offsetPointNo, offsetPointElevation);
+				fprintf(outputFile,"Store Point %s Feature \"%s\"\n", offsetPointNo, offsetPointCode);
+				break;
 			}
 		}
+	fclose(origData);
 	}
 return 0;
 }
