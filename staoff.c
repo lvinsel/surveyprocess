@@ -34,7 +34,7 @@ char  offsetPointCode[4];
 
 /* Function prototypes */
 float elevationCalc(float oldElev,float BS,float FS);
-float offsetCalc(float oldOS,float bsDist,float fsDist);
+float offsetCalc(float oldOS,float bsDist,float fsDist,char leftRight[]);
 
 /* open files */
 FILE *origData = fopen("geopakStaOff.txt","r");
@@ -73,7 +73,7 @@ FILE *idotCodeList = fopen("mpsIdotCodes.txt","r");
 			printf("bsDistFromPoint = %f\n",bsDistFromPoint);
 			printf("fsDistFromPoint = %f\n",fsDistFromPoint);
 			printf("leftRight = %s\n",leftRight);
-			offsetPointOffset = offsetCalc(origPointOffset,bsDistFromPoint,fsDistFromPoint);
+			offsetPointOffset = offsetCalc(origPointOffset,bsDistFromPoint,fsDistFromPoint,leftRight);
 //			/* use fieldCode to search for IDOTcode in ??? and return offsetPointCode */
 //				while (fscanf(idotCodeList,"%s,%s",&alphaCode,&idotCode) == 2) {
 //					if (strcmp(alphaCode,fieldCode) == 0) {
@@ -101,14 +101,22 @@ float elevationCalc(float oldElev,float BS,float FS) {
 	return newElev;
 }
 
-float offsetCalc(float oldOS,float bsDist,float fsDist) {
+float offsetCalc(float oldOS,float bsDist,float fsDist,char side[]) {
 	printf("\n\n%s \n","testing offsetCalc");
 	printf("%s \n","testing2");
 	printf("oldOS = %f \n",oldOS);
 	printf("bsDist = %f \n",bsDist);
 	printf("fsDist = %f \n",fsDist);
+	printf("side = %s \n",side);
 	float newOffset;
-	newOffset = oldOS + bsDist + fsDist;
+	if (side[0] == 'L') {
+		printf("side is left = %s \n",side);
+		newOffset = oldOS - bsDist - fsDist;
+	}
+	if (side[0] == 'R') {
+		printf("side is right = %s \n",side);
+		newOffset = oldOS + bsDist + fsDist;
+	}
 	printf("newOffset = %f \n",newOffset);
 	return newOffset;
 }
