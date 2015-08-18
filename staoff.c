@@ -72,6 +72,7 @@ FILE *idotCodeList = fopen("mpsIdotCodes.txt","r");
 			printf("origPointOffset = %f\n",origPointOffset);
 			printf("bsDistFromPoint = %f\n",bsDistFromPoint);
 			printf("fsDistFromPoint = %f\n",fsDistFromPoint);
+			printf("leftRight = %s\n",leftRight);
 			offsetPointOffset = offsetCalc(origPointOffset,bsDistFromPoint,fsDistFromPoint);
 //			/* use fieldCode to search for IDOTcode in ??? and return offsetPointCode */
 //				while (fscanf(idotCodeList,"%s,%s",&alphaCode,&idotCode) == 2) {
