@@ -5,6 +5,25 @@
 
 const char chainName[10] = "IL113";
 char counterString[11];
+
+char * fetchCode(char *aCode){
+	char  alphaCode[4];
+	char  idotCode[4];
+	char  iCode[4];
+	FILE *idotCodeList = fopen("mpsIdotCodes.txt","r");
+	while (fscanf(idotCodeList,"%s %s",&alphaCode,&idotCode) == 2) {
+		if (strcmp(alphaCode,aCode) == 0) {
+			printf("\n\n%s \n","testing fetchCode");
+			printf("alphaCode = %s\n",alphaCode);
+			printf("idotCode = %s\n",idotCode);
+			printf("fieldCode(aCode) = %s\n",aCode);
+			strcpy(iCode, idotCode);
+			printf("offsetPointCode(iCode) = %s\n",iCode);
+		}
+	}
+	fclose(idotCodeList);
+	return iCode;
+}
 int main()
 {
 /* Input variables from geopakStaOff.txt */
@@ -23,8 +42,6 @@ char  fieldCode[4];
 /* Input variables from argument */
 //char  chainName[10] = "IL113";
 /* Interior variables */
-char  alphaCode[4];
-char  idotCode[4];
 int   ret;
 int   counter = 0;
 
@@ -38,7 +55,7 @@ char  offsetPointCode[4];
 /* Function prototypes */
 float elevationCalc(float oldElev,float BS,float FS);
 float offsetCalc(float oldOS,float bsDist,float fsDist,char leftRight[]);
-
+// char* fetchcode(char *aCode);
 /* open files */
 FILE *fieldData = fopen("inputFieldData.csv","r");
 FILE *outputFile = fopen("out.txt","a");
@@ -78,7 +95,7 @@ FILE *outputFile = fopen("out.txt","a");
 //			printf("origPointOffset = %f\n",origPointOffset);
 //			printf("origPointElevation = %f\n",origPointElevation);
 			if (strcmp(fieldPointNo,origPointNo) == 0) {
-				printf("fieldPointNo22 = %s\n",fieldPointNo);
+				printf("\n\n\nfieldPointNo22 = %s\n",fieldPointNo);
 //				printf("origPointNo23 = %s\n",origPointNo);
 //				printf("origPointElevation24 = %f\n",origPointElevation);
 				/* Do calculations */
@@ -91,7 +108,7 @@ FILE *outputFile = fopen("out.txt","a");
 //				printf("leftRight = %s\n",leftRight);
 				offsetPointOffset = offsetCalc(origPointOffset,bsDistFromPoint,fsDistFromPoint,leftRight);
 //				/* use fieldCode to search for IDOTcode in ??? and return offsetPointCode */
-				offsetPointCode = fetchCode(fieldCode)
+				offsetPointCode[4] = fetchCode(fieldCode);
 //				while (fscanf(idotCodeList,"%s %s",&alphaCode,&idotCode) == 2) {
 //					printf("alphaCode = %s\n",alphaCode);
 //					printf("idotCode = %s\n",idotCode);
@@ -150,17 +167,21 @@ float offsetCalc(float oldOS,float bsDist,float fsDist,char side[]) {
 	printf("newOffset = %f \n\n\n",newOffset);
 	return newOffset;
 }
-char *fetchCode(char *aCode){
-	FILE *idotCodeList = fopen("mpsIdotCodes.txt","r");
-	while (fscanf(idotCodeList,"%s %s",&alphaCode,&idotCode) == 2) {
-		if (strcmp(alphaCode,fieldCode) == 0) {
-			printf("alphaCode = %s\n",alphaCode);
-			printf("idotCode = %s\n",idotCode);
-			printf("fieldCode(aCode) = %s\n",aCode);
-			strcpy(iCode, idotCode);
-			printf("offsetPointCode(iCode) = %s\n",iCode);
-		}
-	}
-	fclose(idotCodeList);
-	return icode;
-}
+//char * fetchCode(char *aCode){
+//	char  alphaCode[4];
+//	char  idotCode[4];
+//	char  iCode[4];
+//	FILE *idotCodeList = fopen("mpsIdotCodes.txt","r");
+//	while (fscanf(idotCodeList,"%s %s",&alphaCode,&idotCode) == 2) {
+//		if (strcmp(alphaCode,aCode) == 0) {
+//			printf("\n\n%s \n","testing fetchCode");
+//			printf("alphaCode = %s\n",alphaCode);
+//			printf("idotCode = %s\n",idotCode);
+//			printf("fieldCode(aCode) = %s\n",aCode);
+//			strcpy(iCode, idotCode);
+//			printf("offsetPointCode(iCode) = %s\n",iCode);
+//		}
+//	}
+//	fclose(idotCodeList);
+//	return iCode;
+//}
