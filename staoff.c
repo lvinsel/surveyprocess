@@ -110,7 +110,7 @@ FILE *idotCodeList = fopen("mpsIdotCodes.txt","r");
 				fprintf(outputFile,"Store Point %s Elevation %.1f\n", offsetPointNo, offsetPointElevation);
 				fprintf(outputFile,"Store Point %s Feature \"%s\"\n", offsetPointNo, offsetPointCode);
 				fieldPointNo[0] = 'x';
-				break;
+//				break;
 			}
 //			break;
 		}
