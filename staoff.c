@@ -9,16 +9,17 @@ char counterString[11];
 char * fetchCode(char *aCode){
 	char  alphaCode[4];
 	char  idotCode[4];
-	char  iCode[4];
+	char*  iCode = (char*) malloc(4);
 	FILE *idotCodeList = fopen("mpsIdotCodes.txt","r");
-	while (fscanf(idotCodeList,"%s %s",&alphaCode,&idotCode) == 2) {
+	while (fscanf(idotCodeList,"%s %s",alphaCode,idotCode) == 2) {
+//	while (fscanf(idotCodeList,"%s %s",&alphaCode,&idotCode) == 2) {
 		if (strcmp(alphaCode,aCode) == 0) {
 			printf("\n\n%s \n","testing fetchCode");
 			printf("alphaCode = %s\n",alphaCode);
 			printf("idotCode = %s\n",idotCode);
 			printf("fieldCode(aCode) = %s\n",aCode);
 			strcpy(iCode, idotCode);
-			printf("offsetPointCode(iCode) = %s\n",iCode);
+			printf("offsetPointCode(iCode) = %s\n\n\n",iCode);
 		}
 	}
 	fclose(idotCodeList);
@@ -42,15 +43,14 @@ char  fieldCode[4];
 /* Input variables from argument */
 //char  chainName[10] = "IL113";
 /* Interior variables */
-int   ret;
 int   counter = 0;
 
 /* Output variable */
 char  offsetPointNo[11];
-float offsetPointStation;
+//float offsetPointStation;
 float offsetPointOffset;
 float offsetPointElevation;
-char  offsetPointCode[4];
+char  *offsetPointCode;
 
 /* Function prototypes */
 float elevationCalc(float oldElev,float BS,float FS);
@@ -63,7 +63,8 @@ FILE *outputFile = fopen("out.txt","a");
 
 //printf("%s \n","testing");
 /* Read one line of input file */
-	while (fscanf(fieldData,"%s %s %f %f %f %f %s",&fieldPointNo,leftRight,&backsightPlus,&bsDistFromPoint,\
+//	while (fscanf(fieldData,"%s %s %f %f %f %f %s",&fieldPointNo,leftRight,&backsightPlus,&bsDistFromPoint,
+	while (fscanf(fieldData,"%s %s %f %f %f %f %s",fieldPointNo,leftRight,&backsightPlus,&bsDistFromPoint,\
 			&foresightMinus,&fsDistFromPoint,fieldCode) == 7) {
 		//Create new point number from old number and a counter
 		if (counter == 8) {
@@ -87,7 +88,8 @@ FILE *outputFile = fopen("out.txt","a");
 //		printf("fieldCode = %s\n",fieldCode);
 		/* use point number to search for point number in origData and return variables */
 		FILE *origData = fopen("geopakStaOff.txt","r");
-		while (fscanf(origData,"%s %f %f %f",&origPointNo,&pointStation,&origPointOffset,&origPointElevation) == 4) {
+//		while (fscanf(origData,"%s %f %f %f",&origPointNo,&pointStation,&origPointOffset,&origPointElevation) == 4) {
+		while (fscanf(origData,"%s %f %f %f",origPointNo,&pointStation,&origPointOffset,&origPointElevation) == 4) {
 //			printf("\nchainName2 = %s\n",chainName);
 //			printf("fieldPointNo = %s\n",fieldPointNo);
 //			printf("origPointNo = %s\n",origPointNo);
@@ -108,7 +110,11 @@ FILE *outputFile = fopen("out.txt","a");
 //				printf("leftRight = %s\n",leftRight);
 				offsetPointOffset = offsetCalc(origPointOffset,bsDistFromPoint,fsDistFromPoint,leftRight);
 //				/* use fieldCode to search for IDOTcode in ??? and return offsetPointCode */
-				offsetPointCode[4] = fetchCode(fieldCode);
+				char *tmp = fetchCode(fieldCode);
+				offsetPointCode = tmp;
+//				offsetPointCode = fetchCode(fieldCode);
+				printf("offsetPointCode = %s\n\n\n",offsetPointCode);
+				free(tmp);
 //				while (fscanf(idotCodeList,"%s %s",&alphaCode,&idotCode) == 2) {
 //					printf("alphaCode = %s\n",alphaCode);
 //					printf("idotCode = %s\n",idotCode);
