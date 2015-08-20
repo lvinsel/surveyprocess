@@ -113,8 +113,9 @@ FILE *outputFile = fopen("out.txt","a");
 				char *tmp = fetchCode(fieldCode);
 				offsetPointCode = tmp;
 //				offsetPointCode = fetchCode(fieldCode);
+				printf("offsetPointCode = %s\n",offsetPointCode);
+//:				free(tmp);
 				printf("offsetPointCode = %s\n\n\n",offsetPointCode);
-				free(tmp);
 //				while (fscanf(idotCodeList,"%s %s",&alphaCode,&idotCode) == 2) {
 //					printf("alphaCode = %s\n",alphaCode);
 //					printf("idotCode = %s\n",idotCode);
@@ -134,6 +135,7 @@ FILE *outputFile = fopen("out.txt","a");
 				fprintf(outputFile,"Store Point %s Elevation %.1f\n", offsetPointNo, offsetPointElevation);
 				fprintf(outputFile,"Store Point %s Feature \"%s\"\n", offsetPointNo, offsetPointCode);
 				fieldPointNo[0] = 'x';
+				free(tmp);
 //				break;
 			}
 //			break;
