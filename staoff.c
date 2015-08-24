@@ -14,12 +14,12 @@ char * fetchCode(char *aCode){
 	while (fscanf(idotCodeList,"%s %s",alphaCode,idotCode) == 2) {
 //	while (fscanf(idotCodeList,"%s %s",&alphaCode,&idotCode) == 2) {
 		if (strcmp(alphaCode,aCode) == 0) {
-			printf("\n\n%s \n","testing fetchCode");
-			printf("alphaCode = %s\n",alphaCode);
-			printf("idotCode = %s\n",idotCode);
-			printf("fieldCode(aCode) = %s\n",aCode);
+//			printf("\n\n%s \n","testing fetchCode");
+//			printf("alphaCode = %s\n",alphaCode);
+//			printf("idotCode = %s\n",idotCode);
+//			printf("fieldCode(aCode) = %s\n",aCode);
 			strcpy(iCode, idotCode);
-			printf("offsetPointCode(iCode) = %s\n\n\n",iCode);
+//			printf("offsetPointCode(iCode) = %s\n\n\n",iCode);
 		}
 	}
 	fclose(idotCodeList);
@@ -70,13 +70,13 @@ FILE *outputFile = fopen("out.txt","a");
 		if (counter == 8) {
 			counter = 0;
 		}
-		printf("counter = %d\n",counter);
+//		printf("counter = %d\n",counter);
 		sprintf(counterString, "%d", counter);
-		printf("counterString = %s\n",counterString);
+//		printf("counterString = %s\n",counterString);
 		printf("fieldPointNo = %s\n",fieldPointNo);
 		strcpy(offsetPointNo, fieldPointNo);
 		strcat(offsetPointNo, counterString);
-		printf("offsetPointNo = %s\n",offsetPointNo);
+//		printf("offsetPointNo = %s\n",offsetPointNo);
 		counter++;
 //		printf("\n\nchainName = %s\n",chainName);
 //		printf("fieldPointNo = %s\n",fieldPointNo);
@@ -97,7 +97,7 @@ FILE *outputFile = fopen("out.txt","a");
 //			printf("origPointOffset = %f\n",origPointOffset);
 //			printf("origPointElevation = %f\n",origPointElevation);
 			if (strcmp(fieldPointNo,origPointNo) == 0) {
-				printf("\n\n\nfieldPointNo22 = %s\n",fieldPointNo);
+//				printf("\n\n\nfieldPointNo22 = %s\n",fieldPointNo);
 //				printf("origPointNo23 = %s\n",origPointNo);
 //				printf("origPointElevation24 = %f\n",origPointElevation);
 				/* Do calculations */
@@ -130,6 +130,7 @@ FILE *outputFile = fopen("out.txt","a");
 //					}
 //					break;
 //				}
+				offsetPointNo[0] = 'O';
 				/* print results */
 				fprintf(outputFile,"Locate %s ON Chain %s STA %.1f Offset  %.1f\n", offsetPointNo, chainName, pointStation, offsetPointOffset); 
 				fprintf(outputFile,"Store Point %s Elevation %.1f\n", offsetPointNo, offsetPointElevation);
@@ -146,50 +147,32 @@ fclose(fieldData);
 return 0;
 }
 float elevationCalc(float oldElev,float BS,float FS) {
-	printf("\n\n%s \n","testing elevationCalc");
-	printf("oldElev = %f \n",oldElev);
-	printf("BS = %f \n",BS);
-	printf("FS = %f \n",FS);
+//	printf("\n\n%s \n","testing elevationCalc");
+//	printf("oldElev = %f \n",oldElev);
+//	printf("BS = %f \n",BS);
+//	printf("FS = %f \n",FS);
 	float newElev;
 	newElev = ((oldElev + BS) - FS);
-	printf("newElev = %f \n",newElev);
+//	printf("newElev = %f \n",newElev);
 	return newElev;
 }
 
 float offsetCalc(float oldOS,float bsDist,float fsDist,char side[]) {
-	printf("\n\n%s \n","testing offsetCalc");
-	printf("%s \n","testing2");
-	printf("oldOS = %f \n",oldOS);
-	printf("bsDist = %f \n",bsDist);
-	printf("fsDist = %f \n",fsDist);
-	printf("side = %s \n",side);
+//	printf("\n\n%s \n","testing offsetCalc");
+//	printf("%s \n","testing2");
+//	printf("oldOS = %f \n",oldOS);
+//	printf("bsDist = %f \n",bsDist);
+//	printf("fsDist = %f \n",fsDist);
+//	printf("side = %s \n",side);
 	float newOffset;
 	if (side[0] == 'L') {
-		printf("side is left = %s \n",side);
+//		printf("side is left = %s \n",side);
 		newOffset = oldOS - bsDist - fsDist;
 	}
 	if (side[0] == 'R') {
-		printf("side is right = %s \n",side);
+//		printf("side is right = %s \n",side);
 		newOffset = oldOS + bsDist + fsDist;
 	}
-	printf("newOffset = %f \n\n\n",newOffset);
+//	printf("newOffset = %f \n\n\n",newOffset);
 	return newOffset;
 }
-//char * fetchCode(char *aCode){
-//	char  alphaCode[4];
-//	char  idotCode[4];
-//	char  iCode[4];
-//	FILE *idotCodeList = fopen("mpsIdotCodes.txt","r");
-//	while (fscanf(idotCodeList,"%s %s",&alphaCode,&idotCode) == 2) {
-//		if (strcmp(alphaCode,aCode) == 0) {
-//			printf("\n\n%s \n","testing fetchCode");
-//			printf("alphaCode = %s\n",alphaCode);
-//			printf("idotCode = %s\n",idotCode);
-//			printf("fieldCode(aCode) = %s\n",aCode);
-//			strcpy(iCode, idotCode);
-//			printf("offsetPointCode(iCode) = %s\n",iCode);
-//		}
-//	}
-//	fclose(idotCodeList);
-//	return iCode;
-//}

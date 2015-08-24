@@ -1,0 +1,1632 @@
+Locate OB27930 ON Chain IL113 STA 67398.8 Offset  -59.1
+Store Point OB27930 Elevation 599.4
+Store Point OB27930 Feature "604"
+Locate OB27821 ON Chain IL113 STA 67299.9 Offset  -62.6
+Store Point OB27821 Elevation 597.5
+Store Point OB27821 Feature "604"
+Locate OB26472 ON Chain IL113 STA 66998.8 Offset  -22.4
+Store Point OB26472 Elevation 596.7
+Store Point OB26472 Feature "607"
+Locate OB26473 ON Chain IL113 STA 66998.8 Offset  -58.9
+Store Point OB26473 Elevation 596.6
+Store Point OB26473 Feature "604"
+Locate OB26154 ON Chain IL113 STA 66900.7 Offset  -59.5
+Store Point OB26154 Elevation 597.0
+Store Point OB26154 Feature "604"
+Locate OB25915 ON Chain IL113 STA 66799.4 Offset  -61.9
+Store Point OB25915 Elevation 595.5
+Store Point OB25915 Feature "604"
+Locate OB25916 ON Chain IL113 STA 66799.4 Offset  -31.9
+Store Point OB25916 Elevation 596.1
+Store Point OB25916 Feature "607"
+Locate OB35797 ON Chain IL113 STA 63203.5 Offset  -28.6
+Store Point OB35797 Elevation 597.5
+Store Point OB35797 Feature "607"
+Locate OB35790 ON Chain IL113 STA 63203.5 Offset  -59.6
+Store Point OB35790 Elevation 596.8
+Store Point OB35790 Feature "604"
+Locate OB25361 ON Chain IL113 STA 66601.9 Offset  -29.4
+Store Point OB25361 Elevation 599.2
+Store Point OB25361 Feature "607"
+Locate OB25362 ON Chain IL113 STA 66601.9 Offset  -60.9
+Store Point OB25362 Elevation 599.3
+Store Point OB25362 Feature "604"
+Locate OB25243 ON Chain IL113 STA 66499.7 Offset  -27.1
+Store Point OB25243 Elevation 598.9
+Store Point OB25243 Feature "607"
+Locate OB25244 ON Chain IL113 STA 66499.7 Offset  -35.6
+Store Point OB25244 Elevation 598.5
+Store Point OB25244 Feature "363"
+Locate OB25245 ON Chain IL113 STA 66499.7 Offset  -41.6
+Store Point OB25245 Elevation 599.8
+Store Point OB25245 Feature "607"
+Locate OB25246 ON Chain IL113 STA 66499.7 Offset  -61.1
+Store Point OB25246 Elevation 600.1
+Store Point OB25246 Feature "604"
+Locate OB25027 ON Chain IL113 STA 66401.3 Offset  -31.0
+Store Point OB25027 Elevation 600.8
+Store Point OB25027 Feature "604"
+Locate OB25020 ON Chain IL113 STA 66401.3 Offset  -59.0
+Store Point OB25020 Elevation 601.0
+Store Point OB25020 Feature "604"
+Locate OB24931 ON Chain IL113 STA 66300.7 Offset  -31.2
+Store Point OB24931 Elevation 602.0
+Store Point OB24931 Feature "607"
+Locate OB24932 ON Chain IL113 STA 66300.7 Offset  -59.2
+Store Point OB24932 Elevation 603.0
+Store Point OB24932 Feature "604"
+Locate OB24763 ON Chain IL113 STA 66201.1 Offset  -58.9
+Store Point OB24763 Elevation 603.9
+Store Point OB24763 Feature "604"
+Locate OB31714 ON Chain IL113 STA 66102.3 Offset  -60.2
+Store Point OB31714 Elevation 600.8
+Store Point OB31714 Feature "604"
+Locate OB30995 ON Chain IL113 STA 66000.4 Offset  -30.8
+Store Point OB30995 Elevation 603.0
+Store Point OB30995 Feature "607"
+Locate OB30996 ON Chain IL113 STA 66000.4 Offset  -58.8
+Store Point OB30996 Elevation 602.9
+Store Point OB30996 Feature "604"
+Locate OB30907 ON Chain IL113 STA 65900.3 Offset  -33.2
+Store Point OB30907 Elevation 605.1
+Store Point OB30907 Feature "607"
+Locate OB30900 ON Chain IL113 STA 65900.3 Offset  -60.2
+Store Point OB30900 Elevation 605.3
+Store Point OB30900 Feature "604"
+Locate OB30281 ON Chain IL113 STA 65702.4 Offset  -30.8
+Store Point OB30281 Elevation 611.9
+Store Point OB30281 Feature "607"
+Locate OB30282 ON Chain IL113 STA 65702.4 Offset  -57.8
+Store Point OB30282 Elevation 613.2
+Store Point OB30282 Feature "604"
+Locate OB30193 ON Chain IL113 STA 65600.2 Offset  -33.0
+Store Point OB30193 Elevation 612.9
+Store Point OB30193 Feature "607"
+Locate OB30194 ON Chain IL113 STA 65600.2 Offset  -60.0
+Store Point OB30194 Elevation 613.4
+Store Point OB30194 Feature "604"
+Locate OB30085 ON Chain IL113 STA 65501.2 Offset  -33.5
+Store Point OB30085 Elevation 613.8
+Store Point OB30085 Feature "607"
+Locate OB30086 ON Chain IL113 STA 65501.2 Offset  -54.0
+Store Point OB30086 Elevation 613.7
+Store Point OB30086 Feature "604"
+Locate OB29637 ON Chain IL113 STA 65400.3 Offset  -33.0
+Store Point OB29637 Elevation 612.6
+Store Point OB29637 Feature "607"
+Locate OB29630 ON Chain IL113 STA 65400.3 Offset  -60.0
+Store Point OB29630 Elevation 612.3
+Store Point OB29630 Feature "604"
+Locate OB29451 ON Chain IL113 STA 65297.7 Offset  -32.5
+Store Point OB29451 Elevation 609.6
+Store Point OB29451 Feature "607"
+Locate OB29452 ON Chain IL113 STA 65297.7 Offset  -61.5
+Store Point OB29452 Elevation 607.6
+Store Point OB29452 Feature "604"
+Locate OB29393 ON Chain IL113 STA 65200.7 Offset  -28.0
+Store Point OB29393 Elevation 606.8
+Store Point OB29393 Feature "607"
+Locate OB29394 ON Chain IL113 STA 65200.7 Offset  -59.0
+Store Point OB29394 Elevation 606.0
+Store Point OB29394 Feature "604"
+Locate OB29265 ON Chain IL113 STA 65102.8 Offset  -26.9
+Store Point OB29265 Elevation 604.5
+Store Point OB29265 Feature "607"
+Locate OB29266 ON Chain IL113 STA 65102.8 Offset  -52.9
+Store Point OB29266 Elevation 603.1
+Store Point OB29266 Feature "604"
+Locate OB32547 ON Chain IL113 STA 65001.2 Offset  -28.3
+Store Point OB32547 Elevation 602.5
+Store Point OB32547 Feature "607"
+Locate OB32540 ON Chain IL113 STA 65001.2 Offset  -57.3
+Store Point OB32540 Elevation 601.5
+Store Point OB32540 Feature "604"
+Locate OB32691 ON Chain IL113 STA 64896.3 Offset  -31.8
+Store Point OB32691 Elevation 602.9
+Store Point OB32691 Feature "607"
+Locate OB32692 ON Chain IL113 STA 64896.3 Offset  -57.8
+Store Point OB32692 Elevation 602.7
+Store Point OB32692 Feature "604"
+Locate OB32743 ON Chain IL113 STA 64801.4 Offset  -24.7
+Store Point OB32743 Elevation 601.1
+Store Point OB32743 Feature "363"
+Locate OB32744 ON Chain IL113 STA 64801.4 Offset  -34.2
+Store Point OB32744 Elevation 603.1
+Store Point OB32744 Feature "861"
+Locate OB32745 ON Chain IL113 STA 64801.4 Offset  -61.7
+Store Point OB32745 Elevation 602.4
+Store Point OB32745 Feature "604"
+Locate OB32746 ON Chain IL113 STA 64801.4 Offset  74.8
+Store Point OB32746 Elevation 604.8
+Store Point OB32746 Feature "604"
+Locate OB32927 ON Chain IL113 STA 64697.3 Offset  -25.2
+Store Point OB32927 Elevation 600.3
+Store Point OB32927 Feature "363"
+Locate OB32920 ON Chain IL113 STA 64697.3 Offset  -34.2
+Store Point OB32920 Elevation 602.0
+Store Point OB32920 Feature "861"
+Locate OB32931 ON Chain IL113 STA 64697.0 Offset  -60.6
+Store Point OB32931 Elevation 600.9
+Store Point OB32931 Feature "604"
+Locate OB32982 ON Chain IL113 STA 64599.1 Offset  -27.3
+Store Point OB32982 Elevation 599.5
+Store Point OB32982 Feature "363"
+Locate OB32983 ON Chain IL113 STA 64599.1 Offset  -59.3
+Store Point OB32983 Elevation 598.8
+Store Point OB32983 Feature "604"
+Locate OB34074 ON Chain IL113 STA 64399.5 Offset  -30.7
+Store Point OB34074 Elevation 598.7
+Store Point OB34074 Feature "607"
+Locate OB34075 ON Chain IL113 STA 64399.5 Offset  -58.7
+Store Point OB34075 Elevation 597.7
+Store Point OB34075 Feature "604"
+Locate OB34136 ON Chain IL113 STA 64299.9 Offset  -26.0
+Store Point OB34136 Elevation 598.1
+Store Point OB34136 Feature "363"
+Locate OB34137 ON Chain IL113 STA 64299.9 Offset  -31.0
+Store Point OB34137 Elevation 598.7
+Store Point OB34137 Feature "607"
+Locate OB34130 ON Chain IL113 STA 64299.9 Offset  -55.0
+Store Point OB34130 Elevation 598.2
+Store Point OB34130 Feature "604"
+Locate OB34191 ON Chain IL113 STA 64200.5 Offset  -32.5
+Store Point OB34191 Elevation 599.0
+Store Point OB34191 Feature "607"
+Locate OB34192 ON Chain IL113 STA 64200.5 Offset  -56.5
+Store Point OB34192 Elevation 599.2
+Store Point OB34192 Feature "604"
+Locate OB34383 ON Chain IL113 STA 64100.8 Offset  -31.1
+Store Point OB34383 Elevation 599.8
+Store Point OB34383 Feature "607"
+Locate OB34384 ON Chain IL113 STA 64100.8 Offset  -59.6
+Store Point OB34384 Elevation 599.1
+Store Point OB34384 Feature "604"
+Locate OB34465 ON Chain IL113 STA 63999.3 Offset  -33.4
+Store Point OB34465 Elevation 599.4
+Store Point OB34465 Feature "607"
+Locate OB34466 ON Chain IL113 STA 63999.3 Offset  -60.4
+Store Point OB34466 Elevation 598.2
+Store Point OB34466 Feature "604"
+Locate OB34677 ON Chain IL113 STA 63901.7 Offset  -32.1
+Store Point OB34677 Elevation 597.5
+Store Point OB34677 Feature "607"
+Locate OB34670 ON Chain IL113 STA 63901.7 Offset  -61.6
+Store Point OB34670 Elevation 597.5
+Store Point OB34670 Feature "604"
+Locate OB34871 ON Chain IL113 STA 63797.3 Offset  -30.7
+Store Point OB34871 Elevation 598.4
+Store Point OB34871 Feature "607"
+Locate OB34872 ON Chain IL113 STA 63797.3 Offset  -60.7
+Store Point OB34872 Elevation 598.2
+Store Point OB34872 Feature "604"
+Locate OB34923 ON Chain IL113 STA 63699.9 Offset  -33.2
+Store Point OB34923 Elevation 598.6
+Store Point OB34923 Feature "607"
+Locate OB34924 ON Chain IL113 STA 63699.9 Offset  -60.7
+Store Point OB34924 Elevation 597.9
+Store Point OB34924 Feature "604"
+Locate OB34925 ON Chain IL113 STA 63699.9 Offset  -26.2
+Store Point OB34925 Elevation 597.6
+Store Point OB34925 Feature "363"
+Locate OB35126 ON Chain IL113 STA 63601.4 Offset  -26.4
+Store Point OB35126 Elevation 597.7
+Store Point OB35126 Feature "363"
+Locate OB35127 ON Chain IL113 STA 63601.4 Offset  -59.9
+Store Point OB35127 Elevation 597.4
+Store Point OB35127 Feature "604"
+Locate OB35240 ON Chain IL113 STA 63495.8 Offset  -22.8
+Store Point OB35240 Elevation 597.1
+Store Point OB35240 Feature "363"
+Locate OB35241 ON Chain IL113 STA 63495.8 Offset  -33.3
+Store Point OB35241 Elevation 598.1
+Store Point OB35241 Feature "607"
+Locate OB35242 ON Chain IL113 STA 63495.8 Offset  -59.8
+Store Point OB35242 Elevation 596.2
+Store Point OB35242 Feature "604"
+Locate OB38533 ON Chain IL113 STA 63399.7 Offset  -26.5
+Store Point OB38533 Elevation 597.7
+Store Point OB38533 Feature "363"
+Locate OB38534 ON Chain IL113 STA 63399.7 Offset  -59.0
+Store Point OB38534 Elevation 597.6
+Store Point OB38534 Feature "604"
+Locate OB35615 ON Chain IL113 STA 63301.3 Offset  -27.8
+Store Point OB35615 Elevation 597.9
+Store Point OB35615 Feature "363"
+Locate OB35616 ON Chain IL113 STA 63301.3 Offset  -31.8
+Store Point OB35616 Elevation 598.4
+Store Point OB35616 Feature "607"
+Locate OB35617 ON Chain IL113 STA 63301.3 Offset  -59.8
+Store Point OB35617 Elevation 597.8
+Store Point OB35617 Feature "604"
+Locate OB35790 ON Chain IL113 STA 63203.5 Offset  -31.1
+Store Point OB35790 Elevation 599.0
+Store Point OB35790 Feature "607"
+Locate OB35791 ON Chain IL113 STA 63203.5 Offset  -39.6
+Store Point OB35791 Elevation 597.7
+Store Point OB35791 Feature "604"
+Locate OB35792 ON Chain IL113 STA 63203.5 Offset  -59.1
+Store Point OB35792 Elevation 597.4
+Store Point OB35792 Feature "604"
+Locate OB35913 ON Chain IL113 STA 63101.4 Offset  -29.9
+Store Point OB35913 Elevation 598.7
+Store Point OB35913 Feature "607"
+Locate OB35914 ON Chain IL113 STA 63101.4 Offset  -58.4
+Store Point OB35914 Elevation 598.5
+Store Point OB35914 Feature "604"
+Locate OB36125 ON Chain IL113 STA 63000.6 Offset  -27.3
+Store Point OB36125 Elevation 599.8
+Store Point OB36125 Feature "607"
+Locate OB36126 ON Chain IL113 STA 63000.6 Offset  -58.3
+Store Point OB36126 Elevation 600.0
+Store Point OB36126 Feature "604"
+Locate OB36187 ON Chain IL113 STA 62898.8 Offset  -25.3
+Store Point OB36187 Elevation 600.0
+Store Point OB36187 Feature "363"
+Locate OB36180 ON Chain IL113 STA 62898.8 Offset  -36.8
+Store Point OB36180 Elevation 601.5
+Store Point OB36180 Feature "861"
+Locate OB36181 ON Chain IL113 STA 62898.8 Offset  -57.8
+Store Point OB36181 Elevation 600.5
+Store Point OB36181 Feature "604"
+Locate OB36362 ON Chain IL113 STA 62798.9 Offset  -24.7
+Store Point OB36362 Elevation 600.4
+Store Point OB36362 Feature "363"
+Locate OB36363 ON Chain IL113 STA 62798.9 Offset  -27.7
+Store Point OB36363 Elevation 600.9
+Store Point OB36363 Feature "861"
+Locate OB36364 ON Chain IL113 STA 62798.9 Offset  -59.7
+Store Point OB36364 Elevation 600.9
+Store Point OB36364 Feature "604"
+Locate OB36645 ON Chain IL113 STA 62699.6 Offset  -25.1
+Store Point OB36645 Elevation 600.8
+Store Point OB36645 Feature "363"
+Locate OB36646 ON Chain IL113 STA 62699.6 Offset  -28.6
+Store Point OB36646 Elevation 601.2
+Store Point OB36646 Feature "861"
+Locate OB36647 ON Chain IL113 STA 62699.6 Offset  -59.6
+Store Point OB36647 Elevation 601.2
+Store Point OB36647 Feature "604"
+Locate OB36820 ON Chain IL113 STA 62602.3 Offset  -27.9
+Store Point OB36820 Elevation 601.7
+Store Point OB36820 Feature "861"
+Locate OB36821 ON Chain IL113 STA 62602.3 Offset  -58.4
+Store Point OB36821 Elevation 601.5
+Store Point OB36821 Feature "604"
+Locate OB37082 ON Chain IL113 STA 62500.0 Offset  -32.9
+Store Point OB37082 Elevation 602.9
+Store Point OB37082 Feature "607"
+Locate OB37083 ON Chain IL113 STA 62500.0 Offset  -60.4
+Store Point OB37083 Elevation 602.1
+Store Point OB37083 Feature "604"
+Locate OB37264 ON Chain IL113 STA 62399.3 Offset  -28.9
+Store Point OB37264 Elevation 603.5
+Store Point OB37264 Feature "607"
+Locate OB37265 ON Chain IL113 STA 62399.3 Offset  -57.9
+Store Point OB37265 Elevation 603.1
+Store Point OB37265 Feature "604"
+Locate OB37510 ON Chain IL113 STA 62199.0 Offset  -29.3
+Store Point OB37510 Elevation 603.7
+Store Point OB37510 Feature "607"
+Locate OB37511 ON Chain IL113 STA 62199.0 Offset  -57.3
+Store Point OB37511 Elevation 603.5
+Store Point OB37511 Feature "604"
+Locate OB37572 ON Chain IL113 STA 62098.5 Offset  -28.6
+Store Point OB37572 Elevation 603.8
+Store Point OB37572 Feature "607"
+Locate OB37573 ON Chain IL113 STA 62098.5 Offset  -58.6
+Store Point OB37573 Elevation 604.2
+Store Point OB37573 Feature "604"
+Locate OB37734 ON Chain IL113 STA 61998.0 Offset  -28.3
+Store Point OB37734 Elevation 603.7
+Store Point OB37734 Feature "607"
+Locate OB37735 ON Chain IL113 STA 61998.0 Offset  -58.9
+Store Point OB37735 Elevation 604.3
+Store Point OB37735 Feature "604"
+Locate OB37796 ON Chain IL113 STA 61899.8 Offset  -24.5
+Store Point OB37796 Elevation 602.7
+Store Point OB37796 Feature "363"
+Locate OB37797 ON Chain IL113 STA 61899.8 Offset  -29.5
+Store Point OB37797 Elevation 604.0
+Store Point OB37797 Feature "861"
+Locate OB37790 ON Chain IL113 STA 61899.8 Offset  -58.5
+Store Point OB37790 Elevation 604.3
+Store Point OB37790 Feature "604"
+Locate OB38701 ON Chain IL113 STA 61800.7 Offset  -23.1
+Store Point OB38701 Elevation 602.6
+Store Point OB38701 Feature "363"
+Locate OB38702 ON Chain IL113 STA 61800.7 Offset  -30.1
+Store Point OB38702 Elevation 604.1
+Store Point OB38702 Feature "861"
+Locate OB38703 ON Chain IL113 STA 61800.7 Offset  -59.6
+Store Point OB38703 Elevation 603.9
+Store Point OB38703 Feature "604"
+Locate OB38744 ON Chain IL113 STA 61701.1 Offset  -24.0
+Store Point OB38744 Elevation 602.8
+Store Point OB38744 Feature "363"
+Locate OB38745 ON Chain IL113 STA 61701.1 Offset  -27.5
+Store Point OB38745 Elevation 603.6
+Store Point OB38745 Feature "861"
+Locate OB38746 ON Chain IL113 STA 61701.1 Offset  -59.5
+Store Point OB38746 Elevation 603.7
+Store Point OB38746 Feature "604"
+Locate OB38907 ON Chain IL113 STA 61600.6 Offset  -29.1
+Store Point OB38907 Elevation 603.7
+Store Point OB38907 Feature "861"
+Locate OB38900 ON Chain IL113 STA 61600.6 Offset  -63.6
+Store Point OB38900 Elevation 603.7
+Store Point OB38900 Feature "604"
+Locate OB38941 ON Chain IL113 STA 61498.7 Offset  -24.7
+Store Point OB38941 Elevation 603.2
+Store Point OB38941 Feature "363"
+Locate OB38942 ON Chain IL113 STA 61498.7 Offset  -31.7
+Store Point OB38942 Elevation 604.3
+Store Point OB38942 Feature "861"
+Locate OB38943 ON Chain IL113 STA 61498.7 Offset  -60.7
+Store Point OB38943 Elevation 604.3
+Store Point OB38943 Feature "604"
+Locate OB39224 ON Chain IL113 STA 61401.1 Offset  -30.0
+Store Point OB39224 Elevation 604.7
+Store Point OB39224 Feature "861"
+Locate OB39225 ON Chain IL113 STA 61401.1 Offset  -59.0
+Store Point OB39225 Elevation 604.8
+Store Point OB39225 Feature "604"
+Locate OB39396 ON Chain IL113 STA 61301.5 Offset  -31.3
+Store Point OB39396 Elevation 605.2
+Store Point OB39396 Feature "861"
+Locate OB39397 ON Chain IL113 STA 61301.5 Offset  -60.8
+Store Point OB39397 Elevation 605.7
+Store Point OB39397 Feature "604"
+Locate OB39390 ON Chain IL113 STA 61301.5 Offset  27.2
+Store Point OB39390 Elevation 607.1
+Store Point OB39390 Feature "861"
+Locate OB39711 ON Chain IL113 STA 61197.2 Offset  30.0
+Store Point OB39711 Elevation 607.3
+Store Point OB39711 Feature "604"
+Locate OB39712 ON Chain IL113 STA 61197.2 Offset  -25.5
+Store Point OB39712 Elevation 604.4
+Store Point OB39712 Feature "363"
+Locate OB39713 ON Chain IL113 STA 61197.2 Offset  -31.5
+Store Point OB39713 Elevation 605.4
+Store Point OB39713 Feature "861"
+Locate OB39714 ON Chain IL113 STA 61197.2 Offset  -60.0
+Store Point OB39714 Elevation 606.0
+Store Point OB39714 Feature "604"
+Locate OB40145 ON Chain IL113 STA 61097.4 Offset  28.1
+Store Point OB40145 Elevation 607.4
+Store Point OB40145 Feature "604"
+Locate OB40146 ON Chain IL113 STA 61097.4 Offset  -23.9
+Store Point OB40146 Elevation 605.0
+Store Point OB40146 Feature "363"
+Locate OB40147 ON Chain IL113 STA 61097.4 Offset  -31.9
+Store Point OB40147 Elevation 606.3
+Store Point OB40147 Feature "861"
+Locate OB40140 ON Chain IL113 STA 61097.4 Offset  -58.9
+Store Point OB40140 Elevation 606.3
+Store Point OB40140 Feature "604"
+Locate OB40191 ON Chain IL113 STA 61000.4 Offset  26.3
+Store Point OB40191 Elevation 607.6
+Store Point OB40191 Feature "861"
+Locate OB40192 ON Chain IL113 STA 61000.4 Offset  -23.7
+Store Point OB40192 Elevation 605.6
+Store Point OB40192 Feature "363"
+Locate OB40193 ON Chain IL113 STA 61000.4 Offset  -30.7
+Store Point OB40193 Elevation 606.8
+Store Point OB40193 Feature "861"
+Locate OB40194 ON Chain IL113 STA 61000.4 Offset  -58.7
+Store Point OB40194 Elevation 607.4
+Store Point OB40194 Feature "604"
+Locate OB40755 ON Chain IL113 STA 60904.0 Offset  29.6
+Store Point OB40755 Elevation 607.7
+Store Point OB40755 Feature "861"
+Locate OB40756 ON Chain IL113 STA 60904.0 Offset  -23.9
+Store Point OB40756 Elevation 606.4
+Store Point OB40756 Feature "363"
+Locate OB40757 ON Chain IL113 STA 60904.0 Offset  -31.4
+Store Point OB40757 Elevation 607.7
+Store Point OB40757 Feature "861"
+Locate OB40750 ON Chain IL113 STA 60904.0 Offset  -58.4
+Store Point OB40750 Elevation 608.3
+Store Point OB40750 Feature "604"
+Locate OB40851 ON Chain IL113 STA 60800.7 Offset  26.3
+Store Point OB40851 Elevation 607.7
+Store Point OB40851 Feature "861"
+Locate OB45152 ON Chain IL113 STA 58701.0 Offset  26.2
+Store Point OB45152 Elevation 600.9
+Store Point OB45152 Feature "861"
+Locate OB41603 ON Chain IL113 STA 60596.2 Offset  -30.0
+Store Point OB41603 Elevation 610.1
+Store Point OB41603 Feature "607"
+Locate OB41604 ON Chain IL113 STA 60596.2 Offset  -58.0
+Store Point OB41604 Elevation 610.7
+Store Point OB41604 Feature "604"
+Locate OB41915 ON Chain IL113 STA 60500.0 Offset  25.1
+Store Point OB41915 Elevation 609.3
+Store Point OB41915 Feature "861"
+Locate OB41916 ON Chain IL113 STA 60500.0 Offset  -29.4
+Store Point OB41916 Elevation 610.7
+Store Point OB41916 Feature "861"
+Locate OB41917 ON Chain IL113 STA 60500.0 Offset  -62.4
+Store Point OB41917 Elevation 610.8
+Store Point OB41917 Feature "604"
+Locate OB42180 ON Chain IL113 STA 60391.1 Offset  25.3
+Store Point OB42180 Elevation 607.0
+Store Point OB42180 Feature "861"
+Locate OB42181 ON Chain IL113 STA 60391.1 Offset  -30.7
+Store Point OB42181 Elevation 610.5
+Store Point OB42181 Feature "861"
+Locate OB42182 ON Chain IL113 STA 60391.1 Offset  -76.7
+Store Point OB42182 Elevation 610.7
+Store Point OB42182 Feature "604"
+Locate OB42373 ON Chain IL113 STA 60301.1 Offset  27.4
+Store Point OB42373 Elevation 605.5
+Store Point OB42373 Feature "607"
+Locate OB42394 ON Chain IL113 STA 60303.5 Offset  -31.2
+Store Point OB42394 Elevation 608.6
+Store Point OB42394 Feature "861"
+Locate OB42395 ON Chain IL113 STA 60303.5 Offset  -60.2
+Store Point OB42395 Elevation 609.6
+Store Point OB42395 Feature "604"
+Locate OB42506 ON Chain IL113 STA 60195.6 Offset  -29.3
+Store Point OB42506 Elevation 609.2
+Store Point OB42506 Feature "861"
+Locate OB42507 ON Chain IL113 STA 60195.6 Offset  -58.3
+Store Point OB42507 Elevation 609.9
+Store Point OB42507 Feature "604"
+Locate OB42520 ON Chain IL113 STA 60193.9 Offset  26.7
+Store Point OB42520 Elevation 605.5
+Store Point OB42520 Feature "607"
+Locate OB42521 ON Chain IL113 STA 60193.9 Offset  57.7
+Store Point OB42521 Elevation 604.1
+Store Point OB42521 Feature "604"
+Locate OB42722 ON Chain IL113 STA 60105.3 Offset  24.8
+Store Point OB42722 Elevation 604.2
+Store Point OB42722 Feature "607"
+Locate OB42723 ON Chain IL113 STA 60105.3 Offset  58.8
+Store Point OB42723 Elevation 602.4
+Store Point OB42723 Feature "604"
+Locate OB42704 ON Chain IL113 STA 60106.3 Offset  -32.0
+Store Point OB42704 Elevation 609.1
+Store Point OB42704 Feature "607"
+Locate OB42705 ON Chain IL113 STA 60106.3 Offset  -58.5
+Store Point OB42705 Elevation 610.4
+Store Point OB42705 Feature "604"
+Locate OB42926 ON Chain IL113 STA 60002.8 Offset  29.8
+Store Point OB42926 Elevation 610.1
+Store Point OB42926 Feature "607"
+Locate OB42927 ON Chain IL113 STA 60002.8 Offset  46.3
+Store Point OB42927 Elevation 609.8
+Store Point OB42927 Feature "607"
+Locate OB42920 ON Chain IL113 STA 60002.8 Offset  74.8
+Store Point OB42920 Elevation 608.1
+Store Point OB42920 Feature "604"
+Locate OB42901 ON Chain IL113 STA 60001.7 Offset  -30.3
+Store Point OB42901 Elevation 610.2
+Store Point OB42901 Feature "861"
+Locate OB42902 ON Chain IL113 STA 60001.7 Offset  -55.8
+Store Point OB42902 Elevation 611.3
+Store Point OB42902 Feature "604"
+Locate OB43053 ON Chain IL113 STA 59901.7 Offset  -34.2
+Store Point OB43053 Elevation 608.2
+Store Point OB43053 Feature "607"
+Locate OB43054 ON Chain IL113 STA 59901.7 Offset  -59.2
+Store Point OB43054 Elevation 609.3
+Store Point OB43054 Feature "604"
+Locate OB43035 ON Chain IL113 STA 59901.6 Offset  26.0
+Store Point OB43035 Elevation 602.5
+Store Point OB43035 Feature "604"
+Locate OB43036 ON Chain IL113 STA 59901.6 Offset  -32.0
+Store Point OB43036 Elevation 601.5
+Store Point OB43036 Feature "604"
+Locate OB43207 ON Chain IL113 STA 59803.4 Offset  29.2
+Store Point OB43207 Elevation 602.2
+Store Point OB43207 Feature "607"
+Locate OB43200 ON Chain IL113 STA 59803.4 Offset  58.2
+Store Point OB43200 Elevation 600.7
+Store Point OB43200 Feature "604"
+Locate OB43181 ON Chain IL113 STA 59820.7 Offset  -34.6
+Store Point OB43181 Elevation 607.7
+Store Point OB43181 Feature "607"
+Locate OB43182 ON Chain IL113 STA 59820.7 Offset  -59.6
+Store Point OB43182 Elevation 607.9
+Store Point OB43182 Feature "604"
+Locate OB43513 ON Chain IL113 STA 59701.4 Offset  -42.8
+Store Point OB43513 Elevation 606.1
+Store Point OB43513 Feature "607"
+Locate OB43514 ON Chain IL113 STA 59701.4 Offset  -61.8
+Store Point OB43514 Elevation 606.5
+Store Point OB43514 Feature "604"
+Locate OB43535 ON Chain IL113 STA 59700.1 Offset  29.2
+Store Point OB43535 Elevation 601.6
+Store Point OB43535 Feature "861"
+Locate OB43536 ON Chain IL113 STA 59700.1 Offset  59.2
+Store Point OB43536 Elevation 600.6
+Store Point OB43536 Feature "604"
+Locate OB43677 ON Chain IL113 STA 59601.3 Offset  -34.9
+Store Point OB43677 Elevation 609.7
+Store Point OB43677 Feature "861"
+Locate OB43670 ON Chain IL113 STA 59601.3 Offset  -62.9
+Store Point OB43670 Elevation 613.9
+Store Point OB43670 Feature "604"
+Locate OB43691 ON Chain IL113 STA 59600.6 Offset  34.6
+Store Point OB43691 Elevation 601.6
+Store Point OB43691 Feature "607"
+Locate OB43692 ON Chain IL113 STA 59600.6 Offset  60.6
+Store Point OB43692 Elevation 600.3
+Store Point OB43692 Feature "604"
+Locate OB43753 ON Chain IL113 STA 59498.2 Offset  33.3
+Store Point OB43753 Elevation 601.6
+Store Point OB43753 Feature "607"
+Locate OB43754 ON Chain IL113 STA 59498.2 Offset  59.3
+Store Point OB43754 Elevation 599.8
+Store Point OB43754 Feature "604"
+Locate OB43775 ON Chain IL113 STA 59499.1 Offset  -52.7
+Store Point OB43775 Elevation 610.1
+Store Point OB43775 Feature "861"
+Locate OB43776 ON Chain IL113 STA 59499.1 Offset  -67.7
+Store Point OB43776 Elevation 611.8
+Store Point OB43776 Feature "604"
+Locate OB43947 ON Chain IL113 STA 59400.8 Offset  -51.2
+Store Point OB43947 Elevation 600.8
+Store Point OB43947 Feature "607"
+Locate OB43940 ON Chain IL113 STA 59400.8 Offset  -69.7
+Store Point OB43940 Elevation 604.5
+Store Point OB43940 Feature "604"
+Locate OB44633 ON Chain IL113 STA 58999.9 Offset  -31.5
+Store Point OB44633 Elevation 595.6
+Store Point OB44633 Feature "363"
+Locate OB44634 ON Chain IL113 STA 58999.9 Offset  -58.5
+Store Point OB44634 Elevation 595.6
+Store Point OB44634 Feature "604"
+Locate OB44775 ON Chain IL113 STA 58905.6 Offset  -29.1
+Store Point OB44775 Elevation 601.9
+Store Point OB44775 Feature "607"
+Locate OB44776 ON Chain IL113 STA 58905.6 Offset  -59.1
+Store Point OB44776 Elevation 602.3
+Store Point OB44776 Feature "604"
+Locate OB44927 ON Chain IL113 STA 58795.8 Offset  31.0
+Store Point OB44927 Elevation 602.4
+Store Point OB44927 Feature "604"
+Locate OB44900 ON Chain IL113 STA 58796.9 Offset  -34.1
+Store Point OB44900 Elevation 604.5
+Store Point OB44900 Feature "861"
+Locate OB44901 ON Chain IL113 STA 58796.9 Offset  -59.1
+Store Point OB44901 Elevation 605.7
+Store Point OB44901 Feature "604"
+Locate OB45152 ON Chain IL113 STA 58701.0 Offset  -35.8
+Store Point OB45152 Elevation 603.9
+Store Point OB45152 Feature "607"
+Locate OB45153 ON Chain IL113 STA 58701.0 Offset  -62.8
+Store Point OB45153 Elevation 605.2
+Store Point OB45153 Feature "604"
+Locate OB45324 ON Chain IL113 STA 58596.6 Offset  26.3
+Store Point OB45324 Elevation 604.2
+Store Point OB45324 Feature "607"
+Locate OB45345 ON Chain IL113 STA 58596.7 Offset  -26.9
+Store Point OB45345 Elevation 604.5
+Store Point OB45345 Feature "607"
+Locate OB45346 ON Chain IL113 STA 58596.7 Offset  -62.9
+Store Point OB45346 Elevation 605.6
+Store Point OB45346 Feature "604"
+Locate OB45667 ON Chain IL113 STA 58398.3 Offset  28.2
+Store Point OB45667 Elevation 606.1
+Store Point OB45667 Feature "861"
+Locate OB45490 ON Chain IL113 STA 58501.7 Offset  -28.8
+Store Point OB45490 Elevation 605.5
+Store Point OB45490 Feature "607"
+Locate OB45491 ON Chain IL113 STA 58501.7 Offset  -57.8
+Store Point OB45491 Elevation 605.9
+Store Point OB45491 Feature "604"
+Locate OB46382 ON Chain IL113 STA 58199.8 Offset  26.6
+Store Point OB46382 Elevation 606.1
+Store Point OB46382 Feature "607"
+Locate OB46403 ON Chain IL113 STA 58199.7 Offset  -23.0
+Store Point OB46403 Elevation 604.3
+Store Point OB46403 Feature "363"
+Locate OB46404 ON Chain IL113 STA 58199.7 Offset  -28.5
+Store Point OB46404 Elevation 605.2
+Store Point OB46404 Feature "861"
+Locate OB46405 ON Chain IL113 STA 58199.7 Offset  -58.5
+Store Point OB46405 Elevation 605.4
+Store Point OB46405 Feature "604"
+Locate OB46546 ON Chain IL113 STA 58103.7 Offset  -22.6
+Store Point OB46546 Elevation 604.6
+Store Point OB46546 Feature "363"
+Locate OB46547 ON Chain IL113 STA 58103.7 Offset  -27.6
+Store Point OB46547 Elevation 605.7
+Store Point OB46547 Feature "861"
+Locate OB46540 ON Chain IL113 STA 58103.7 Offset  -57.6
+Store Point OB46540 Elevation 605.4
+Store Point OB46540 Feature "604"
+Locate OB46511 ON Chain IL113 STA 58102.8 Offset  27.4
+Store Point OB46511 Elevation 606.9
+Store Point OB46511 Feature "861"
+Locate OB46672 ON Chain IL113 STA 58002.1 Offset  27.3
+Store Point OB46672 Elevation 607.9
+Store Point OB46672 Feature "861"
+Locate OB46833 ON Chain IL113 STA 58000.6 Offset  -23.0
+Store Point OB46833 Elevation 605.7
+Store Point OB46833 Feature "363"
+Locate OB46834 ON Chain IL113 STA 58000.6 Offset  -28.0
+Store Point OB46834 Elevation 606.1
+Store Point OB46834 Feature "607"
+Locate OB46835 ON Chain IL113 STA 58000.6 Offset  -58.0
+Store Point OB46835 Elevation 606.4
+Store Point OB46835 Feature "604"
+Locate OB47156 ON Chain IL113 STA 57900.0 Offset  -29.1
+Store Point OB47156 Elevation 606.9
+Store Point OB47156 Feature "607"
+Locate OB47157 ON Chain IL113 STA 57900.0 Offset  -59.1
+Store Point OB47157 Elevation 607.0
+Store Point OB47157 Feature "604"
+Locate OB46800 ON Chain IL113 STA 57900.0 Offset  26.9
+Store Point OB46800 Elevation 608.4
+Store Point OB46800 Feature "607"
+Locate OB47601 ON Chain IL113 STA 57803.0 Offset  26.5
+Store Point OB47601 Elevation 608.5
+Store Point OB47601 Feature "607"
+Locate OB47722 ON Chain IL113 STA 57698.7 Offset  26.8
+Store Point OB47722 Elevation 607.4
+Store Point OB47722 Feature "607"
+Locate OB47743 ON Chain IL113 STA 57698.6 Offset  -59.5
+Store Point OB47743 Elevation 607.5
+Store Point OB47743 Feature "607"
+Locate OB47744 ON Chain IL113 STA 57698.6 Offset  -60.0
+Store Point OB47744 Elevation 606.5
+Store Point OB47744 Feature "604"
+Locate OB47815 ON Chain IL113 STA 57601.0 Offset  28.0
+Store Point OB47815 Elevation 607.1
+Store Point OB47815 Feature "604"
+Locate OB47796 ON Chain IL113 STA 57601.5 Offset  -33.1
+Store Point OB47796 Elevation 606.5
+Store Point OB47796 Feature "604"
+Locate OB47797 ON Chain IL113 STA 57601.5 Offset  -58.1
+Store Point OB47797 Elevation 606.5
+Store Point OB47797 Feature "604"
+Locate OB48090 ON Chain IL113 STA 57496.2 Offset  -31.2
+Store Point OB48090 Elevation 606.3
+Store Point OB48090 Feature "607"
+Locate OB48091 ON Chain IL113 STA 57496.2 Offset  -61.2
+Store Point OB48091 Elevation 606.7
+Store Point OB48091 Feature "604"
+Locate OB48072 ON Chain IL113 STA 57495.9 Offset  27.9
+Store Point OB48072 Elevation 607.1
+Store Point OB48072 Feature "604"
+Locate OB48653 ON Chain IL113 STA 57400.1 Offset  -30.9
+Store Point OB48653 Elevation 606.6
+Store Point OB48653 Feature "607"
+Locate OB48654 ON Chain IL113 STA 57400.1 Offset  -59.4
+Store Point OB48654 Elevation 606.6
+Store Point OB48654 Feature "604"
+Locate OB48835 ON Chain IL113 STA 57304.4 Offset  -25.9
+Store Point OB48835 Elevation 606.9
+Store Point OB48835 Feature "607"
+Locate OB48836 ON Chain IL113 STA 57304.4 Offset  -29.9
+Store Point OB48836 Elevation 607.4
+Store Point OB48836 Feature "607"
+Locate OB48837 ON Chain IL113 STA 57304.4 Offset  -57.4
+Store Point OB48837 Elevation 607.2
+Store Point OB48837 Feature "604"
+Locate OB49030 ON Chain IL113 STA 57200.4 Offset  -27.3
+Store Point OB49030 Elevation 608.5
+Store Point OB49030 Feature "607"
+Locate OB49031 ON Chain IL113 STA 57200.4 Offset  -62.3
+Store Point OB49031 Elevation 608.3
+Store Point OB49031 Feature "604"
+Locate OB49222 ON Chain IL113 STA 57099.4 Offset  -29.1
+Store Point OB49222 Elevation 609.0
+Store Point OB49222 Feature "607"
+Locate OB49223 ON Chain IL113 STA 57099.4 Offset  -63.1
+Store Point OB49223 Elevation 608.1
+Store Point OB49223 Feature "604"
+Locate OB49434 ON Chain IL113 STA 56998.0 Offset  -28.3
+Store Point OB49434 Elevation 611.0
+Store Point OB49434 Feature "861"
+Locate OB49435 ON Chain IL113 STA 56998.0 Offset  -61.3
+Store Point OB49435 Elevation 610.9
+Store Point OB49435 Feature "604"
+Locate OB49606 ON Chain IL113 STA 56899.5 Offset  -27.0
+Store Point OB49606 Elevation 612.7
+Store Point OB49606 Feature "607"
+Locate OB49607 ON Chain IL113 STA 56899.5 Offset  -57.0
+Store Point OB49607 Elevation 611.6
+Store Point OB49607 Feature "604"
+Locate OB49770 ON Chain IL113 STA 56799.8 Offset  -29.9
+Store Point OB49770 Elevation 612.6
+Store Point OB49770 Feature "607"
+Locate OB49771 ON Chain IL113 STA 56799.8 Offset  -57.9
+Store Point OB49771 Elevation 612.3
+Store Point OB49771 Feature "604"
+Locate OB50732 ON Chain IL113 STA 56604.8 Offset  30.8
+Store Point OB50732 Elevation 612.2
+Store Point OB50732 Feature "861"
+Locate OB51013 ON Chain IL113 STA 56495.3 Offset  -26.1
+Store Point OB51013 Elevation 610.9
+Store Point OB51013 Feature "861"
+Locate OB51014 ON Chain IL113 STA 56495.3 Offset  -62.1
+Store Point OB51014 Elevation 610.2
+Store Point OB51014 Feature "604"
+Locate OB51915 ON Chain IL113 STA 56397.6 Offset  28.4
+Store Point OB51915 Elevation 610.1
+Store Point OB51915 Feature "861"
+Locate OB51056 ON Chain IL113 STA 56398.1 Offset  -27.1
+Store Point OB51056 Elevation 609.7
+Store Point OB51056 Feature "607"
+Locate OB51057 ON Chain IL113 STA 56398.1 Offset  -59.6
+Store Point OB51057 Elevation 610.3
+Store Point OB51057 Feature "604"
+Locate OB51160 ON Chain IL113 STA 56300.3 Offset  -25.6
+Store Point OB51160 Elevation 609.7
+Store Point OB51160 Feature "607"
+Locate OB51161 ON Chain IL113 STA 56300.3 Offset  -61.1
+Store Point OB51161 Elevation 610.1
+Store Point OB51161 Feature "604"
+Locate OB52322 ON Chain IL113 STA 56197.2 Offset  26.8
+Store Point OB52322 Elevation 609.9
+Store Point OB52322 Feature "861"
+Locate OB52343 ON Chain IL113 STA 56199.4 Offset  -23.0
+Store Point OB52343 Elevation 608.7
+Store Point OB52343 Feature "607"
+Locate OB52344 ON Chain IL113 STA 56199.4 Offset  -62.0
+Store Point OB52344 Elevation 609.1
+Store Point OB52344 Feature "604"
+Locate OB52565 ON Chain IL113 STA 56101.4 Offset  -26.5
+Store Point OB52565 Elevation 608.9
+Store Point OB52565 Feature "607"
+Locate OB52566 ON Chain IL113 STA 56101.4 Offset  -58.0
+Store Point OB52566 Elevation 609.3
+Store Point OB52566 Feature "604"
+Locate OB52757 ON Chain IL113 STA 56000.9 Offset  26.1
+Store Point OB52757 Elevation 606.9
+Store Point OB52757 Feature "604"
+Locate OB52730 ON Chain IL113 STA 56001.7 Offset  -26.2
+Store Point OB52730 Elevation 606.8
+Store Point OB52730 Feature "607"
+Locate OB52731 ON Chain IL113 STA 56001.7 Offset  -58.2
+Store Point OB52731 Elevation 607.1
+Store Point OB52731 Feature "604"
+Locate OB53272 ON Chain IL113 STA 55892.2 Offset  -28.3
+Store Point OB53272 Elevation 606.7
+Store Point OB53272 Feature "604"
+Locate OB53273 ON Chain IL113 STA 55892.2 Offset  -60.3
+Store Point OB53273 Elevation 606.7
+Store Point OB53273 Feature "604"
+Locate OB52274 ON Chain IL113 STA 56157.9 Offset  69.3
+Store Point OB52274 Elevation 608.1
+Store Point OB52274 Feature "604"
+Locate OB53455 ON Chain IL113 STA 55784.4 Offset  29.1
+Store Point OB53455 Elevation 606.9
+Store Point OB53455 Feature "607"
+Locate OB53476 ON Chain IL113 STA 55785.6 Offset  -27.2
+Store Point OB53476 Elevation 606.2
+Store Point OB53476 Feature "607"
+Locate OB53477 ON Chain IL113 STA 55785.6 Offset  -59.2
+Store Point OB53477 Elevation 606.7
+Store Point OB53477 Feature "604"
+Locate OB53620 ON Chain IL113 STA 55702.1 Offset  26.1
+Store Point OB53620 Elevation 605.9
+Store Point OB53620 Feature "607"
+Locate OB53601 ON Chain IL113 STA 55703.4 Offset  -25.2
+Store Point OB53601 Elevation 605.6
+Store Point OB53601 Feature "607"
+Locate OB53602 ON Chain IL113 STA 55703.4 Offset  -57.7
+Store Point OB53602 Elevation 606.0
+Store Point OB53602 Feature "604"
+Locate OB54043 ON Chain IL113 STA 55598.4 Offset  -25.3
+Store Point OB54043 Elevation 605.7
+Store Point OB54043 Feature "607"
+Locate OB54044 ON Chain IL113 STA 55598.4 Offset  -61.8
+Store Point OB54044 Elevation 606.2
+Store Point OB54044 Feature "604"
+Locate OB54205 ON Chain IL113 STA 55494.0 Offset  -26.8
+Store Point OB54205 Elevation 604.6
+Store Point OB54205 Feature "604"
+Locate OB54206 ON Chain IL113 STA 55494.0 Offset  -61.3
+Store Point OB54206 Elevation 604.6
+Store Point OB54206 Feature "604"
+Locate OB54617 ON Chain IL113 STA 55400.2 Offset  -28.6
+Store Point OB54617 Elevation 604.7
+Store Point OB54617 Feature "604"
+Locate OB54610 ON Chain IL113 STA 55400.2 Offset  -57.6
+Store Point OB54610 Elevation 604.9
+Store Point OB54610 Feature "604"
+Locate OB55431 ON Chain IL113 STA 55098.9 Offset  -19.9
+Store Point OB55431 Elevation 608.6
+Store Point OB55431 Feature "604"
+Locate OB55432 ON Chain IL113 STA 55098.9 Offset  -33.4
+Store Point OB55432 Elevation 605.8
+Store Point OB55432 Feature "607"
+Locate OB55433 ON Chain IL113 STA 55098.9 Offset  -59.4
+Store Point OB55433 Elevation 603.1
+Store Point OB55433 Feature "604"
+Locate OB55934 ON Chain IL113 STA 54999.1 Offset  -36.5
+Store Point OB55934 Elevation 613.8
+Store Point OB55934 Feature "861"
+Locate OB55935 ON Chain IL113 STA 54999.1 Offset  -65.5
+Store Point OB55935 Elevation 614.6
+Store Point OB55935 Feature "604"
+Locate OB56096 ON Chain IL113 STA 54899.4 Offset  -29.2
+Store Point OB56096 Elevation 610.6
+Store Point OB56096 Feature "607"
+Locate OB56097 ON Chain IL113 STA 54899.4 Offset  -57.7
+Store Point OB56097 Elevation 612.9
+Store Point OB56097 Feature "604"
+Locate OB56280 ON Chain IL113 STA 54799.4 Offset  -32.8
+Store Point OB56280 Elevation 608.5
+Store Point OB56280 Feature "607"
+Locate OB56281 ON Chain IL113 STA 54799.4 Offset  -57.8
+Store Point OB56281 Elevation 609.3
+Store Point OB56281 Feature "604"
+Locate OB56332 ON Chain IL113 STA 54700.1 Offset  -28.7
+Store Point OB56332 Elevation 605.4
+Store Point OB56332 Feature "607"
+Locate OB56333 ON Chain IL113 STA 54700.1 Offset  -58.2
+Store Point OB56333 Elevation 606.4
+Store Point OB56333 Feature "604"
+Locate OB56534 ON Chain IL113 STA 54601.0 Offset  -24.4
+Store Point OB56534 Elevation 604.6
+Store Point OB56534 Feature "604"
+Locate OB56535 ON Chain IL113 STA 54601.0 Offset  -28.9
+Store Point OB56535 Elevation 605.3
+Store Point OB56535 Feature "607"
+Locate OB56536 ON Chain IL113 STA 54601.0 Offset  -57.9
+Store Point OB56536 Elevation 605.1
+Store Point OB56536 Feature "604"
+Locate OB56577 ON Chain IL113 STA 54499.6 Offset  -20.8
+Store Point OB56577 Elevation 603.8
+Store Point OB56577 Feature "363"
+Locate OB56570 ON Chain IL113 STA 54499.6 Offset  -28.8
+Store Point OB56570 Elevation 605.9
+Store Point OB56570 Feature "607"
+Locate OB56571 ON Chain IL113 STA 54499.6 Offset  -63.3
+Store Point OB56571 Elevation 606.7
+Store Point OB56571 Feature "604"
+Locate OB57352 ON Chain IL113 STA 54091.5 Offset  -33.4
+Store Point OB57352 Elevation 607.5
+Store Point OB57352 Feature "861"
+Locate OB57353 ON Chain IL113 STA 54091.5 Offset  -45.9
+Store Point OB57353 Elevation 607.1
+Store Point OB57353 Feature "604"
+Locate OB57354 ON Chain IL113 STA 54091.5 Offset  -70.4
+Store Point OB57354 Elevation 603.4
+Store Point OB57354 Feature "604"
+Locate OB57515 ON Chain IL113 STA 53999.2 Offset  -32.6
+Store Point OB57515 Elevation 607.7
+Store Point OB57515 Feature "607"
+Locate OB57516 ON Chain IL113 STA 53999.2 Offset  -62.6
+Store Point OB57516 Elevation 606.1
+Store Point OB57516 Feature "604"
+Locate OB57657 ON Chain IL113 STA 53899.5 Offset  -35.4
+Store Point OB57657 Elevation 607.4
+Store Point OB57657 Feature "861"
+Locate OB57650 ON Chain IL113 STA 53899.5 Offset  -62.4
+Store Point OB57650 Elevation 608.1
+Store Point OB57650 Feature "604"
+Locate OB57781 ON Chain IL113 STA 53798.8 Offset  -28.4
+Store Point OB57781 Elevation 603.8
+Store Point OB57781 Feature "861"
+Locate OB57782 ON Chain IL113 STA 53798.8 Offset  -57.4
+Store Point OB57782 Elevation 603.8
+Store Point OB57782 Feature "604"
+Locate OB57883 ON Chain IL113 STA 53701.4 Offset  -30.5
+Store Point OB57883 Elevation 602.9
+Store Point OB57883 Feature "607"
+Locate OB57884 ON Chain IL113 STA 53701.4 Offset  -58.0
+Store Point OB57884 Elevation 605.3
+Store Point OB57884 Feature "604"
+Locate OB57985 ON Chain IL113 STA 53599.4 Offset  -32.1
+Store Point OB57985 Elevation 602.5
+Store Point OB57985 Feature "607"
+Locate OB57986 ON Chain IL113 STA 53599.4 Offset  -59.1
+Store Point OB57986 Elevation 605.5
+Store Point OB57986 Feature "604"
+Locate OB58117 ON Chain IL113 STA 53499.3 Offset  -33.7
+Store Point OB58117 Elevation 603.0
+Store Point OB58117 Feature "607"
+Locate OB58110 ON Chain IL113 STA 53499.3 Offset  -59.7
+Store Point OB58110 Elevation 608.0
+Store Point OB58110 Feature "604"
+Locate OB58221 ON Chain IL113 STA 53396.4 Offset  -35.7
+Store Point OB58221 Elevation 601.6
+Store Point OB58221 Feature "607"
+Locate OB58222 ON Chain IL113 STA 53396.4 Offset  -62.7
+Store Point OB58222 Elevation 604.3
+Store Point OB58222 Feature "604"
+Locate OB58353 ON Chain IL113 STA 53300.2 Offset  -32.6
+Store Point OB58353 Elevation 599.6
+Store Point OB58353 Feature "861"
+Locate OB58354 ON Chain IL113 STA 53300.2 Offset  -62.6
+Store Point OB58354 Elevation 602.9
+Store Point OB58354 Feature "604"
+Locate OB58475 ON Chain IL113 STA 53199.2 Offset  -33.7
+Store Point OB58475 Elevation 601.5
+Store Point OB58475 Feature "607"
+Locate OB58476 ON Chain IL113 STA 53199.2 Offset  -60.7
+Store Point OB58476 Elevation 604.6
+Store Point OB58476 Feature "604"
+Locate OB58567 ON Chain IL113 STA 53100.4 Offset  -22.8
+Store Point OB58567 Elevation 595.6
+Store Point OB58567 Feature "363"
+Locate OB58560 ON Chain IL113 STA 53100.4 Offset  -59.8
+Store Point OB58560 Elevation 598.6
+Store Point OB58560 Feature "604"
+Locate OB58711 ON Chain IL113 STA 52997.6 Offset  -31.0
+Store Point OB58711 Elevation 594.7
+Store Point OB58711 Feature "607"
+Locate OB58712 ON Chain IL113 STA 52997.6 Offset  -60.0
+Store Point OB58712 Elevation 593.5
+Store Point OB58712 Feature "604"
+Locate OB58913 ON Chain IL113 STA 52899.1 Offset  -29.4
+Store Point OB58913 Elevation 593.8
+Store Point OB58913 Feature "607"
+Locate OB58914 ON Chain IL113 STA 52899.1 Offset  -57.9
+Store Point OB58914 Elevation 593.2
+Store Point OB58914 Feature "604"
+Locate OB59205 ON Chain IL113 STA 52797.9 Offset  -23.8
+Store Point OB59205 Elevation 597.2
+Store Point OB59205 Feature "363"
+Locate OB59206 ON Chain IL113 STA 52797.9 Offset  -26.3
+Store Point OB59206 Elevation 597.5
+Store Point OB59206 Feature "607"
+Locate OB59207 ON Chain IL113 STA 52797.9 Offset  -57.8
+Store Point OB59207 Elevation 596.8
+Store Point OB59207 Feature "604"
+Locate OB59340 ON Chain IL113 STA 52697.8 Offset  -26.9
+Store Point OB59340 Elevation 601.0
+Store Point OB59340 Feature "861"
+Locate OB59341 ON Chain IL113 STA 52697.8 Offset  -60.4
+Store Point OB59341 Elevation 601.0
+Store Point OB59341 Feature "604"
+Locate OB59452 ON Chain IL113 STA 52597.0 Offset  -27.0
+Store Point OB59452 Elevation 600.5
+Store Point OB59452 Feature "607"
+Locate OB59453 ON Chain IL113 STA 52597.0 Offset  -58.0
+Store Point OB59453 Elevation 602.3
+Store Point OB59453 Feature "604"
+Locate OB59734 ON Chain IL113 STA 52497.6 Offset  -27.5
+Store Point OB59734 Elevation 600.9
+Store Point OB59734 Feature "607"
+Locate OB59735 ON Chain IL113 STA 52497.6 Offset  -59.0
+Store Point OB59735 Elevation 601.9
+Store Point OB59735 Feature "604"
+Locate OB59906 ON Chain IL113 STA 52401.4 Offset  -23.4
+Store Point OB59906 Elevation 600.3
+Store Point OB59906 Feature "363"
+Locate OB59907 ON Chain IL113 STA 52401.4 Offset  -33.4
+Store Point OB59907 Elevation 601.6
+Store Point OB59907 Feature "607"
+Locate OB59900 ON Chain IL113 STA 52401.4 Offset  -57.9
+Store Point OB59900 Elevation 603.2
+Store Point OB59900 Feature "604"
+Locate OB60071 ON Chain IL113 STA 52303.1 Offset  -32.2
+Store Point OB60071 Elevation 602.3
+Store Point OB60071 Feature "861"
+Locate OB60072 ON Chain IL113 STA 52303.1 Offset  -58.2
+Store Point OB60072 Elevation 604.5
+Store Point OB60072 Feature "604"
+Locate OB60443 ON Chain IL113 STA 52198.7 Offset  -30.7
+Store Point OB60443 Elevation 601.6
+Store Point OB60443 Feature "607"
+Locate OB60444 ON Chain IL113 STA 52198.7 Offset  -58.2
+Store Point OB60444 Elevation 602.4
+Store Point OB60444 Feature "604"
+Locate OB60605 ON Chain IL113 STA 52096.9 Offset  -31.1
+Store Point OB60605 Elevation 601.9
+Store Point OB60605 Feature "607"
+Locate OB60606 ON Chain IL113 STA 52096.9 Offset  -58.6
+Store Point OB60606 Elevation 602.8
+Store Point OB60606 Feature "604"
+Locate OB61397 ON Chain IL113 STA 51997.9 Offset  -33.1
+Store Point OB61397 Elevation 600.2
+Store Point OB61397 Feature "604"
+Locate OB61390 ON Chain IL113 STA 51997.9 Offset  -60.1
+Store Point OB61390 Elevation 601.1
+Store Point OB61390 Feature "604"
+Locate OB61541 ON Chain IL113 STA 51906.6 Offset  -29.9
+Store Point OB61541 Elevation 599.7
+Store Point OB61541 Feature "607"
+Locate OB61542 ON Chain IL113 STA 51906.6 Offset  -57.4
+Store Point OB61542 Elevation 600.2
+Store Point OB61542 Feature "604"
+Locate OB61633 ON Chain IL113 STA 51794.6 Offset  -28.8
+Store Point OB61633 Elevation 600.6
+Store Point OB61633 Feature "607"
+Locate OB61634 ON Chain IL113 STA 51794.6 Offset  -58.8
+Store Point OB61634 Elevation 600.9
+Store Point OB61634 Feature "604"
+Locate OB61805 ON Chain IL113 STA 51700.8 Offset  -32.8
+Store Point OB61805 Elevation 602.5
+Store Point OB61805 Feature "607"
+Locate OB61806 ON Chain IL113 STA 51700.8 Offset  -59.8
+Store Point OB61806 Elevation 604.4
+Store Point OB61806 Feature "604"
+Locate OB61897 ON Chain IL113 STA 51599.7 Offset  -22.8
+Store Point OB61897 Elevation 607.4
+Store Point OB61897 Feature "363"
+Locate OB61890 ON Chain IL113 STA 51599.7 Offset  -30.8
+Store Point OB61890 Elevation 608.6
+Store Point OB61890 Feature "861"
+Locate OB61891 ON Chain IL113 STA 51599.7 Offset  -57.8
+Store Point OB61891 Elevation 611.0
+Store Point OB61891 Feature "604"
+Locate OB78762 ON Chain IL113 STA 51501.4 Offset  -24.7
+Store Point OB78762 Elevation 609.7
+Store Point OB78762 Feature "363"
+Locate OB78763 ON Chain IL113 STA 51501.4 Offset  -30.7
+Store Point OB78763 Elevation 610.3
+Store Point OB78763 Feature "861"
+Locate OB78764 ON Chain IL113 STA 51501.4 Offset  -57.7
+Store Point OB78764 Elevation 609.8
+Store Point OB78764 Feature "604"
+Locate OB70205 ON Chain IL113 STA 51397.5 Offset  -32.4
+Store Point OB70205 Elevation 612.6
+Store Point OB70205 Feature "607"
+Locate OB70206 ON Chain IL113 STA 51397.5 Offset  -57.9
+Store Point OB70206 Elevation 612.5
+Store Point OB70206 Feature "604"
+Locate OB70347 ON Chain IL113 STA 51300.9 Offset  -30.6
+Store Point OB70347 Elevation 612.1
+Store Point OB70347 Feature "607"
+Locate OB70340 ON Chain IL113 STA 51300.9 Offset  -61.6
+Store Point OB70340 Elevation 611.2
+Store Point OB70340 Feature "604"
+Locate OB70531 ON Chain IL113 STA 51196.4 Offset  -30.4
+Store Point OB70531 Elevation 609.4
+Store Point OB70531 Feature "607"
+Locate OB70532 ON Chain IL113 STA 51196.4 Offset  -62.4
+Store Point OB70532 Elevation 608.3
+Store Point OB70532 Feature "604"
+Locate OB70673 ON Chain IL113 STA 51097.9 Offset  -31.7
+Store Point OB70673 Elevation 607.6
+Store Point OB70673 Feature "607"
+Locate OB70674 ON Chain IL113 STA 51097.9 Offset  -61.7
+Store Point OB70674 Elevation 607.7
+Store Point OB70674 Feature "604"
+Locate OB70835 ON Chain IL113 STA 50998.3 Offset  -34.8
+Store Point OB70835 Elevation 609.2
+Store Point OB70835 Feature "607"
+Locate OB70836 ON Chain IL113 STA 50998.3 Offset  -62.8
+Store Point OB70836 Elevation 610.0
+Store Point OB70836 Feature "604"
+Locate OB70967 ON Chain IL113 STA 50897.4 Offset  -25.8
+Store Point OB70967 Elevation 603.3
+Store Point OB70967 Feature "607"
+Locate OB70960 ON Chain IL113 STA 50897.4 Offset  -60.3
+Store Point OB70960 Elevation 603.7
+Store Point OB70960 Feature "604"
+Locate OB71131 ON Chain IL113 STA 50800.6 Offset  -33.2
+Store Point OB71131 Elevation 602.1
+Store Point OB71131 Feature "861"
+Locate OB71132 ON Chain IL113 STA 50800.6 Offset  -60.2
+Store Point OB71132 Elevation 602.3
+Store Point OB71132 Feature "604"
+Locate OB71313 ON Chain IL113 STA 50698.6 Offset  -26.5
+Store Point OB71313 Elevation 594.2
+Store Point OB71313 Feature "607"
+Locate OB71314 ON Chain IL113 STA 50698.6 Offset  -61.0
+Store Point OB71314 Elevation 596.4
+Store Point OB71314 Feature "604"
+Locate OB71465 ON Chain IL113 STA 50601.4 Offset  -24.6
+Store Point OB71465 Elevation 588.2
+Store Point OB71465 Feature "604"
+Locate OB71466 ON Chain IL113 STA 50601.4 Offset  -62.1
+Store Point OB71466 Elevation 585.9
+Store Point OB71466 Feature "604"
+Locate OB71597 ON Chain IL113 STA 50501.6 Offset  -34.8
+Store Point OB71597 Elevation 582.5
+Store Point OB71597 Feature "604"
+Locate OB71590 ON Chain IL113 STA 50501.6 Offset  -58.8
+Store Point OB71590 Elevation 580.9
+Store Point OB71590 Feature "604"
+Locate OB71711 ON Chain IL113 STA 50400.4 Offset  -35.2
+Store Point OB71711 Elevation 580.0
+Store Point OB71711 Feature "604"
+Locate OB71712 ON Chain IL113 STA 50400.4 Offset  -56.7
+Store Point OB71712 Elevation 577.7
+Store Point OB71712 Feature "604"
+Locate OB71993 ON Chain IL113 STA 50299.2 Offset  -32.1
+Store Point OB71993 Elevation 577.2
+Store Point OB71993 Feature "604"
+Locate OB71994 ON Chain IL113 STA 50299.2 Offset  -57.1
+Store Point OB71994 Elevation 576.1
+Store Point OB71994 Feature "604"
+Locate OB72375 ON Chain IL113 STA 50198.5 Offset  -57.4
+Store Point OB72375 Elevation 584.9
+Store Point OB72375 Feature "604"
+Locate OB72726 ON Chain IL113 STA 50107.7 Offset  -32.7
+Store Point OB72726 Elevation 586.0
+Store Point OB72726 Feature "414"
+Locate OB72727 ON Chain IL113 STA 50107.7 Offset  -32.7
+Store Point OB72727 Elevation 586.0
+Store Point OB72727 Feature "607"
+Locate OB72720 ON Chain IL113 STA 50107.7 Offset  -57.7
+Store Point OB72720 Elevation 585.5
+Store Point OB72720 Feature "604"
+Locate OB72741 ON Chain IL113 STA 50104.9 Offset  32.2
+Store Point OB72741 Elevation 580.2
+Store Point OB72741 Feature "414"
+Locate OB72742 ON Chain IL113 STA 50104.9 Offset  58.2
+Store Point OB72742 Elevation 577.5
+Store Point OB72742 Feature "604"
+Locate OB72863 ON Chain IL113 STA 49993.2 Offset  34.2
+Store Point OB72863 Elevation 579.9
+Store Point OB72863 Feature "414"
+Locate OB72864 ON Chain IL113 STA 49993.2 Offset  58.2
+Store Point OB72864 Elevation 578.1
+Store Point OB72864 Feature "604"
+Locate OB73085 ON Chain IL113 STA 49896.7 Offset  32.7
+Store Point OB73085 Elevation 582.5
+Store Point OB73085 Feature "607"
+Locate OB73086 ON Chain IL113 STA 49896.7 Offset  58.2
+Store Point OB73086 Elevation 580.2
+Store Point OB73086 Feature "604"
+Locate OB73297 ON Chain IL113 STA 49797.1 Offset  33.2
+Store Point OB73297 Elevation 582.5
+Store Point OB73297 Feature "861"
+Locate OB73290 ON Chain IL113 STA 49797.1 Offset  33.2
+Store Point OB73290 Elevation 582.5
+Store Point OB73290 Feature "414"
+Locate OB73291 ON Chain IL113 STA 49797.1 Offset  78.2
+Store Point OB73291 Elevation 584.7
+Store Point OB73291 Feature "604"
+Locate OB73292 ON Chain IL113 STA 49797.1 Offset  20.7
+Store Point OB73292 Elevation 578.6
+Store Point OB73292 Feature "363"
+Locate OB75213 ON Chain IL113 STA 49699.7 Offset  21.7
+Store Point OB75213 Elevation 576.8
+Store Point OB75213 Feature "363"
+Locate OB75214 ON Chain IL113 STA 49699.7 Offset  31.7
+Store Point OB75214 Elevation 579.4
+Store Point OB75214 Feature "607"
+Locate OB75215 ON Chain IL113 STA 49699.7 Offset  31.7
+Store Point OB75215 Elevation 579.4
+Store Point OB75215 Feature "414"
+Locate OB75216 ON Chain IL113 STA 49699.7 Offset  58.7
+Store Point OB75216 Elevation 579.4
+Store Point OB75216 Feature "604"
+Locate OB75477 ON Chain IL113 STA 49598.6 Offset  31.8
+Store Point OB75477 Elevation 576.6
+Store Point OB75477 Feature "414"
+Locate OB75470 ON Chain IL113 STA 49598.6 Offset  60.8
+Store Point OB75470 Elevation 577.2
+Store Point OB75470 Feature "604"
+Locate OB81721 ON Chain IL113 STA 47394.8 Offset  -32.9
+Store Point OB81721 Elevation 573.8
+Store Point OB81721 Feature "607"
+Locate OB81722 ON Chain IL113 STA 47394.8 Offset  -32.9
+Store Point OB81722 Elevation 573.8
+Store Point OB81722 Feature "414"
+Locate OB81723 ON Chain IL113 STA 47394.8 Offset  -59.9
+Store Point OB81723 Elevation 574.1
+Store Point OB81723 Feature "604"
+Locate OB81764 ON Chain IL113 STA 47295.3 Offset  -31.9
+Store Point OB81764 Elevation 576.9
+Store Point OB81764 Feature "414"
+Locate OB81765 ON Chain IL113 STA 47295.3 Offset  -62.9
+Store Point OB81765 Elevation 578.2
+Store Point OB81765 Feature "604"
+Locate OB82016 ON Chain IL113 STA 47200.0 Offset  -24.6
+Store Point OB82016 Elevation 577.6
+Store Point OB82016 Feature "607"
+Locate OB82017 ON Chain IL113 STA 47200.0 Offset  -61.6
+Store Point OB82017 Elevation 578.1
+Store Point OB82017 Feature "604"
+Locate OB82590 ON Chain IL113 STA 47001.2 Offset  -33.4
+Store Point OB82590 Elevation 578.3
+Store Point OB82590 Feature "414"
+Locate OB82591 ON Chain IL113 STA 47001.2 Offset  -57.9
+Store Point OB82591 Elevation 579.0
+Store Point OB82591 Feature "604"
+Locate OB82612 ON Chain IL113 STA 46999.5 Offset  27.1
+Store Point OB82612 Elevation 578.7
+Store Point OB82612 Feature "607"
+Locate OB82673 ON Chain IL113 STA 46900.1 Offset  31.9
+Store Point OB82673 Elevation 580.7
+Store Point OB82673 Feature "607"
+Locate OB82674 ON Chain IL113 STA 46900.1 Offset  57.9
+Store Point OB82674 Elevation 580.2
+Store Point OB82674 Feature "604"
+Locate OB82695 ON Chain IL113 STA 46899.5 Offset  -35.5
+Store Point OB82695 Elevation 574.3
+Store Point OB82695 Feature "607"
+Locate OB82696 ON Chain IL113 STA 46899.5 Offset  -35.5
+Store Point OB82696 Elevation 574.3
+Store Point OB82696 Feature "414"
+Locate OB82697 ON Chain IL113 STA 46899.5 Offset  -62.0
+Store Point OB82697 Elevation 574.3
+Store Point OB82697 Feature "604"
+Locate OB83510 ON Chain IL113 STA 46192.4 Offset  28.9
+Store Point OB83510 Elevation 571.5
+Store Point OB83510 Feature "607"
+Locate OB83511 ON Chain IL113 STA 46192.4 Offset  57.4
+Store Point OB83511 Elevation 571.3
+Store Point OB83511 Feature "604"
+Locate OB83642 ON Chain IL113 STA 46101.3 Offset  -30.6
+Store Point OB83642 Elevation 571.6
+Store Point OB83642 Feature "861"
+Locate OB85003 ON Chain IL113 STA 45998.2 Offset  -31.1
+Store Point OB85003 Elevation 571.0
+Store Point OB85003 Feature "861"
+Locate OB85004 ON Chain IL113 STA 45998.2 Offset  31.4
+Store Point OB85004 Elevation 567.3
+Store Point OB85004 Feature "607"
+Locate OB85035 ON Chain IL113 STA 45899.8 Offset  -22.3
+Store Point OB85035 Elevation 562.1
+Store Point OB85035 Feature "363"
+Locate OB85036 ON Chain IL113 STA 45899.8 Offset  -30.8
+Store Point OB85036 Elevation 565.9
+Store Point OB85036 Feature "861"
+Locate OB85077 ON Chain IL113 STA 45799.1 Offset  -29.6
+Store Point OB85077 Elevation 559.1
+Store Point OB85077 Feature "607"
+Locate OB85230 ON Chain IL113 STA 45700.5 Offset  -35.6
+Store Point OB85230 Elevation 555.4
+Store Point OB85230 Feature "607"
+Locate OB85351 ON Chain IL113 STA 45601.0 Offset  -31.3
+Store Point OB85351 Elevation 557.7
+Store Point OB85351 Feature "861"
+Locate OP35962 ON Chain IL113 STA 44502.0 Offset  -32.0
+Store Point OP35962 Elevation 568.5
+Store Point OP35962 Feature "607"
+Locate OP35963 ON Chain IL113 STA 44502.0 Offset  -62.0
+Store Point OP35963 Elevation 570.0
+Store Point OP35963 Feature "604"
+Locate OP34314 ON Chain IL113 STA 43700.2 Offset  30.2
+Store Point OP34314 Elevation 573.6
+Store Point OP34314 Feature "861"
+Locate OP34315 ON Chain IL113 STA 43700.2 Offset  57.7
+Store Point OP34315 Elevation 572.4
+Store Point OP34315 Feature "604"
+Locate OP34466 ON Chain IL113 STA 43800.9 Offset  -28.5
+Store Point OP34466 Elevation 570.1
+Store Point OP34466 Feature "607"
+Locate OP34467 ON Chain IL113 STA 43800.9 Offset  32.5
+Store Point OP34467 Elevation 570.4
+Store Point OP34467 Feature "604"
+Locate OP34010 ON Chain IL113 STA 43499.9 Offset  34.6
+Store Point OP34010 Elevation 573.2
+Store Point OP34010 Feature "607"
+Locate OP34011 ON Chain IL113 STA 43499.9 Offset  59.1
+Store Point OP34011 Elevation 573.8
+Store Point OP34011 Feature "604"
+Locate OP33892 ON Chain IL113 STA 43399.4 Offset  29.9
+Store Point OP33892 Elevation 574.0
+Store Point OP33892 Feature "607"
+Locate OP33893 ON Chain IL113 STA 43399.4 Offset  60.9
+Store Point OP33893 Elevation 575.0
+Store Point OP33893 Feature "604"
+Locate OP33854 ON Chain IL113 STA 43398.2 Offset  -33.1
+Store Point OP33854 Elevation 570.4
+Store Point OP33854 Feature "607"
+Locate OP33855 ON Chain IL113 STA 43398.2 Offset  -56.1
+Store Point OP33855 Elevation 569.9
+Store Point OP33855 Feature "604"
+Locate OP333736 ON Chain IL113 STA 43299.4 Offset  -62.7
+Store Point OP333736 Elevation 571.4
+Store Point OP333736 Feature "604"
+Locate OP333777 ON Chain IL113 STA 43300.0 Offset  59.6
+Store Point OP333777 Elevation 577.6
+Store Point OP333777 Feature "604"
+Locate OP333610 ON Chain IL113 STA 43200.1 Offset  33.9
+Store Point OP333610 Elevation 579.9
+Store Point OP333610 Feature "607"
+Locate OP333611 ON Chain IL113 STA 43200.1 Offset  66.4
+Store Point OP333611 Elevation 579.6
+Store Point OP333611 Feature "604"
+Locate OP333632 ON Chain IL113 STA 43199.6 Offset  -50.9
+Store Point OP333632 Elevation 571.5
+Store Point OP333632 Feature "604"
+Locate OP333513 ON Chain IL113 STA 43100.3 Offset  -60.9
+Store Point OP333513 Elevation 571.7
+Store Point OP333513 Feature "604"
+Locate OP333484 ON Chain IL113 STA 43100.2 Offset  30.8
+Store Point OP333484 Elevation 579.2
+Store Point OP333484 Feature "607"
+Locate OP333485 ON Chain IL113 STA 43100.2 Offset  58.8
+Store Point OP333485 Elevation 580.0
+Store Point OP333485 Feature "604"
+Locate OP333286 ON Chain IL113 STA 42999.8 Offset  -59.9
+Store Point OP333286 Elevation 572.8
+Store Point OP333286 Feature "604"
+Locate OP333207 ON Chain IL113 STA 42899.5 Offset  -63.2
+Store Point OP333207 Elevation 574.0
+Store Point OP333207 Feature "604"
+Locate OP333170 ON Chain IL113 STA 42900.6 Offset  36.9
+Store Point OP333170 Elevation 584.9
+Store Point OP333170 Feature "607"
+Locate OP333171 ON Chain IL113 STA 42900.6 Offset  66.9
+Store Point OP333171 Elevation 585.0
+Store Point OP333171 Feature "604"
+Locate OP333012 ON Chain IL113 STA 42800.3 Offset  -58.5
+Store Point OP333012 Elevation 577.7
+Store Point OP333012 Feature "604"
+Locate OP333623 ON Chain IL113 STA 43200.1 Offset  -33.7
+Store Point OP333623 Elevation 576.1
+Store Point OP333623 Feature "604"
+Locate OP332414 ON Chain IL113 STA 42598.9 Offset  -29.1
+Store Point OP332414 Elevation 583.4
+Store Point OP332414 Feature "607"
+Locate OP332415 ON Chain IL113 STA 42598.9 Offset  -59.1
+Store Point OP332415 Elevation 583.1
+Store Point OP332415 Feature "604"
+Locate OP332266 ON Chain IL113 STA 42500.5 Offset  -31.1
+Store Point OP332266 Elevation 579.8
+Store Point OP332266 Feature "607"
+Locate OP332267 ON Chain IL113 STA 42500.5 Offset  -58.1
+Store Point OP332267 Elevation 578.2
+Store Point OP332267 Feature "604"
+Locate OP331860 ON Chain IL113 STA 42401.2 Offset  -29.5
+Store Point OP331860 Elevation 583.9
+Store Point OP331860 Feature "607"
+Locate OP331861 ON Chain IL113 STA 42401.2 Offset  -58.5
+Store Point OP331861 Elevation 584.0
+Store Point OP331861 Feature "604"
+Locate OP331902 ON Chain IL113 STA 42402.3 Offset  29.7
+Store Point OP331902 Elevation 583.7
+Store Point OP331902 Feature "607"
+Locate OP331903 ON Chain IL113 STA 42402.3 Offset  57.7
+Store Point OP331903 Elevation 585.0
+Store Point OP331903 Feature "604"
+Locate OP331804 ON Chain IL113 STA 42300.0 Offset  -32.5
+Store Point OP331804 Elevation 584.6
+Store Point OP331804 Feature "607"
+Locate OP331805 ON Chain IL113 STA 42300.0 Offset  -58.5
+Store Point OP331805 Elevation 585.0
+Store Point OP331805 Feature "604"
+Locate OP331766 ON Chain IL113 STA 42300.1 Offset  31.1
+Store Point OP331766 Elevation 585.6
+Store Point OP331766 Feature "607"
+Locate OP331767 ON Chain IL113 STA 42300.1 Offset  61.6
+Store Point OP331767 Elevation 585.9
+Store Point OP331767 Feature "604"
+Locate OP331700 ON Chain IL113 STA 42200.4 Offset  60.0
+Store Point OP331700 Elevation 584.8
+Store Point OP331700 Feature "604"
+Locate OP331701 ON Chain IL113 STA 42200.4 Offset  -34.0
+Store Point OP331701 Elevation 584.4
+Store Point OP331701 Feature "607"
+Locate OP331702 ON Chain IL113 STA 42200.4 Offset  -67.0
+Store Point OP331702 Elevation 584.5
+Store Point OP331702 Feature "604"
+Locate OP331363 ON Chain IL113 STA 41899.7 Offset  -31.0
+Store Point OP331363 Elevation 584.9
+Store Point OP331363 Feature "607"
+Locate OP331364 ON Chain IL113 STA 41899.7 Offset  -62.0
+Store Point OP331364 Elevation 584.9
+Store Point OP331364 Feature "604"
+Locate OP331445 ON Chain IL113 STA 42001.2 Offset  -32.0
+Store Point OP331445 Elevation 585.6
+Store Point OP331445 Feature "607"
+Locate OP331446 ON Chain IL113 STA 42001.2 Offset  -57.5
+Store Point OP331446 Elevation 584.9
+Store Point OP331446 Feature "604"
+Locate OP331377 ON Chain IL113 STA 41899.8 Offset  -31.4
+Store Point OP331377 Elevation 585.3
+Store Point OP331377 Feature "607"
+Locate OP331370 ON Chain IL113 STA 41899.8 Offset  -57.9
+Store Point OP331370 Elevation 585.1
+Store Point OP331370 Feature "604"
+Locate OP331311 ON Chain IL113 STA 41799.6 Offset  -28.3
+Store Point OP331311 Elevation 585.4
+Store Point OP331311 Feature "607"
+Locate OP331312 ON Chain IL113 STA 41799.6 Offset  -58.8
+Store Point OP331312 Elevation 585.5
+Store Point OP331312 Feature "604"
+Locate OP331243 ON Chain IL113 STA 41700.7 Offset  -31.9
+Store Point OP331243 Elevation 584.8
+Store Point OP331243 Feature "607"
+Locate OP331244 ON Chain IL113 STA 41700.7 Offset  -57.9
+Store Point OP331244 Elevation 584.2
+Store Point OP331244 Feature "604"
+Locate OP331185 ON Chain IL113 STA 41601.6 Offset  -30.2
+Store Point OP331185 Elevation 585.4
+Store Point OP331185 Feature "607"
+Locate OP331186 ON Chain IL113 STA 41601.6 Offset  -58.2
+Store Point OP331186 Elevation 584.3
+Store Point OP331186 Feature "604"
+Locate OP331117 ON Chain IL113 STA 41501.1 Offset  -33.1
+Store Point OP331117 Elevation 584.6
+Store Point OP331117 Feature "283"
+Locate OP331110 ON Chain IL113 STA 41501.1 Offset  -33.1
+Store Point OP331110 Elevation 584.6
+Store Point OP331110 Feature "607"
+Locate OP331111 ON Chain IL113 STA 41501.1 Offset  -58.1
+Store Point OP331111 Elevation 583.5
+Store Point OP331111 Feature "604"
+Locate OP131802 ON Chain IL113 STA 41399.1 Offset  -33.4
+Store Point OP131802 Elevation 583.3
+Store Point OP131802 Feature "607"
+Locate OP131803 ON Chain IL113 STA 41399.1 Offset  -59.4
+Store Point OP131803 Elevation 582.9
+Store Point OP131803 Feature "604"
+Locate OP131754 ON Chain IL113 STA 41300.4 Offset  -34.8
+Store Point OP131754 Elevation 584.9
+Store Point OP131754 Feature "607"
+Locate OP131755 ON Chain IL113 STA 41300.4 Offset  -59.3
+Store Point OP131755 Elevation 582.5
+Store Point OP131755 Feature "604"
+Locate OP131666 ON Chain IL113 STA 41200.9 Offset  -33.1
+Store Point OP131666 Elevation 584.0
+Store Point OP131666 Feature "607"
+Locate OP131667 ON Chain IL113 STA 41200.9 Offset  -49.1
+Store Point OP131667 Elevation 582.1
+Store Point OP131667 Feature "604"
+Locate OP131660 ON Chain IL113 STA 41200.9 Offset  -61.1
+Store Point OP131660 Elevation 576.8
+Store Point OP131660 Feature "604"
+Locate OP131571 ON Chain IL113 STA 41101.5 Offset  -30.2
+Store Point OP131571 Elevation 584.2
+Store Point OP131571 Feature "607"
+Locate OP131572 ON Chain IL113 STA 41101.5 Offset  -48.7
+Store Point OP131572 Elevation 582.3
+Store Point OP131572 Feature "607"
+Locate OP131573 ON Chain IL113 STA 41101.5 Offset  -58.2
+Store Point OP131573 Elevation 578.6
+Store Point OP131573 Feature "604"
+Locate OP234284 ON Chain IL113 STA 40100.9 Offset  33.7
+Store Point OP234284 Elevation 585.6
+Store Point OP234284 Feature "607"
+Locate OP234285 ON Chain IL113 STA 40100.9 Offset  62.7
+Store Point OP234285 Elevation 586.4
+Store Point OP234285 Feature "604"
+Locate OP234246 ON Chain IL113 STA 40000.5 Offset  29.3
+Store Point OP234246 Elevation 585.0
+Store Point OP234246 Feature "607"
+Locate OP234247 ON Chain IL113 STA 40000.5 Offset  58.8
+Store Point OP234247 Elevation 585.1
+Store Point OP234247 Feature "604"
+Locate OP234190 ON Chain IL113 STA 39900.9 Offset  29.1
+Store Point OP234190 Elevation 585.9
+Store Point OP234190 Feature "607"
+Locate OP234191 ON Chain IL113 STA 39900.9 Offset  59.1
+Store Point OP234191 Elevation 585.4
+Store Point OP234191 Feature "604"
+Locate OP233022 ON Chain IL113 STA 39802.3 Offset  26.8
+Store Point OP233022 Elevation 587.0
+Store Point OP233022 Feature "607"
+Locate OP233023 ON Chain IL113 STA 39802.3 Offset  26.8
+Store Point OP233023 Elevation 587.0
+Store Point OP233023 Feature "265"
+Locate OP233024 ON Chain IL113 STA 39802.3 Offset  60.3
+Store Point OP233024 Elevation 585.5
+Store Point OP233024 Feature "604"
+Locate OP232925 ON Chain IL113 STA 39701.6 Offset  59.5
+Store Point OP232925 Elevation 586.8
+Store Point OP232925 Feature "604"
+Locate OP227616 ON Chain IL113 STA 38598.9 Offset  33.1
+Store Point OP227616 Elevation 566.2
+Store Point OP227616 Feature "607"
+Locate OP227617 ON Chain IL113 STA 38598.9 Offset  48.1
+Store Point OP227617 Elevation 570.5
+Store Point OP227617 Feature "604"
+Locate OP227610 ON Chain IL113 STA 38598.9 Offset  -31.9
+Store Point OP227610 Elevation 570.6
+Store Point OP227610 Feature "604"
+Locate OP27591 ON Chain IL113 STA 37401.5 Offset  -31.4
+Store Point OP27591 Elevation 559.0
+Store Point OP27591 Feature "414"
+Locate OP27592 ON Chain IL113 STA 37401.5 Offset  -31.4
+Store Point OP27592 Elevation 559.0
+Store Point OP27592 Feature "607"
+Locate OP27593 ON Chain IL113 STA 37401.5 Offset  -59.4
+Store Point OP27593 Elevation 551.3
+Store Point OP27593 Feature "604"
+Locate OP227484 ON Chain IL113 STA 37300.0 Offset  -40.2
+Store Point OP227484 Elevation 555.0
+Store Point OP227484 Feature "607"
+Locate OP227485 ON Chain IL113 STA 37300.0 Offset  -58.2
+Store Point OP227485 Elevation 548.1
+Store Point OP227485 Feature "604"
+Locate OP227436 ON Chain IL113 STA 37200.2 Offset  -41.4
+Store Point OP227436 Elevation 555.5
+Store Point OP227436 Feature "607"
+Locate OP227437 ON Chain IL113 STA 37200.2 Offset  -57.4
+Store Point OP227437 Elevation 547.6
+Store Point OP227437 Feature "604"
+Locate OP227110 ON Chain IL113 STA 36999.5 Offset  -52.5
+Store Point OP227110 Elevation 553.4
+Store Point OP227110 Feature "607"
+Locate OP227111 ON Chain IL113 STA 36999.5 Offset  -60.5
+Store Point OP227111 Elevation 548.4
+Store Point OP227111 Feature "604"
+Locate OP122372 ON Chain IL113 STA 34699.4 Offset  -43.6
+Store Point OP122372 Elevation 544.2
+Store Point OP122372 Feature "607"
+Locate OP122373 ON Chain IL113 STA 34699.4 Offset  -58.6
+Store Point OP122373 Elevation 544.5
+Store Point OP122373 Feature "604"
+Locate OP122124 ON Chain IL113 STA 34602.0 Offset  -38.4
+Store Point OP122124 Elevation 544.3
+Store Point OP122124 Feature "607"
+Locate OP122125 ON Chain IL113 STA 34602.0 Offset  -58.4
+Store Point OP122125 Elevation 544.2
+Store Point OP122125 Feature "604"
+Locate OP23086 ON Chain IL113 STA 33897.3 Offset  40.8
+Store Point OP23086 Elevation 549.5
+Store Point OP23086 Feature "607"
+Locate OP23087 ON Chain IL113 STA 33897.3 Offset  60.8
+Store Point OP23087 Elevation 550.0
+Store Point OP23087 Feature "604"
+Locate OP20400 ON Chain IL113 STA 33333.1 Offset  40.5
+Store Point OP20400 Elevation 558.6
+Store Point OP20400 Feature "607"
+Locate OP20401 ON Chain IL113 STA 33333.1 Offset  62.5
+Store Point OP20401 Elevation 558.9
+Store Point OP20401 Feature "604"
+Locate OP22492 ON Chain IL113 STA 33599.2 Offset  60.1
+Store Point OP22492 Elevation 560.8
+Store Point OP22492 Feature "604"
+Locate OP21493 ON Chain IL113 STA 33500.1 Offset  32.7
+Store Point OP21493 Elevation 564.9
+Store Point OP21493 Feature "607"
+Locate OP21494 ON Chain IL113 STA 33500.1 Offset  20.2
+Store Point OP21494 Elevation 565.4
+Store Point OP21494 Feature "604"
+Locate OP21395 ON Chain IL113 STA 33399.8 Offset  28.3
+Store Point OP21395 Elevation 566.8
+Store Point OP21395 Feature "607"
+Locate OP21396 ON Chain IL113 STA 33399.8 Offset  60.3
+Store Point OP21396 Elevation 566.2
+Store Point OP21396 Feature "604"
+Locate OP18931 ON Chain IL113 STA 32700.4 Offset  30.3
+Store Point OP18931 Elevation 568.8
+Store Point OP18931 Feature "607"
+Locate OP18932 ON Chain IL113 STA 32700.4 Offset  60.3
+Store Point OP18932 Elevation 568.1
+Store Point OP18932 Feature "604"
+Locate OP18773 ON Chain IL113 STA 32600.0 Offset  37.5
+Store Point OP18773 Elevation 576.1
+Store Point OP18773 Feature "607"
+Locate OP18774 ON Chain IL113 STA 32600.0 Offset  61.5
+Store Point OP18774 Elevation 572.6
+Store Point OP18774 Feature "604"
+Locate OP18545 ON Chain IL113 STA 32501.8 Offset  39.1
+Store Point OP18545 Elevation 580.9
+Store Point OP18545 Feature "607"
+Locate OP18546 ON Chain IL113 STA 32501.8 Offset  66.1
+Store Point OP18546 Elevation 574.6
+Store Point OP18546 Feature "604"
+Locate OP18437 ON Chain IL113 STA 32400.9 Offset  39.5
+Store Point OP18437 Elevation 583.0
+Store Point OP18437 Feature "607"
+Locate OP18430 ON Chain IL113 STA 32400.9 Offset  60.5
+Store Point OP18430 Elevation 577.7
+Store Point OP18430 Feature "604"
+Locate OP17601 ON Chain IL113 STA 32200.3 Offset  -62.4
+Store Point OP17601 Elevation 577.8
+Store Point OP17601 Feature "604"
+Locate OP16812 ON Chain IL113 STA 32000.3 Offset  -32.9
+Store Point OP16812 Elevation 580.0
+Store Point OP16812 Feature "607"
+Locate OP16813 ON Chain IL113 STA 32000.3 Offset  -56.9
+Store Point OP16813 Elevation 584.2
+Store Point OP16813 Feature "604"
+Locate OP15674 ON Chain IL113 STA 31802.5 Offset  -30.2
+Store Point OP15674 Elevation 585.0
+Store Point OP15674 Feature "607"
+Locate OP15675 ON Chain IL113 STA 31802.5 Offset  -59.2
+Store Point OP15675 Elevation 585.6
+Store Point OP15675 Feature "604"
+Locate OP15566 ON Chain IL113 STA 31701.9 Offset  -32.0
+Store Point OP15566 Elevation 585.4
+Store Point OP15566 Feature "607"
+Locate OP15567 ON Chain IL113 STA 31701.9 Offset  -61.0
+Store Point OP15567 Elevation 585.6
+Store Point OP15567 Feature "604"
+Locate OP15210 ON Chain IL113 STA 31602.9 Offset  -32.0
+Store Point OP15210 Elevation 585.3
+Store Point OP15210 Feature "607"
+Locate OP15211 ON Chain IL113 STA 31602.9 Offset  -62.0
+Store Point OP15211 Elevation 585.4
+Store Point OP15211 Feature "604"
+Locate OP14802 ON Chain IL113 STA 31503.0 Offset  -27.7
+Store Point OP14802 Elevation 585.8
+Store Point OP14802 Feature "607"
+Locate OP14803 ON Chain IL113 STA 31503.0 Offset  -59.7
+Store Point OP14803 Elevation 585.8
+Store Point OP14803 Feature "604"
+Locate OP22734 ON Chain IL113 STA 33700.1 Offset  -44.7
+Store Point OP22734 Elevation 548.5
+Store Point OP22734 Feature "607"
+Locate OP122735 ON Chain IL113 STA 34803.5 Offset  -59.8
+Store Point OP122735 Elevation 545.2
+Store Point OP122735 Feature "604"
