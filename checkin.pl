@@ -1,138 +1,15 @@
-# checkin_22.pl
-# added various codes to maintain the detail of Hoelscher's code list
-# added	'N' - Stone/Rock
-# 	'O' - Oil and Chip
-# to Material Modifiers List
-# added Monitoring/Inspection Well 'MWL' IDOT 640
-# added a material modifier to Gutter GU*
-# added a material modifier to CURB "CR*" which causes a conflict with CRB which is our standard concrete back of curb code
-# 'curb bit' becomes CUB instead????
-# add RR mile Post 'RMP'
-# add RR switch heater 'RSH'
-# add RR tie 'RTI'
-# add RR derailer RDR
-# add additional modifier to building.  there are conflicts in the B** series due to bridge codes
-# so I'm moving Building codes to G**
-# G<OM> the first modifiier is the ownership.  This is needed for IDOT.  The second modifier is the material type
-# I added M as a material type for Masonry
-# added PA<M> for patio
-# added SL<M> for slab
-# added RW<M> for Retaining wall material type
-# added WA<M> for Wall material type
-# added ACU for air conditioning unit
-# added COL for column
-# added DCK for deck
-# added V for a material type for vinyl
-# Added a list of Survey Point types using a combination Hoelscher codes and IDOT codes SP<P>
-# A	Traverse Point
-# B	Axle
-# C	Cut Cross
-# D	Concrete Monument
-# E	Crimp Pipe
-# F	Bench Mark
-# G	GPS Monument
-# H	Control Point
-# I	Iron Pipe
-# J	Nail
-# k	Nail & Washer\shiner
-# L	PK Nail
-# M	Mag Nail
-# N	ROW Marker
-# O	RR Spike
-# P	Pole Barn Spike
-# Q	Stone
-# R	Cotton Picker Spindle
-# S	Hub
-# T	Cut Square
-# U	Rebar
-# V	Drill Hole
-# W	Brass Marker
-# X	Iron Rod/Pin
-# Y
-# Z	other
-# Removed the SPC - Special misc code - more confusion
-# Changed a few of the Railroad Related codes so that they all start with RR
-# Added some Railroad related codes too 
-# Added Riser/Feed for the Utilities RS*
-########################################
-####################################
-# Hoelscher # checkin_21.pl
-# 20131107
-# added (modified):
-#      MHM Storm Manhole 351
-#      MHN Sanitary Manhole 337
-#      VLB Valve Box 342
-#      VLW Water Valve 343
-#      VLG Gas Valve 344
-#      BBG Gas Buffalo Box 319
-#      BBW Water Buffalo Box 320
-#####################################
-####################################
-# checkin_20.pl
-# 20130322
-# added:
-#     VNG Gas Vent
-#     PDF Pedestal Fiber Optic
-#     HHF Handhole Fiber Optic
-#     HHV Handhole TV
-#     HHR Handhole Traffic
-#     HHE Handhole Electric
-#     MHS Manhole Traffic Fiber Optic
-#     RPF Point of Frog
-#     RPS Point of Switch
-#     RSW Switch Box
-############################################
-##################################
-# checkin_19.pl 20130116
-# added BWC - Bridge Walk Concrete - BSW is depreciated
-# added BSS - Bridge Structural Steel 610
-# added BSC - Bridge Scupper
-# added BDP - Bridge Deck Plate
-# changed BPA from 624 to 633 and eliminated 'Required Comment' "PARAPET"
-# depreciated edge of pavement/edge of shoulder combinations used on IL-83 (fail). ERB-EWC.
-# depreciated RNW Runway
-# depreciated 667 as IDOT code for crown (CRB/CRC) using breakline 607 with material comments for
-#    pavement areas with no stripeing - use stripeing as breakline where possible
-# Crown now has material types: CNB = HMA, CNC = CONC, etc. - see 667 above
-# I'm going to stop using the B6B codes and start using CRB on all curbs unless they are
-#    odd (not B6.12 or B6.24).  Use the IDOT codes of odd curbs. - LV - The B6B and B62 will still
-#    work.
-# added BUC - Building Commercial - BLD is being depreciated
-# added BUP - Building Public - BLD is being depreciated
-# added BUR - Building Residential - BLD is being depreciated
-# Changed BBA/BBB/BBC/BBR from 619 to 621 so that spots land on the Topo_BridgeStructures level
-# changed RR centerline from CLR to RCL
-# added BRR Barrier Wall - base
-# added SBW for weird sprinkler system splice box on US14
-####################################
-##################################
-# checkin_18.pl
-# added B6F back in
-##################################
-#------------------------
-# ver checkin_15.pl
-#
-# added SWA,B,C,R
-# added WEL well
-# added BBA,BBB,BBC.BBR - Bridge Deck with AGG,BIT.Conc,Bridk
-# added BSW - Bridge Sidewalk
-# added RCK - Rock/boulder
-#################################
 #################################
 %legalCodes = (
  "ACU" => "legal", # Air Conditioning Unit
  "AEM" => "legal", # Electric Above Ground Main - Center of Tower
- #"AGE" => "legal",
  "B62" => "legal", # B6-24 Curb - added v6 - depreciated
  "B6B" => "legal", # B6-12 Top Back Curb - depreciated
  "B6F" => "legal", # added back v18 - depreciated
- #"B6T" => "legal", # deleted v6
  "BAB" => "legal", # The outline of the face,sides, and top of the abutment.  A 3d line.
  "BAL" => "legal", # The outline of the face of the abutment and the face of the
                    # Wingwalls.  A 2d line, usually collected prismless.
  "BAR" => "legal", # Stop Bar - Painted
  "BAS" => "legal", # Bridge Approach Slab
- #"BAT" => "legal",
  "BBA" => "legal", # Bridge Deck - AGG
  "BBB" => "legal", # Bridge Deck - BIT/HMA
  "BBC" => "legal", # Bridge Deck - Concrete
@@ -142,13 +19,11 @@
                    # with the "hook".
  "BBW" => "legal", # Buffalo Box - Water
  "BBU" => "legal", # Buffalo Box - Gas
- #"BBX" => "legal", # Buffalo Box - Water
  "BCB" => "legal", # The top front of any curb or median on a bridge.
  "BDB" => "legal", # The line of the bit bridge deck.  A 3d line.
  "BDC" => "legal", # The line of the conc bridge deck.  A 3d line.
  "BDP" => "legal", # Bridge Deck Plate
  "BDT" => "legal", # Bridge Deck Timber
- #"BDK" => "legal",
  "BEX" => "legal", # The bridge expansion joint.  A 3d line.
  "BHR" => "legal", # Building# Bridge Handrail.  A 3D line.
  "BLD" => "legal", # Building
@@ -169,27 +44,23 @@
  "BPR" => "legal", # The outline of the face, sides and top of the pier cap.  A 3d line.
  "BPT" => "legal", # The pier cap elevation,  For elevation only.  Usually collected
                    # with the "hook".
- #"BRC" => "legal",
  "BRK" => "legal", # Break Line
  "BRR" => "legal", # Barrier Wall - base
  "BSC" => "legal", # Bridge Scupper
  "BSH" => "legal", # Bush / Shrub
  "BSL" => "legal", # Bush line / Hedgerow
  "BSS" => "legal", # Bridge Structural Steel
- #"BSW" => "legal", # Bridge - Sidewalk - depreciated v19
  "BUC" => "legal", # Building - Commercial
  "BUP" => "legal", # Building - Public
  "BUR" => "legal", # Building - Residential
  "BWC" => "legal", # Bridge Deck Sidewalk Conc
  "BWL" => "legal", # The outline of the face and sides of the bridge back wall.  A 3d line.
-  #"BWT" => "legal",
  "BWW" => "legal", # The outline of the face and sides of the wingwall.  A 3d line with
                    # points at each elevation change.
  "CBM" => "legal", # Catch Basin - Round Open
  "CKH" => "legal", # Control Point Check - Horizontal
  "CKV" => "legal", # Control Point Check - Vertical
  "CLR" => "legal", # Centerline Railroad Track - depreciated
- #"CMA" => "legal",
  "CNP" => "legal", # Canopy
  "CNT" => "legal", # Traffic Signal Cantelever/Mast Arm
  "CNA" => "legal", # Crown of roadway - Agg - use where there is no stripeing
@@ -199,7 +70,6 @@
  "COL" => "legal", # Column
  "CPH" => "legal", # Control Point Horizontal
  "CRB" => "legal", # Curb - Top Back - Concrete - this was changed back after a brief period of confusion
-# "CRC" => "legal", # removed after a brief period of confusion
  "CRN" => "legal", # Crown Line - this was changed back after a brief period of confusion
  "CRP" => "legal", # Crop Line
  "CRW" => "legal", # Crosswalk
@@ -237,20 +107,10 @@
  "EOB" => "legal", # Edge of Pavement - BIT/HMA
  "EOC" => "legal", # Edge of Pavement - Concrete
  "EOL" => "legal", # Edge of Lanes - added v6
- #"EOP" => "legal", # Edge of Pavement
+ "EOP" => "legal", # Edge of Pavement
  "EOR" => "legal", # Edge of Pavement - Brick
- #"ERB" => "legal", # Edge of Bit Pavement - Bit Shoulder - no curb
- #"ERC" => "legal", # Edge of Conc Pavement - Bit Shoulder - no curb
- #"ESC" => "legal", # Edge of Conc Pavement - Concrete Shoulder - no curb
- #"ETB" => "legal", # Edge of Bit Pavement - Bit Shoulder with curb
- #"ETC" => "legal", # Edge of Conc Pavement - Bit Shoulder with curb
- #"EUB" => "legal", # Edge of Bit Pavement - curb - no shoulder
- #"EUC" => "legal", # Edge of Conc Pavement - curb - no shoulder
- #"EWC" => "legal", # Edge of Conc Pavement - Concrete SDhoulder with curb
  "FES" => "legal", # Flared End Section
  "FFL" => "legal", # Finish Floor Elevation
- #"FLW" => "legal",
- #"FLO" => "legal", # Flow Line / Ditch
  "FNC" => "legal", # Fence Line
  "FND" => "legal", # Found Survey Evidence
  "FNG" => "legal", # Fence Gate Post
@@ -281,9 +141,6 @@
  "GRR" => "legal", # Building Residential Brick
  "GRS" => "legal", # Building Residential Steel
  "GRT" => "legal", # Building Residential Timber/Log
-# "GUB" => "legal", # Gutter Bit depreciated after that brief period of confusion
-# "GUC" => "legal", # Gutter Concrete depreciated after that brief period of confusion
-# "GUN" => "legal", # Gutter Stone depreciated after that brief period of confusion
  "GUP" => "legal", # Guy Pole
  "GUT" => "legal", # Gutter/Flowline
  "GUY" => "legal", # Guy Wire
@@ -302,7 +159,6 @@
  "JUG" => "legal", # QL-B Paint Mark Line - Gas
  "JUM" => "legal", # QL-B Paint Mark Line - Storm
  "JUN" => "legal", # QL-B Paint Mark Line - Sanitary
- #"JUO" => "legal",
  "JUR" => "legal", # QL-B Paint Mark Line - Traffic Signal
  "JUS" => "legal", # QL-B Paint Mark Line - Traffic Signal Fiber Optic
  "JUT" => "legal", # QL-B Paint Mark Line - Telephone
@@ -315,7 +171,6 @@
  "MBX" => "legal", # Mailbox
  "MCS" => "legal", # Misc Concrete Slab
  "MED" => "legal", # Top Front of Median
- #"MGR" => "legal",
  "MHE" => "legal", # Manhole Electrical
  "MHF" => "legal", # Manhole Fiber Optic
  "MHG" => "legal", # Manhole Gas
@@ -360,7 +215,6 @@
  "RDR" => "legal", # RR Derailer
  "RGG" => "legal", # Regulator Gas
  "RIP" => "legal", # Rip Rap
- #"RNW" => "legal",
  "ROW" => "legal", # ROW Monument
  "RPB" => "legal", # Ramp - Bit
  "RPC" => "legal", # Ramp - Conc
@@ -416,7 +270,6 @@
  "SNG" => "legal", # Sign - Warning - Gas
  "SNL" => "legal", # Sign - For Line Coding
  "SNN" => "legal", # Sign - Warning - Sanitary Line
-# "SNO" => "legal", # Sign - Warning - Fiber Optic
  "SNP" => "legal", # Sign - Warning - Petroleum
  "SNR" => "legal", # Sign - Traffic
  "SNT" => "legal", # Sign - Warning - Telephone/Communications
@@ -455,7 +308,6 @@
  "SWC" => "legal", # Sidewalk - Conc
  "SWR" => "legal", # Sidewalk - Brick
  "TIL" => "legal", # Tile
- #"TOB" => "legal",
  "TNG" => "legal", # Gas Tank
  "TNP" => "legal", # Oil Tank
  "TOE" => "legal", # Toe of Slope
@@ -554,7 +406,6 @@
  "361" => "legal",
  "363" => "legal",
  "369" => "legal",
- #"376" => "legal",
  "377" => "legal",
  "379" => "legal",
  "381" => "legal",
@@ -583,9 +434,7 @@
  "463" => "legal",
  "466" => "legal",
  "501" => "legal",
- #"508" => "legal", # deleted v6
  "509" => "legal",
- #"510" => "legal", # deleted v6
  "516" => "legal", # B6-24 added v6
  "575" => "legal",
  "578" => "legal",
@@ -626,7 +475,6 @@
  "656" => "legal",
  "664" => "legal",
  "666" => "legal",
- #"667" => "legal",
  "668" => "legal",
  "669" => "legal",
  "673" => "legal",
@@ -669,7 +517,6 @@
  "BDP" => "BRIDGE DECK PLATE",
  "BDT" => "TIMBER",
  "BHR" => "HANDRAIL",
- #"BPA" => "PARAPET",
  "BPC" => "LOCATION ONLY",
  "BPR" => "PIER CAP",
  "BPT" => "ELEV ONLY",
@@ -682,9 +529,6 @@
  "CNC" => "CONC",
  "CNR" => "BRICK",
  "COL" => "COLUMN",
- # "CRB" => "HMA",
- # "CRC" => "CONC",
- # "CRN" => "STONE",
  "DRA" => "AGG",
  "DRB" => "HMA",
  "DRC" => "CONC",
@@ -743,9 +587,6 @@
  "GRR" => "BRICK",
  "GRS" => "STEEL",
  "GRT" => "TIMBER",
- # "GUB" => "HMA",
- # "GUC" => "CONC",
- # "GUN" => "HMA",
  "HHE" => "ELECTRIC",
  "HHF" => "FIBER OPTIC",
  "HHR" => "TRAFFIC SIGNAL",
