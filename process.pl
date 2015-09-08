@@ -2420,7 +2420,7 @@ while (<IN>) {
    # $csplit[0] = 3 letter code
    # $csplit[1] = line number
  if (length($fsplit[1])>0) {##############lv
-  $fsplit[1]="\;$fsplit[1]"; ########lv - adds the semi-colon before the Comment
+#  $fsplit[1]="\;$fsplit[1]"; ########lv - adds the semi-colon before the Comment
  }
  $Icode=$pointCodes{$csplit[0]}; ## if the three letter code matches any of the codes
 
@@ -2458,12 +2458,12 @@ while (<IN>) {
    if ($c = $idotcommands{$tok[0]})
      {
      print OUT2 "$in[0],$in[1],$in[2],$in[3],$Icode$csplit[1]$fsplit[1],$c\n";
-     print OUT1 "$in[0],$in[1],$in[2],$in[3], $Icode$csplit[1]$fsplit[1], $c\n";
+     print OUT1 "$in[0],$in[1],$in[2],$in[3], $Icode$csplit[1], $c, $fsplit[1]\n";
      }
    else
      {
      print OUT2 "$in[0],$in[1],$in[2],$in[3],$Icode$csplit[1]$fsplit[1],\n";
-     print OUT1 "$in[0],$in[1],$in[2],$in[3], $Icode$csplit[1]$fsplit[1],\n";
+     print OUT1 "$in[0],$in[1],$in[2],$in[3], $Icode$csplit[1],,$fsplit[1]\n";
      }
    }
  elsif (exists ($symbolCodes{$Icode}))  # Check against symbolCodes list for cells
@@ -2471,12 +2471,12 @@ while (<IN>) {
    if ($c = $idotcommands{$tok[0]})
      {
      print OUT4 "$in[0],$in[1],$in[2],$in[3],$Icode$csplit[1]$fsplit[1],$c\n";
-     print OUT1 "$in[0],$in[1],$in[2],$in[3], $Icode$csplit[1]$fsplit[1], $c\n";
+     print OUT1 "$in[0],$in[1],$in[2],$in[3], $Icode$csplit[1], $c, $fsplit[1]\n";
      }
    else
      {
      print OUT4 "$in[0],$in[1],$in[2],$in[3],$Icode$csplit[1]$fsplit[1],\n";
-     print OUT1 "$in[0],$in[1],$in[2],$in[3], $Icode$csplit[1]$fsplit[1],\n";
+     print OUT1 "$in[0],$in[1],$in[2],$in[3], $Icode$csplit[1],,$fsplit[1]\n";
      }
    }
  elsif (exists ($lineCodes{$Icode}))
@@ -2484,12 +2484,12 @@ while (<IN>) {
    if ($c = $idotcommands{$tok[0]})
      {
      print OUT3 "$in[0],$in[1],$in[2],$in[3],$Icode$csplit[1]$fsplit[1],$c\n";
-     print OUT1 "$in[0],$in[1],$in[2],$in[3], $Icode$csplit[1]$fsplit[1], $c\n";
+     print OUT1 "$in[0],$in[1],$in[2],$in[3], $Icode$csplit[1], $c, $fsplit[1]\n";
      }
    else
      {
      print OUT3 "$in[0],$in[1],$in[2],$in[3],$Icode$csplit[1]$fsplit[1],\n";
-     print OUT1 "$in[0],$in[1],$in[2],$in[3], $Icode$csplit[1]$fsplit[1],\n";
+     print OUT1 "$in[0],$in[1],$in[2],$in[3], $Icode$csplit[1],,$fsplit[1]\n";
      }
    }
 
