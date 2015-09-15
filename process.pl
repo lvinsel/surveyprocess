@@ -2197,16 +2197,16 @@ open(OUT4,">${filename}_cell.cor");
 while (<IN>) {
  $curIsString=0;
  @in = split(/,/, substr(uc, 0, -1), 5); #note: the substr forces text to be uppercase; the split creates:
-   pointNo       = $in[0] # point number
-   northing      = $in[1] # northing
-   easting       = $in[2] # easting
-   elevation     = $in[3] # elevation
-   fullFieldCode = $in[4] # full description (3 Letter Code-Line Number-Line Code-Comment)
- my @firstSplit = split(/\s+/,$in[4],2); #added lv - this separates the Codes from the Comments
+   $pointNo         = $in[0] # point number
+   $northing        = $in[1] # northing
+   $easting         = $in[2] # easting
+   $elevation       = $in[3] # elevation
+   $fullDescription = $in[4] # full description (3 Letter Code-Line Number-Line Code-Comment)
+ my @firstSplit = split(/\s+/,$fullDescription,2); #added lv - this separates the Codes from the Comments
    #using the first whitespace as the separator so:
-   #$firstSplit[0] = 3 Letter Code-Line Number-Line Code
-   #$firstSplit[1] = the Comment
- my @secondSplit = split(/\W+/,$firstSplit[0],2); #added lv - this separates the 3 Letter Code and
+   $fullCode    = $firstSplit[0] # 3 Letter Code-Line Number-Line Code
+   $comment     = $firstSplit[1] # the Comment
+ my @secondSplit = split(/\W+/,$fullCode,2); #added lv - this separates the 3 Letter Code and
    # line number from the line coding symbol
    # using the first non-numeric/non-alpha character as the separator so:
    # $secondSplit[0] = the 3 Letter Code and Line Number
@@ -2225,9 +2225,9 @@ while (<IN>) {
 
 ##############Test Section
 #print OUT1 "alksdf;alkdj   $pointCodes{$thirdSplit[0]}\n";
-#print OUT5 "\n\n\n\in[0] point number      = $in[0]\n";
-#print OUT5 "in[4] full code & comment      = $in[4]\n";
-#print OUT5 "firstSplit[0] full code no comment = $firstSplit[0]\n";
+#print OUT5 "\n\n\n\pointNo point number      = $pointNo\n";
+#print OUT5 "fullDescription full code & comment      = $fullDescription\n";
+#print OUT5 "fullCode full code no comment = $fullCode\n";
 #print OUT5 "firstSplit[1] comment              = $firstSplit[1]\n";
 #print OUT5 "secondSplit[0] code and line no.    = $secondSplit[0]\n";
 #print OUT5 "secondSplit[1] line code            = $secondSplit[1]\n";
@@ -2255,39 +2255,39 @@ while (<IN>) {
    {
    if ($c = $idotcommands{$lineCode})
      {
-     print OUT2 "$in[0],$in[1],$in[2],$in[3],$Icode$thirdSplit[1]$firstSplit[1],$c\n";
-     print OUT1 "$in[0],$in[1],$in[2],$in[3], $Icode$thirdSplit[1], $c, $firstSplit[1]\n";
+     print OUT2 "$pointNo,$northing,$easting,$elevation,$Icode$thirdSplit[1]$firstSplit[1],$c\n";
+     print OUT1 "$pointNo,$northing,$easting,$elevation, $Icode$thirdSplit[1], $c, $firstSplit[1]\n";
      }
    else
      {
-     print OUT2 "$in[0],$in[1],$in[2],$in[3],$Icode$thirdSplit[1]$firstSplit[1],\n";
-     print OUT1 "$in[0],$in[1],$in[2],$in[3], $Icode$thirdSplit[1],,$firstSplit[1]\n";
+     print OUT2 "$pointNo,$northing,$easting,$elevation,$Icode$thirdSplit[1]$firstSplit[1],\n";
+     print OUT1 "$pointNo,$northing,$easting,$elevation, $Icode$thirdSplit[1],,$firstSplit[1]\n";
      }
    }
  elsif (exists ($symbolCodes{$Icode}))  # Check against symbolCodes list for cells
    {
    if ($c = $idotcommands{$lineCode})
      {
-     print OUT4 "$in[0],$in[1],$in[2],$in[3],$Icode$thirdSplit[1]$firstSplit[1],$c\n";
-     print OUT1 "$in[0],$in[1],$in[2],$in[3], $Icode$thirdSplit[1], $c, $firstSplit[1]\n";
+     print OUT4 "$pointNo,$northing,$easting,$elevation,$Icode$thirdSplit[1]$firstSplit[1],$c\n";
+     print OUT1 "$pointNo,$northing,$easting,$elevation, $Icode$thirdSplit[1], $c, $firstSplit[1]\n";
      }
    else
      {
-     print OUT4 "$in[0],$in[1],$in[2],$in[3],$Icode$thirdSplit[1]$firstSplit[1],\n";
-     print OUT1 "$in[0],$in[1],$in[2],$in[3], $Icode$thirdSplit[1],,$firstSplit[1]\n";
+     print OUT4 "$pointNo,$northing,$easting,$elevation,$Icode$thirdSplit[1]$firstSplit[1],\n";
+     print OUT1 "$pointNo,$northing,$easting,$elevation, $Icode$thirdSplit[1],,$firstSplit[1]\n";
      }
    }
  elsif (exists ($lineCodes{$Icode}))
    {
    if ($c = $idotcommands{$lineCode})
      {
-     print OUT3 "$in[0],$in[1],$in[2],$in[3],$Icode$thirdSplit[1]$firstSplit[1],$c\n";
-     print OUT1 "$in[0],$in[1],$in[2],$in[3], $Icode$thirdSplit[1], $c, $firstSplit[1]\n";
+     print OUT3 "$pointNo,$northing,$easting,$elevation,$Icode$thirdSplit[1]$firstSplit[1],$c\n";
+     print OUT1 "$pointNo,$northing,$easting,$elevation, $Icode$thirdSplit[1], $c, $firstSplit[1]\n";
      }
    else
      {
-     print OUT3 "$in[0],$in[1],$in[2],$in[3],$Icode$thirdSplit[1]$firstSplit[1],\n";
-     print OUT1 "$in[0],$in[1],$in[2],$in[3], $Icode$thirdSplit[1],,$firstSplit[1]\n";
+     print OUT3 "$pointNo,$northing,$easting,$elevation,$Icode$thirdSplit[1]$firstSplit[1],\n";
+     print OUT1 "$pointNo,$northing,$easting,$elevation, $Icode$thirdSplit[1],,$firstSplit[1]\n";
      }
    }
 
@@ -2296,12 +2296,12 @@ while (<IN>) {
 
 
 ####################### TEST SECTION
-#print OUT5 "in[0] point number             = $in[0]\n";
-#print OUT5 "in[1] northing                 = $in[1]\n";
-#print OUT5 "in[2] easting                  = $in[2]\n";
-#print OUT5 "in[3] elevation                = $in[3]\n";
-#print OUT5 "in[4] full code & comment      = $in[4]\n";
-#print OUT5 "firstSplit[0] full code no comment = $firstSplit[0]\n";
+#print OUT5 "in[0] pointNo             = $pointNo\n";
+#print OUT5 "in[1] northing                 = $northing\n";
+#print OUT5 "in[2] easting                  = $easting\n";
+#print OUT5 "in[3] elevation                = $elevation\n";
+#print OUT5 "fullDescription full code & comment      = $fullDescription\n";
+#print OUT5 "fullCode full code no comment = $fullCode\n";
 #print OUT5 "firstSplit[1] comment              = $firstSplit[1]\n";
 #print OUT5 "secondSplit[0] code and line no.    = $secondSplit[0]\n";
 #print OUT5 "secondSplit[1] line code            = $secondSplit[1]\n";
@@ -2319,14 +2319,14 @@ while (<IN>) {
  }
  $lastWasString=$curIsString;
  $lastFigname=$figname;
- $lastPtNum=$in[0];
+ $lastPtNum=$pointNo;
  $figname="";
  $comment="";  #### added lv
  $Icode="";
  $prefix="";
 
 
- $firstSplit[0]="";
+ $fullCode="";
  $firstSplit[1]="";
  $secondSplit[0]="";
  $secondSplit[1]="";
