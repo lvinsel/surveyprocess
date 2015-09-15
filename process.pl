@@ -2221,16 +2221,16 @@ while (<IN>) {
    # $tok[0} = the Line Code
    # $tok[1] = "$ssplit[0] $fsplit[1]"; #added lv:
    # $tok[1] = the code and the comment, no line code
- my @csplit = ($ssplit[0] =~ /(\w\w\w)(\d*)/); # this is for QAQC
-   # $csplit[0] = 3 letter code
-   # $csplit[1] = line number
+ my @tsplit = ($ssplit[0] =~ /(\w\w\w)(\d*)/); # this is for QAQC
+   # $tsplit[0] = 3 letter code
+   # $tsplit[1] = line number
  if (length($fsplit[1])>0) {##############lv
 #  $fsplit[1]="\;$fsplit[1]"; ########lv - adds the semi-colon before the Comment
  }
- $Icode=$pointCodes{$csplit[0]}; ## if the three letter code matches any of the codes
+ $Icode=$pointCodes{$tsplit[0]}; ## if the three letter code matches any of the codes
 
 ##############Test Section
-#print OUT1 "alksdf;alkdj   $pointCodes{$csplit[0]}\n";
+#print OUT1 "alksdf;alkdj   $pointCodes{$tsplit[0]}\n";
 #print OUT5 "\n\n\n\in[0] point number      = $in[0]\n";
 #print OUT5 "in[4] full code & comment      = $in[4]\n";
 #print OUT5 "fsplit[0] full code no comment = $fsplit[0]\n";
@@ -2238,62 +2238,62 @@ while (<IN>) {
 #print OUT5 "ssplit[0] code and line no.    = $ssplit[0]\n";
 #print OUT5 "ssplit[1] line code            = $ssplit[1]\n";
 #print OUT5 "tok[0] line code               = $tok[0]\n";
-#print OUT5 "csplit[0] alpha code           = $csplit[0]\n";
-#print OUT5 "csplit[1] line number          = $csplit[1]\n";
+#print OUT5 "tsplit[0] alpha code           = $tsplit[0]\n";
+#print OUT5 "tsplit[1] line number          = $tsplit[1]\n";
 #print OUT5 "hold                           = $hold\n";
 #print OUT5 "c linecode                     = $c\n";
 #print OUT5 "Icode idot code, line no.      = $Icode\n\n";
         #####################
         #Material type prefix
-        if  (exists ($typePrefix{$csplit[0]})) {
-          $prefix = $typePrefix{$csplit[0]};
-          $csplit[1] = "$prefix$csplit[1]";
+        if  (exists ($typePrefix{$tsplit[0]})) {
+          $prefix = $typePrefix{$tsplit[0]};
+          $tsplit[1] = "$prefix$tsplit[1]";
  }
  ########################################
  #NoLine fix
- if  (exists ($noLine{$csplit[0]})) {
-          $csplit[1] = $noLineCounter;
+ if  (exists ($noLine{$tsplit[0]})) {
+          $tsplit[1] = $noLineCounter;
           $noLineCounter = $noLineCounter + 1;
  }
  ########################################Begin sorting and printing
  #################################################
- if  (exists ($bridgeCodes{$csplit[0]}))
+ if  (exists ($bridgeCodes{$tsplit[0]}))
    {
    if ($c = $idotcommands{$tok[0]})
      {
-     print OUT2 "$in[0],$in[1],$in[2],$in[3],$Icode$csplit[1]$fsplit[1],$c\n";
-     print OUT1 "$in[0],$in[1],$in[2],$in[3], $Icode$csplit[1], $c, $fsplit[1]\n";
+     print OUT2 "$in[0],$in[1],$in[2],$in[3],$Icode$tsplit[1]$fsplit[1],$c\n";
+     print OUT1 "$in[0],$in[1],$in[2],$in[3], $Icode$tsplit[1], $c, $fsplit[1]\n";
      }
    else
      {
-     print OUT2 "$in[0],$in[1],$in[2],$in[3],$Icode$csplit[1]$fsplit[1],\n";
-     print OUT1 "$in[0],$in[1],$in[2],$in[3], $Icode$csplit[1],,$fsplit[1]\n";
+     print OUT2 "$in[0],$in[1],$in[2],$in[3],$Icode$tsplit[1]$fsplit[1],\n";
+     print OUT1 "$in[0],$in[1],$in[2],$in[3], $Icode$tsplit[1],,$fsplit[1]\n";
      }
    }
  elsif (exists ($symbolCodes{$Icode}))  # Check against symbolCodes list for cells
    {
    if ($c = $idotcommands{$tok[0]})
      {
-     print OUT4 "$in[0],$in[1],$in[2],$in[3],$Icode$csplit[1]$fsplit[1],$c\n";
-     print OUT1 "$in[0],$in[1],$in[2],$in[3], $Icode$csplit[1], $c, $fsplit[1]\n";
+     print OUT4 "$in[0],$in[1],$in[2],$in[3],$Icode$tsplit[1]$fsplit[1],$c\n";
+     print OUT1 "$in[0],$in[1],$in[2],$in[3], $Icode$tsplit[1], $c, $fsplit[1]\n";
      }
    else
      {
-     print OUT4 "$in[0],$in[1],$in[2],$in[3],$Icode$csplit[1]$fsplit[1],\n";
-     print OUT1 "$in[0],$in[1],$in[2],$in[3], $Icode$csplit[1],,$fsplit[1]\n";
+     print OUT4 "$in[0],$in[1],$in[2],$in[3],$Icode$tsplit[1]$fsplit[1],\n";
+     print OUT1 "$in[0],$in[1],$in[2],$in[3], $Icode$tsplit[1],,$fsplit[1]\n";
      }
    }
  elsif (exists ($lineCodes{$Icode}))
    {
    if ($c = $idotcommands{$tok[0]})
      {
-     print OUT3 "$in[0],$in[1],$in[2],$in[3],$Icode$csplit[1]$fsplit[1],$c\n";
-     print OUT1 "$in[0],$in[1],$in[2],$in[3], $Icode$csplit[1], $c, $fsplit[1]\n";
+     print OUT3 "$in[0],$in[1],$in[2],$in[3],$Icode$tsplit[1]$fsplit[1],$c\n";
+     print OUT1 "$in[0],$in[1],$in[2],$in[3], $Icode$tsplit[1], $c, $fsplit[1]\n";
      }
    else
      {
-     print OUT3 "$in[0],$in[1],$in[2],$in[3],$Icode$csplit[1]$fsplit[1],\n";
-     print OUT1 "$in[0],$in[1],$in[2],$in[3], $Icode$csplit[1],,$fsplit[1]\n";
+     print OUT3 "$in[0],$in[1],$in[2],$in[3],$Icode$tsplit[1]$fsplit[1],\n";
+     print OUT1 "$in[0],$in[1],$in[2],$in[3], $Icode$tsplit[1],,$fsplit[1]\n";
      }
    }
 
@@ -2312,8 +2312,8 @@ while (<IN>) {
 #print OUT5 "ssplit[0] code and line no.    = $ssplit[0]\n";
 #print OUT5 "ssplit[1] line code            = $ssplit[1]\n";
 #print OUT5 "tok[0] line code               = $tok[0]\n";
-#print OUT5 "csplit[0] alpha code           = $csplit[0]\n";
-#print OUT5 "csplit[1] line number          = $csplit[1]\n";
+#print OUT5 "tsplit[0] alpha code           = $tsplit[0]\n";
+#print OUT5 "tsplit[1] line number          = $tsplit[1]\n";
 #print OUT1 "hold                           = $hold\n";
 #print OUT5 "c linecode                     = $c\n";
 #print OUT5 "Icode idot code, line no.      = $Icode\n\n\n\n\n";
@@ -2338,8 +2338,8 @@ while (<IN>) {
  $ssplit[1]="";
  $tok[0]="";
  # $tok[1]="";
- $csplit[0]="";
- $csplit[1]="";
+ $tsplit[0]="";
+ $tsplit[1]="";
 
 
 }
