@@ -2217,7 +2217,7 @@ while (<IN>) {
    # \w is alpha or numeric - \W is non alpha or numeric:
    # $secondSplit[0] = the 3 Letter Code and Line Number
    # $secondSplit[1] = the Line Code
- $tok[0] = $secondSplit[1]; #added lv:
+ $lineCode = $secondSplit[1]; #added lv:
    # $tok[0} = the Line Code
    # $tok[1] = "$secondSplit[0] $firstSplit[1]"; #added lv:
    # $tok[1] = the code and the comment, no line code
@@ -2237,7 +2237,7 @@ while (<IN>) {
 #print OUT5 "firstSplit[1] comment              = $firstSplit[1]\n";
 #print OUT5 "secondSplit[0] code and line no.    = $secondSplit[0]\n";
 #print OUT5 "secondSplit[1] line code            = $secondSplit[1]\n";
-#print OUT5 "tok[0] line code               = $tok[0]\n";
+#print OUT5 "lineCode line code               = $lineCode\n";
 #print OUT5 "thirdSplit[0] alpha code           = $thirdSplit[0]\n";
 #print OUT5 "thirdSplit[1] line number          = $thirdSplit[1]\n";
 #print OUT5 "hold                           = $hold\n";
@@ -2259,7 +2259,7 @@ while (<IN>) {
  #################################################
  if  (exists ($bridgeCodes{$thirdSplit[0]}))
    {
-   if ($c = $idotcommands{$tok[0]})
+   if ($c = $idotcommands{$lineCode})
      {
      print OUT2 "$in[0],$in[1],$in[2],$in[3],$Icode$thirdSplit[1]$firstSplit[1],$c\n";
      print OUT1 "$in[0],$in[1],$in[2],$in[3], $Icode$thirdSplit[1], $c, $firstSplit[1]\n";
@@ -2272,7 +2272,7 @@ while (<IN>) {
    }
  elsif (exists ($symbolCodes{$Icode}))  # Check against symbolCodes list for cells
    {
-   if ($c = $idotcommands{$tok[0]})
+   if ($c = $idotcommands{$lineCode})
      {
      print OUT4 "$in[0],$in[1],$in[2],$in[3],$Icode$thirdSplit[1]$firstSplit[1],$c\n";
      print OUT1 "$in[0],$in[1],$in[2],$in[3], $Icode$thirdSplit[1], $c, $firstSplit[1]\n";
@@ -2285,7 +2285,7 @@ while (<IN>) {
    }
  elsif (exists ($lineCodes{$Icode}))
    {
-   if ($c = $idotcommands{$tok[0]})
+   if ($c = $idotcommands{$lineCode})
      {
      print OUT3 "$in[0],$in[1],$in[2],$in[3],$Icode$thirdSplit[1]$firstSplit[1],$c\n";
      print OUT1 "$in[0],$in[1],$in[2],$in[3], $Icode$thirdSplit[1], $c, $firstSplit[1]\n";
@@ -2311,7 +2311,7 @@ while (<IN>) {
 #print OUT5 "firstSplit[1] comment              = $firstSplit[1]\n";
 #print OUT5 "secondSplit[0] code and line no.    = $secondSplit[0]\n";
 #print OUT5 "secondSplit[1] line code            = $secondSplit[1]\n";
-#print OUT5 "tok[0] line code               = $tok[0]\n";
+#print OUT5 "lineCode line code               = $lineCode\n";
 #print OUT5 "thirdSplit[0] alpha code           = $thirdSplit[0]\n";
 #print OUT5 "thirdSplit[1] line number          = $thirdSplit[1]\n";
 #print OUT1 "hold                           = $hold\n";
@@ -2336,7 +2336,7 @@ while (<IN>) {
  $firstSplit[1]="";
  $secondSplit[0]="";
  $secondSplit[1]="";
- $tok[0]="";
+ $lineCode="";
  # $tok[1]="";
  $thirdSplit[0]="";
  $thirdSplit[1]="";
