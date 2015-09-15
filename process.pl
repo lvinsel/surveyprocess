@@ -2208,92 +2208,92 @@ while (<IN>) {
    #$in[2] = easting
    #$in[3] = elevation
    #$in[4] = full description (3 Letter Code-Line Number-Line Code-Comment)
- my @fsplit = split(/\s+/,$in[4],2); #added lv - this separates the Codes from the Comments
+ my @firstSplit = split(/\s+/,$in[4],2); #added lv - this separates the Codes from the Comments
    #using the first whitespace as the separator so:
-   #$fsplit[0] = 3 Letter Code-Line Number-Line Code
-   #$fsplit[1] = the Comment
- my @ssplit = ($fsplit[0] =~ /(\w+)*(\W*)/); #added lv - this separates the 3 Letter Code and
+   #$firstSplit[0] = 3 Letter Code-Line Number-Line Code
+   #$firstSplit[1] = the Comment
+ my @secondSplit = ($firstSplit[0] =~ /(\w+)*(\W*)/); #added lv - this separates the 3 Letter Code and
    # line number from the line coding symbol
    # \w is alpha or numeric - \W is non alpha or numeric:
-   # $ssplit[0] = the 3 Letter Code and Line Number
-   # $ssplit[1] = the Line Code
- $tok[0] = $ssplit[1]; #added lv:
+   # $secondSplit[0] = the 3 Letter Code and Line Number
+   # $secondSplit[1] = the Line Code
+ $tok[0] = $secondSplit[1]; #added lv:
    # $tok[0} = the Line Code
-   # $tok[1] = "$ssplit[0] $fsplit[1]"; #added lv:
+   # $tok[1] = "$secondSplit[0] $firstSplit[1]"; #added lv:
    # $tok[1] = the code and the comment, no line code
- my @tsplit = ($ssplit[0] =~ /(\w\w\w)(\d*)/); # this is for QAQC
-   # $tsplit[0] = 3 letter code
-   # $tsplit[1] = line number
- if (length($fsplit[1])>0) {##############lv
-#  $fsplit[1]="\;$fsplit[1]"; ########lv - adds the semi-colon before the Comment
+ my @thirdSplit = ($secondSplit[0] =~ /(\w\w\w)(\d*)/); # this is for QAQC
+   # $thirdSplit[0] = 3 letter code
+   # $thirdSplit[1] = line number
+ if (length($firstSplit[1])>0) {##############lv
+#  $firstSplit[1]="\;$firstSplit[1]"; ########lv - adds the semi-colon before the Comment
  }
- $Icode=$pointCodes{$tsplit[0]}; ## if the three letter code matches any of the codes
+ $Icode=$pointCodes{$thirdSplit[0]}; ## if the three letter code matches any of the codes
 
 ##############Test Section
-#print OUT1 "alksdf;alkdj   $pointCodes{$tsplit[0]}\n";
+#print OUT1 "alksdf;alkdj   $pointCodes{$thirdSplit[0]}\n";
 #print OUT5 "\n\n\n\in[0] point number      = $in[0]\n";
 #print OUT5 "in[4] full code & comment      = $in[4]\n";
-#print OUT5 "fsplit[0] full code no comment = $fsplit[0]\n";
-#print OUT5 "fsplit[1] comment              = $fsplit[1]\n";
-#print OUT5 "ssplit[0] code and line no.    = $ssplit[0]\n";
-#print OUT5 "ssplit[1] line code            = $ssplit[1]\n";
+#print OUT5 "firstSplit[0] full code no comment = $firstSplit[0]\n";
+#print OUT5 "firstSplit[1] comment              = $firstSplit[1]\n";
+#print OUT5 "secondSplit[0] code and line no.    = $secondSplit[0]\n";
+#print OUT5 "secondSplit[1] line code            = $secondSplit[1]\n";
 #print OUT5 "tok[0] line code               = $tok[0]\n";
-#print OUT5 "tsplit[0] alpha code           = $tsplit[0]\n";
-#print OUT5 "tsplit[1] line number          = $tsplit[1]\n";
+#print OUT5 "thirdSplit[0] alpha code           = $thirdSplit[0]\n";
+#print OUT5 "thirdSplit[1] line number          = $thirdSplit[1]\n";
 #print OUT5 "hold                           = $hold\n";
 #print OUT5 "c linecode                     = $c\n";
 #print OUT5 "Icode idot code, line no.      = $Icode\n\n";
         #####################
         #Material type prefix
-        if  (exists ($typePrefix{$tsplit[0]})) {
-          $prefix = $typePrefix{$tsplit[0]};
-          $tsplit[1] = "$prefix$tsplit[1]";
+        if  (exists ($typePrefix{$thirdSplit[0]})) {
+          $prefix = $typePrefix{$thirdSplit[0]};
+          $thirdSplit[1] = "$prefix$thirdSplit[1]";
  }
  ########################################
  #NoLine fix
- if  (exists ($noLine{$tsplit[0]})) {
-          $tsplit[1] = $noLineCounter;
+ if  (exists ($noLine{$thirdSplit[0]})) {
+          $thirdSplit[1] = $noLineCounter;
           $noLineCounter = $noLineCounter + 1;
  }
  ########################################Begin sorting and printing
  #################################################
- if  (exists ($bridgeCodes{$tsplit[0]}))
+ if  (exists ($bridgeCodes{$thirdSplit[0]}))
    {
    if ($c = $idotcommands{$tok[0]})
      {
-     print OUT2 "$in[0],$in[1],$in[2],$in[3],$Icode$tsplit[1]$fsplit[1],$c\n";
-     print OUT1 "$in[0],$in[1],$in[2],$in[3], $Icode$tsplit[1], $c, $fsplit[1]\n";
+     print OUT2 "$in[0],$in[1],$in[2],$in[3],$Icode$thirdSplit[1]$firstSplit[1],$c\n";
+     print OUT1 "$in[0],$in[1],$in[2],$in[3], $Icode$thirdSplit[1], $c, $firstSplit[1]\n";
      }
    else
      {
-     print OUT2 "$in[0],$in[1],$in[2],$in[3],$Icode$tsplit[1]$fsplit[1],\n";
-     print OUT1 "$in[0],$in[1],$in[2],$in[3], $Icode$tsplit[1],,$fsplit[1]\n";
+     print OUT2 "$in[0],$in[1],$in[2],$in[3],$Icode$thirdSplit[1]$firstSplit[1],\n";
+     print OUT1 "$in[0],$in[1],$in[2],$in[3], $Icode$thirdSplit[1],,$firstSplit[1]\n";
      }
    }
  elsif (exists ($symbolCodes{$Icode}))  # Check against symbolCodes list for cells
    {
    if ($c = $idotcommands{$tok[0]})
      {
-     print OUT4 "$in[0],$in[1],$in[2],$in[3],$Icode$tsplit[1]$fsplit[1],$c\n";
-     print OUT1 "$in[0],$in[1],$in[2],$in[3], $Icode$tsplit[1], $c, $fsplit[1]\n";
+     print OUT4 "$in[0],$in[1],$in[2],$in[3],$Icode$thirdSplit[1]$firstSplit[1],$c\n";
+     print OUT1 "$in[0],$in[1],$in[2],$in[3], $Icode$thirdSplit[1], $c, $firstSplit[1]\n";
      }
    else
      {
-     print OUT4 "$in[0],$in[1],$in[2],$in[3],$Icode$tsplit[1]$fsplit[1],\n";
-     print OUT1 "$in[0],$in[1],$in[2],$in[3], $Icode$tsplit[1],,$fsplit[1]\n";
+     print OUT4 "$in[0],$in[1],$in[2],$in[3],$Icode$thirdSplit[1]$firstSplit[1],\n";
+     print OUT1 "$in[0],$in[1],$in[2],$in[3], $Icode$thirdSplit[1],,$firstSplit[1]\n";
      }
    }
  elsif (exists ($lineCodes{$Icode}))
    {
    if ($c = $idotcommands{$tok[0]})
      {
-     print OUT3 "$in[0],$in[1],$in[2],$in[3],$Icode$tsplit[1]$fsplit[1],$c\n";
-     print OUT1 "$in[0],$in[1],$in[2],$in[3], $Icode$tsplit[1], $c, $fsplit[1]\n";
+     print OUT3 "$in[0],$in[1],$in[2],$in[3],$Icode$thirdSplit[1]$firstSplit[1],$c\n";
+     print OUT1 "$in[0],$in[1],$in[2],$in[3], $Icode$thirdSplit[1], $c, $firstSplit[1]\n";
      }
    else
      {
-     print OUT3 "$in[0],$in[1],$in[2],$in[3],$Icode$tsplit[1]$fsplit[1],\n";
-     print OUT1 "$in[0],$in[1],$in[2],$in[3], $Icode$tsplit[1],,$fsplit[1]\n";
+     print OUT3 "$in[0],$in[1],$in[2],$in[3],$Icode$thirdSplit[1]$firstSplit[1],\n";
+     print OUT1 "$in[0],$in[1],$in[2],$in[3], $Icode$thirdSplit[1],,$firstSplit[1]\n";
      }
    }
 
@@ -2307,13 +2307,13 @@ while (<IN>) {
 #print OUT5 "in[2] easting                  = $in[2]\n";
 #print OUT5 "in[3] elevation                = $in[3]\n";
 #print OUT5 "in[4] full code & comment      = $in[4]\n";
-#print OUT5 "fsplit[0] full code no comment = $fsplit[0]\n";
-#print OUT5 "fsplit[1] comment              = $fsplit[1]\n";
-#print OUT5 "ssplit[0] code and line no.    = $ssplit[0]\n";
-#print OUT5 "ssplit[1] line code            = $ssplit[1]\n";
+#print OUT5 "firstSplit[0] full code no comment = $firstSplit[0]\n";
+#print OUT5 "firstSplit[1] comment              = $firstSplit[1]\n";
+#print OUT5 "secondSplit[0] code and line no.    = $secondSplit[0]\n";
+#print OUT5 "secondSplit[1] line code            = $secondSplit[1]\n";
 #print OUT5 "tok[0] line code               = $tok[0]\n";
-#print OUT5 "tsplit[0] alpha code           = $tsplit[0]\n";
-#print OUT5 "tsplit[1] line number          = $tsplit[1]\n";
+#print OUT5 "thirdSplit[0] alpha code           = $thirdSplit[0]\n";
+#print OUT5 "thirdSplit[1] line number          = $thirdSplit[1]\n";
 #print OUT1 "hold                           = $hold\n";
 #print OUT5 "c linecode                     = $c\n";
 #print OUT5 "Icode idot code, line no.      = $Icode\n\n\n\n\n";
@@ -2332,14 +2332,14 @@ while (<IN>) {
  $prefix="";
 
 
- $fsplit[0]="";
- $fsplit[1]="";
- $ssplit[0]="";
- $ssplit[1]="";
+ $firstSplit[0]="";
+ $firstSplit[1]="";
+ $secondSplit[0]="";
+ $secondSplit[1]="";
  $tok[0]="";
  # $tok[1]="";
- $tsplit[0]="";
- $tsplit[1]="";
+ $thirdSplit[0]="";
+ $thirdSplit[1]="";
 
 
 }
