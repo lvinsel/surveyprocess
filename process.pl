@@ -2194,27 +2194,21 @@ open(OUT3,">${filename}_ptln.cor");
 open(OUT4,">${filename}_cell.cor");
 # open(OUT5,">${filename}_qc_spots.cor");
 # open(OUT6,">${filename}_topo.cor");
-# if ($#ARGV>0) {
-#  $_nextAutogenPtNum=$ARGV[1];
-# }
-# else {
-#  $_nextAutogenPtNum=100000;
-# }
 while (<IN>) {
  $curIsString=0;
  @in = split(/,/, substr(uc, 0, -1), 5); #note: the substr forces text to be uppercase; the split creates:
-   #$in[0] = point number
-   #$in[1] = northing
-   #$in[2] = easting
-   #$in[3] = elevation
-   #$in[4] = full description (3 Letter Code-Line Number-Line Code-Comment)
+   pointNo       = $in[0] # point number
+   northing      = $in[1] # northing
+   easting       = $in[2] # easting
+   elevation     = $in[3] # elevation
+   fullFieldCode = $in[4] # full description (3 Letter Code-Line Number-Line Code-Comment)
  my @firstSplit = split(/\s+/,$in[4],2); #added lv - this separates the Codes from the Comments
    #using the first whitespace as the separator so:
    #$firstSplit[0] = 3 Letter Code-Line Number-Line Code
    #$firstSplit[1] = the Comment
- my @secondSplit = ($firstSplit[0] =~ /(\w+)*(\W*)/); #added lv - this separates the 3 Letter Code and
+ my @secondSplit = split(/\W+/,$firstSplit[0],2); #added lv - this separates the 3 Letter Code and
    # line number from the line coding symbol
-   # \w is alpha or numeric - \W is non alpha or numeric:
+   # using the first non-numeric/non-alpha character as the separator so:
    # $secondSplit[0] = the 3 Letter Code and Line Number
    # $secondSplit[1] = the Line Code
  $lineCode = $secondSplit[1]; #added lv:
