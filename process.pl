@@ -2233,9 +2233,9 @@ while (<IN>) {
 #print OUT5 "hold                           = $hold\n";
 #print OUT5 "c linecode                     = $c\n";
 #print OUT5 "IdotCode idot code, line no.      = $IdotCode\n\n";
-        #####################
-        #Material type prefix
-        if  (exists ($typePrefix{$mpsCode})) {
+#####################
+#Material type prefix
+  if  (exists ($typePrefix{$mpsCode})) {
           $prefix = $typePrefix{$mpsCode};
           $lineNo = "$prefix$lineNo";
  }
