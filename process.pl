@@ -2219,7 +2219,7 @@ while (<IN>) {
    # $ssplit[1] = the Line Code
  $tok[0] = $ssplit[1]; #added lv:
    # $tok[0} = the Line Code
- $tok[1] = "$ssplit[0] $fsplit[1]"; #added lv:
+   # $tok[1] = "$ssplit[0] $fsplit[1]"; #added lv:
    # $tok[1] = the code and the comment, no line code
  my @csplit = ($ssplit[0] =~ /(\w\w\w)(\d*)/); # this is for QAQC
    # $csplit[0] = 3 letter code
@@ -2238,7 +2238,6 @@ while (<IN>) {
 #print OUT5 "ssplit[0] code and line no.    = $ssplit[0]\n";
 #print OUT5 "ssplit[1] line code            = $ssplit[1]\n";
 #print OUT5 "tok[0] line code               = $tok[0]\n";
-#print OUT5 "tok[1] code, line no., comment = $tok[1]\n";
 #print OUT5 "csplit[0] alpha code           = $csplit[0]\n";
 #print OUT5 "csplit[1] line number          = $csplit[1]\n";
 #print OUT5 "hold                           = $hold\n";
@@ -2313,7 +2312,6 @@ while (<IN>) {
 #print OUT5 "ssplit[0] code and line no.    = $ssplit[0]\n";
 #print OUT5 "ssplit[1] line code            = $ssplit[1]\n";
 #print OUT5 "tok[0] line code               = $tok[0]\n";
-#print OUT5 "tok[1] code, line no., comment = $tok[1]\n";
 #print OUT5 "csplit[0] alpha code           = $csplit[0]\n";
 #print OUT5 "csplit[1] line number          = $csplit[1]\n";
 #print OUT1 "hold                           = $hold\n";
@@ -2339,7 +2337,7 @@ while (<IN>) {
  $ssplit[0]="";
  $ssplit[1]="";
  $tok[0]="";
- $tok[1]="";
+ # $tok[1]="";
  $csplit[0]="";
  $csplit[1]="";
 
