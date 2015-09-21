@@ -844,16 +844,12 @@ $oflag = "XXXoutlierXXX";
 #####################
 # Some Global Vars
 $figname="";
-$curPtNum="";
-$lastPtNum="";
-$lastFigname="";
 %activeStrings=();
 $curIsString=0;
 $lastWasString=0;
 $comment=""; #lv added
-$globalcomment="";
-undef @ssplit;
-##### added lv to make comment $fsplit[1] available to processpoint()
+undef @secondSplit;
+##### added lv to make comment $comment available to processpoint()
 #####################
 
 
@@ -881,37 +877,44 @@ else {
 while (<IN>) {
  $curIsString=0;
  @in = split(/,/, substr(uc, 0, -1), 5); #note: forces text to be uppercase
- my @fsplit = split(/\s+/,$in[4],2); #added lv - this separates the code from the comments
-     #using the first? whitespace as the separator so $fplit[0] is the full code and $fsplit[1] = the comment
-        my @ssplit = ($fsplit[0] =~ /(\w+)*(\W+)/);
-#    print OUT "ssplit[0] = $ssplit[0]\n";
-#    print OUT "ssplit[1] = $ssplit[1]\n";
-    if ($ssplit[1]) {
- } else {
-  $ssplit[0] = $fsplit[0];
-  $ssplit[1] = "";
+   $pointNo         = $in[0] # point number
+   $northing        = $in[1] # northing
+   $easting         = $in[2] # easting
+   $elevation       = $in[3] # elevation
+   $fullDescription = $in[4] # full description (3 Letter Code-Line Number-Line Code-Comment)
+ my @firstSplit = split(/\s+/,$fullDescription,2); #added lv - this separates the code from the comments
+     #using the first? whitespace as the separator so:
+     $fullCode    = $firstSplit[0] # 3 Letter Code-Line Number-Line Code
+     $comment     = $firstSplit[1] # the Comment
+ my @secondSplit = split(/\W+/,$fullCode,2); # This separates the 3 letter Code and the line
+     # number from the line coding symbol
+     # using the first non-numeric/non-alpha character as the separator so:
+     #    print OUT "secondSplit[0] = $secondSplit[0]\n";
+     #    print OUT "secondSplit[1] = $secondSplit[1]\n";
+     $mpsCodeAndLineNo = $secondSplit[0] # the 3 Letter Code and Line Number
+     $lineCode         = $secondSplit[1] # the Line Code
+ if ($lineCode) {
  }
-# print OUT "ssplit[0] = $ssplit[0]\n";
-# print OUT "ssplit[1] = $ssplit[1]\n";
-    #added lv - this separates the 3 letter and
-    # line number from the line coding symbol; \w is alpha
-    # or numeric - \W is non alpha or numeric
-    # $ssplit[0] is the code and line number; ssplit[1] is the line code
- $tok[0] = $ssplit[1]; #added lv - this is the line code
- $tok[1] = "$ssplit[0] $fsplit[1]"; #added lv - this is the code and the comment, no line code
- # @tok = split(/\s+/, $in[4], 2);
- my @csplit = ($ssplit[0] =~ /(\w\w\w)(\d*)/);
+else {
+  $mpsCodeAndLineNo = $fullCode;
+  $lineCode = "";
+}
+# print OUT "mpsCodeAndLineNo = $mpsCodeAndLineNo\n";
+# print OUT "secondSplit[1] = $lineCode\n";
+# this separates the 3 letter and
+# line number from the line coding symbol; \w is alpha
+# or numeric - \W is non alpha or numeric
+# $mpsCodeAndLineNo is the code and line number; secondSplit[1] is the line code
+ $tok[0] = $lineCode; #added lv - this is the line code
+ $tok[1] = "$mpsCodeAndLineNo $comment"; #added lv - this is the code and the comment, no line code
+ # @tok = split(/\s+/, $fullDescription, 2);
+ my @csplit = ($mpsCodeAndLineNo =~ /(\w\w\w)(\d*)/);
 
 
-########################test for comment
-# if (length($fsplit[1])>0) {##############lv  test for comment
-#  $fsplit[1]="\;$fsplit[1]";########lv
-#  $globalcomment = $fsplit[1]; #### added lv to make comment $fsplit[1] available to processpoint()
-# }
 ##### 1.A. cHANGES TO fIELD cOMMENT idot MISC CODES
-# if ($fsplit[1] =~ /\d[3]/)  {
- if ($fsplit[1] =~ /\d\d\d/)  {
-#  print OUT "fsplit[1] = $fsplit[1]\n";
+# if ($comment =~ /\d[3]/)  {
+ if ($comment =~ /\d\d\d/)  {
+#  print OUT "firstSplit[1] = $comment\n";
 #  print OUT "var1 = $&\n";
   $possibleMiscCode = $&;
   $description = $IDOTmiscCodes{$possibleMiscCode};
@@ -919,16 +922,16 @@ while (<IN>) {
 #  print OUT "description = $description\n";
  }
  if ($description) {
-  $fieldComment = $fsplit[1];
+  $fieldComment = $comment;
 #  print OUT "fieldcomment1 = $fieldComment\n";
   $fieldComment =~ s/$possibleMiscCode/$description/;
 #  print OUT "fieldcomment2 = $fieldComment\n";
  } else {
-  $fieldComment = $fsplit[1];
+  $fieldComment = $comment;
 #  print OUT "fieldcomment3 = $fieldComment\n";
  }
 #####1.B sEARCH FOR DELETEABLE CODES
- if ($in[4] =~ /RANDOM|CKH|CKV/) {
+ if ($fullDescription =~ /RANDOM|CKH|CKV/) {
   $commentFlag = $cflag;
  }
 ####2 SEARCH FOR REQUIRED COMMENTS
@@ -940,7 +943,7 @@ while (<IN>) {
 # }
 
 ####3.A. sEARCH FOR ALPHA POINT NUMBERS
-# if ($in[0] =~ /[^0-9]/) {
+# if ($pointNo =~ /[^0-9]/) {
 ##  $commentFlag = $aflag;
 # }
 
@@ -953,45 +956,45 @@ while (<IN>) {
 
 
 #### 4 lINECODEl
- if ($ssplit[1] =~ /\.\./) {   #END LINE
+ if ($lineCode =~ /\.\./) {   #END LINE
 #  print OUT "a;lskdjfl\n";
-#  print OUT "ssplit[1] = $ssplit[1]\n";
+#  print OUT "secondSplit[1] = $lineCode\n";
   $linecode = ")";
  }
- if ($ssplit[1] =~ /^\.$/) { #BEGIN LINE
+ if ($lineCode =~ /^\.$/) { #BEGIN LINE
   $linecode = "(";
  }
- if ($ssplit[1] =~ /-/) { #PC or PT (substitiute for OC);Graef Curve 20110610
+ if ($lineCode =~ /-/) { #PC or PT (substitiute for OC);Graef Curve 20110610
   $linecode = "%";
  }
- if ($ssplit[1] =~ /@/) { #END LINE
+ if ($lineCode =~ /@/) { #END LINE
   $linecode = ")";
  }
- #if ($ssplit[1] =~ /-/) { #PC CURVE
+ #if ($lineCode =~ /-/) { #PC CURVE
  # $linecode = "-";
  #}
- if ($ssplit[1] =~ /\+/) { #CLOSE FIGURE
+ if ($lineCode =~ /\+/) { #CLOSE FIGURE
   $linecode = "+";
  }
  $comment = " $mcomment $fieldComment $commentFlag";
- $checkInCode = "$ssplit[0]$linecode$comment";
+ $checkInCode = "$mpsCodeAndLineNo$linecode$comment";
  $checkInCode =~ s/  / /g;
  $checkInCode =~ s/  / /g;
 
 ########################### Print Section
 
- print OUT "$in[0],$in[1],$in[2],$in[3],$checkInCode\n";
+ print OUT "$pointNo,$northing,$easting,$elevation,$checkInCode\n";
 
 ####################### TEST SECTION
-# print OUT "in[0] point number             = $in[0]\n";
-# print OUT "in[1] northing                 = $in[1]\n";
-# print OUT "in[2] easting                  = $in[2]\n";
-# print OUT "in[3] elevation                = $in[3]\n";
-# print OUT "in[4] full code & comment      = $in[4]\n";
-# print OUT "fsplit[0] full code no comment = $fsplit[0]\n";
-# print OUT "fsplit[1] comment              = $fsplit[1]\n";
-# print OUT "ssplit[0] code and line no.    = $ssplit[0]\n";
-# print OUT "ssplit[1] line code            = $ssplit[1]\n";
+# print OUT "in[0] point number             = $pointNo\n";
+# print OUT "in[1] northing                 = $northing\n";
+# print OUT "in[2] easting                  = $easting\n";
+# print OUT "in[3] elevation                = $elevation\n";
+# print OUT "fullDescription full code & comment      = $fullDescription\n";
+# print OUT "firstSplit[0] full code no comment = $fullCode\n";
+# print OUT "firstSplit[1] comment              = $comment\n";
+# print OUT "mpsCodeAndLineNo code and line no.    = $mpsCodeAndLineNo\n";
+# print OUT "secondSplit[1] line code            = $lineCode\n";
 # print OUT "tok[0] line code               = $tok[0]\n";
 # print OUT "tok[1] code, line no., comment = $tok[1]\n";
 # print OUT "csplit[0] code                 = $csplit[0]\n";
@@ -1018,15 +1021,12 @@ while (<IN>) {
   $activeStrings{$figname}=1; #make sure the list contains an entry for this string
  }
  $lastWasString=$curIsString;
- $lastFigname=$figname;
- $lastPtNum=$in[0];
  $figname="";
  $comment="";  #### added lv
- $globalcomment="";  #### added lv to make comment $fsplit[1] available to processpoint()
- $ssplit[0]="";
- $fsplit[0]="";
- $ssplit[1]="";
- $fsplit[1]="";
+ $mpsCodeAndLineNo="";
+ $fullCode="";
+ $lineCode="";
+ $comment="";
  $csplit[0]="";
  $csplit[1]="";
  $possibleMiscCode="";
