@@ -875,65 +875,64 @@ else {
  $_nextAutogenPtNum=100000;
 }
 while (<IN>) {
- $curIsString=0;
- @in = split(/,/, substr(uc, 0, -1), 5); #note: forces text to be uppercase
-   $pointNo         = $in[0]; # point number
-   $northing        = $in[1]; # northing
-   $easting         = $in[2]; # easting
-   $elevation       = $in[3]; # elevation
-   $fullDescription = $in[4]; # full description (3 Letter Code-Line Number-Line Code-Comment)
- my @firstSplit = split(/\s+/,$fullDescription,2); #added lv - this separates the code from the comments
-     #using the first? whitespace as the separator so:
-     $fullCode    = $firstSplit[0]; # 3 Letter Code-Line Number-Line Code
-     $comment     = $firstSplit[1]; # the Comment
- my @secondSplit = split(/\W+/,$fullCode,2); # This separates the 3 letter Code and the line
-     # number from the line coding symbol
-     # using the first non-numeric/non-alpha character as the separator so:
-     #    print OUT "secondSplit[0] = $secondSplit[0]\n";
-     #    print OUT "secondSplit[1] = $secondSplit[1]\n";
-     $mpsCodeAndLineNo = $secondSplit[0]; # the 3 Letter Code and Line Number
-     $lineCode         = $secondSplit[1]; # the Line Code
- if ($lineCode) {
- }
-else {
-  $mpsCodeAndLineNo = $fullCode;
-  $lineCode = "";
-}
-# print OUT "mpsCodeAndLineNo = $mpsCodeAndLineNo\n";
-# print OUT "secondSplit[1] = $lineCode\n";
-# this separates the 3 letter and
-# line number from the line coding symbol; \w is alpha
-# or numeric - \W is non alpha or numeric
-# $mpsCodeAndLineNo is the code and line number; secondSplit[1] is the line code
-# $tok[0] = $lineCode; #added lv - this is the line code
-# $tok[1] = "$mpsCodeAndLineNo $comment"; #added lv - this is the code and the comment, no line code
-# @tok = split(/\s+/, $fullDescription, 2);
-my @thirdSplit = ($mpsCodeAndLineNo =~ /(\w\w\w)(\d*)/);
-	$mpsCode  = $thirdSplit[0];
-	$lineNo   = $thirdSplit[1];
-##### 1.A. cHANGES TO fIELD cOMMENT idot MISC CODES
-# if ($comment =~ /\d[3]/)  {
- if ($comment =~ /\d\d\d/)  {
-#  print OUT "firstSplit[1] = $comment\n";
-#  print OUT "var1 = $&\n";
-  $possibleMiscCode = $&;
-  $description = $IDOTmiscCodes{$possibleMiscCode};
-#  print OUT "possibleMiscCode = $possibleMiscCode\n";
-#  print OUT "description = $description\n";
- }
- if ($description) {
-  $fieldComment = $comment;
-#  print OUT "fieldcomment1 = $fieldComment\n";
-  $fieldComment =~ s/$possibleMiscCode/$description/;
-#  print OUT "fieldcomment2 = $fieldComment\n";
- } else {
-  $fieldComment = $comment;
-#  print OUT "fieldcomment3 = $fieldComment\n";
- }
+  $curIsString=0;
+  @in = split(/,/, substr(uc, 0, -1), 5); #note: forces text to be uppercase
+    $pointNo         = $in[0]; # point number
+    $northing        = $in[1]; # northing
+    $easting         = $in[2]; # easting
+    $elevation       = $in[3]; # elevation
+    $fullDescription = $in[4]; # full description (3 Letter Code-Line Number-Line Code-Comment)
+  my @firstSplit = split(/\s+/,$fullDescription,2); #added lv - this separates the code from the comments
+    #using the first? whitespace as the separator so:
+    $fullCode    = $firstSplit[0]; # 3 Letter Code-Line Number-Line Code
+    $comment     = $firstSplit[1]; # the Comment
+  my @secondSplit = split(/\W+/,$fullCode,2); # This separates the 3 letter Code and the line
+    # number from the line coding symbol
+    # using the first non-numeric/non-alpha character as the separator so:
+    #    print OUT "secondSplit[0] = $secondSplit[0]\n";
+    #    print OUT "secondSplit[1] = $secondSplit[1]\n";
+    $mpsCodeAndLineNo = $secondSplit[0]; # the 3 Letter Code and Line Number
+    $lineCode         = $secondSplit[1]; # the Line Code
+  #  test to see if a line code exists
+  if ($lineCode) {
+  }
+  else {
+    $mpsCodeAndLineNo = $fullCode;
+    $lineCode = "";
+  }
+  my @thirdSplit = ($mpsCodeAndLineNo =~ /(\w\w\w)(\d*)/);
+    $mpsCode  = $thirdSplit[0];
+    $lineNo   = $thirdSplit[1];
+#---------------------------------------------------------------
+#---------------------------------------------------------------
+# IDOT MISC CODES
+# This section tests to see if anyone used the IDOT Misc Codes as comments
+# if they did it pulls the text from the IDOT code list and inserts it into
+# the comment.
+# No one has used this function to-date so I'm disabling it for now.
+   # if ($comment =~ /\d\d\d/)  {
+   #   $possibleMiscCode = $&;
+   #   $description = $IDOTmiscCodes{$possibleMiscCode};
+   # }
+   # if ($description) {
+   #   $fieldComment = $comment;
+   #   $fieldComment =~ s/$possibleMiscCode/$description/;
+   # }
+   # else {
+   # $fieldComment = $comment;
+   # }
+#------------------------------------------
+#---------------------------------------------
+#---------------------------------------------
+#---------------------------------------------
 #####1.B sEARCH FOR DELETEABLE CODES
  if ($fullDescription =~ /RANDOM|CKH|CKV/) {
   $commentFlag = $cflag;
  }
+#---------------------------------------------
+#---------------------------------------------
+#---------------------------------------------
+#---------------------------------------------
 ####2 SEARCH FOR REQUIRED COMMENTS
  $commentText = $requiredComments{$mpsCode};
 # if ($CommentText) {
@@ -941,24 +940,23 @@ my @thirdSplit = ($mpsCodeAndLineNo =~ /(\w\w\w)(\d*)/);
   #print OUT "variblec2 = $commentText\n";
   $mcomment = $commentText;
 # }
-
-####3.A. sEARCH FOR ALPHA POINT NUMBERS
-# if ($pointNo =~ /[^0-9]/) {
-##  $commentFlag = $aflag;
-# }
-
+#---------------------------------------------
+#---------------------------------------------
+#---------------------------------------------
 #### 3.B. sEARCH FOR OUTLIERS
  $C3 = $legalCodes{$mpsCode};
 # print OUT "varibleC3 = $C3\n";
  unless ($C3) {
   $commentFlag = $oflag;
  }
-
-
+#---------------------------------------------
+#---------------------------------------------
+#---------------------------------------------
+#---------------------------------------------
 #### 4 lINECODEl
  if ($lineCode =~ /\.\./) {   #END LINE
 #  print OUT "a;lskdjfl\n";
-#  print OUT "secondSplit[1] = $lineCode\n";
+#  print OUT "lineCode = $lineCode\n";
   $linecode = ")";
  }
  if ($lineCode =~ /^\.$/) { #BEGIN LINE
@@ -980,21 +978,24 @@ my @thirdSplit = ($mpsCodeAndLineNo =~ /(\w\w\w)(\d*)/);
  $checkInCode = "$mpsCodeAndLineNo$linecode$comment";
  $checkInCode =~ s/  / /g;
  $checkInCode =~ s/  / /g;
-
+#---------------------------------------------
+#---------------------------------------------
+#---------------------------------------------
+#---------------------------------------------
 ########################### Print Section
-
- print OUT "$pointNo,$northing,$easting,$elevation,$checkInCode\n";
-
+#
+print OUT "$pointNo,$northing,$easting,$elevation,$checkInCode\n";
+#
 ####################### TEST SECTION
 # print OUT "in[0] point number             = $pointNo\n";
 # print OUT "in[1] northing                 = $northing\n";
 # print OUT "in[2] easting                  = $easting\n";
 # print OUT "in[3] elevation                = $elevation\n";
 # print OUT "fullDescription full code & comment      = $fullDescription\n";
-# print OUT "firstSplit[0] full code no comment = $fullCode\n";
-# print OUT "firstSplit[1] comment              = $comment\n";
+# print OUT "fullCode full code no comment = $fullCode\n";
+# print OUT "$comment comment              = $comment\n";
 # print OUT "mpsCodeAndLineNo code and line no.    = $mpsCodeAndLineNo\n";
-# print OUT "secondSplit[1] line code            = $lineCode\n";
+# print OUT "lineCode line code            = $lineCode\n";
 # print OUT "tok[0] line code               = $tok[0]\n";
 # print OUT "tok[1] code, line no., comment = $tok[1]\n";
 # print OUT "mpsCode code                 = $mpsCode\n";
