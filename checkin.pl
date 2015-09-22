@@ -903,145 +903,149 @@ while (<IN>) {
   my @thirdSplit = ($mpsCodeAndLineNo =~ /(\w\w\w)(\d*)/);
     $mpsCode  = $thirdSplit[0];
     $lineNo   = $thirdSplit[1];
-#---------------------------------------------------------------
-#---------------------------------------------------------------
-# IDOT MISC CODES
-# This section tests to see if anyone used the IDOT Misc Codes as comments
-# if they did it pulls the text from the IDOT code list and inserts it into
-# the comment.
-# No one has used this function to-date so I'm disabling it for now.
-   # if ($comment =~ /\d\d\d/)  {
-   #   $possibleMiscCode = $&;
-   #   $description = $IDOTmiscCodes{$possibleMiscCode};
-   # }
-   # if ($description) {
-   #   $fieldComment = $comment;
-   #   $fieldComment =~ s/$possibleMiscCode/$description/;
-   # }
-   # else {
-   # $fieldComment = $comment;
-   # }
-#------------------------------------------
-#---------------------------------------------
-#---------------------------------------------
-#---------------------------------------------
-#####1.B sEARCH FOR DELETEABLE CODES
- if ($fullDescription =~ /RANDOM|CKH|CKV/) {
-  $commentFlag = $cflag;
- }
-#---------------------------------------------
-#---------------------------------------------
-#---------------------------------------------
-#---------------------------------------------
-####2 SEARCH FOR REQUIRED COMMENTS
- $commentText = $requiredComments{$mpsCode};
-# if ($CommentText) {
-  #print OUT "mpsCode = $mpsCode\n";
-  #print OUT "variblec2 = $commentText\n";
-  $mcomment = $commentText;
-# }
-#---------------------------------------------
-#---------------------------------------------
-#---------------------------------------------
-#### 3.B. sEARCH FOR OUTLIERS
- $C3 = $legalCodes{$mpsCode};
-# print OUT "varibleC3 = $C3\n";
- unless ($C3) {
-  $commentFlag = $oflag;
- }
-#---------------------------------------------
-#---------------------------------------------
-#---------------------------------------------
-#---------------------------------------------
-#### 4 lINECODEl
- if ($lineCode =~ /\.\./) {   #END LINE
-#  print OUT "a;lskdjfl\n";
-#  print OUT "lineCode = $lineCode\n";
-  $linecode = ")";
- }
- if ($lineCode =~ /^\.$/) { #BEGIN LINE
-  $linecode = "(";
- }
- if ($lineCode =~ /-/) { #PC or PT (substitiute for OC);Graef Curve 20110610
-  $linecode = "%";
- }
- if ($lineCode =~ /@/) { #END LINE
-  $linecode = ")";
- }
- #if ($lineCode =~ /-/) { #PC CURVE
- # $linecode = "-";
- #}
- if ($lineCode =~ /\+/) { #CLOSE FIGURE
-  $linecode = "+";
- }
- $comment = " $mcomment $fieldComment $commentFlag";
- $checkInCode = "$mpsCodeAndLineNo$linecode$comment";
- $checkInCode =~ s/  / /g;
- $checkInCode =~ s/  / /g;
-#---------------------------------------------
-#---------------------------------------------
-#---------------------------------------------
-#---------------------------------------------
-########################### Print Section
-#
-print OUT "$pointNo,$northing,$easting,$elevation,$checkInCode\n";
-#
-####################### TEST SECTION
-# print OUT "in[0] point number             = $pointNo\n";
-# print OUT "in[1] northing                 = $northing\n";
-# print OUT "in[2] easting                  = $easting\n";
-# print OUT "in[3] elevation                = $elevation\n";
-# print OUT "fullDescription full code & comment      = $fullDescription\n";
-# print OUT "fullCode full code no comment = $fullCode\n";
-# print OUT "$comment comment              = $comment\n";
-# print OUT "mpsCodeAndLineNo code and line no.    = $mpsCodeAndLineNo\n";
-# print OUT "lineCode line code            = $lineCode\n";
-# print OUT "tok[0] line code               = $tok[0]\n";
-# print OUT "tok[1] code, line no., comment = $tok[1]\n";
-# print OUT "mpsCode code                 = $mpsCode\n";
-# print OUT "lineNo line number          = $lineNo\n";
-# print OUT "possibleMiscCode               = $possibleMiscCode\n";
-# print OUT "description                    = $description\n";
-# print OUT "field comment                  = $fieldComment\n";
-# print OUT "C1                             = $C1\n";
-# print OUT "commentFlag                    = $commentFlag\n";
-# print OUT "cFlag  control                 = $cflag\n";
-# print OUT "aFlag  alpha                   = $aflag\n";
-# print OUT "oFlag  outlier                 = $oflag\n";
-# print OUT "C2                             = $C2\n";
-# print OUT "mComment                       = $mComment\n";
-# print OUT "C3                             = $C3\n";
-# print OUT "C4                             = $C4\n";
-# print OUT "linecode                       = $linecode\n";
-# print OUT "comment                        = $comment\n";
-# print OUT "checkInCode                    = $checkInCode\n\n";
-
-
- #prepare for next loop
- if ($curIsString) {
-  $activeStrings{$figname}=1; #make sure the list contains an entry for this string
- }
- $lastWasString=$curIsString;
- $figname="";
- $comment="";  #### added lv
- $mpsCodeAndLineNo="";
- $fullCode="";
- $lineCode="";
- $comment="";
- $mpsCode="";
- $lineNo="";
- $possibleMiscCode="";
- $description="";
- $fieldComment="";
- $C2="";
- $mComment="";
- $C3="";
- $C4="";
- $linecode="";
- $comment="";
- $checkInCode="";
- $commentFlag="";
- $commentText="";
+  #---------------------------------------------------------------
+  #---------------------------------------------------------------
+  # IDOT MISC CODES
+  # This section tests to see if anyone used the IDOT Misc Codes as comments
+  # if they did it pulls the text from the IDOT code list and inserts it into
+  # the comment.
+  # No one has used this function to-date so I'm disabling it for now.
+     # if ($comment =~ /\d\d\d/)  {
+     #   $possibleMiscCode = $&;
+     #   $description = $IDOTmiscCodes{$possibleMiscCode};
+     # }
+     # if ($description) {
+     #   $fieldComment = $comment;
+     #   $fieldComment =~ s/$possibleMiscCode/$description/;
+     # }
+     # else {
+     # $fieldComment = $comment;
+     # }
+  #------------------------------------------
+  #---------------------------------------------
+  #---------------------------------------------
+  #---------------------------------------------
+  #####1.B sEARCH FOR DELETEABLE CODES
+  if ($fullDescription =~ /RANDOM|CKH|CKV/) {
+    $commentFlag = $cflag;
+  }
+  #---------------------------------------------
+  #---------------------------------------------
+  #---------------------------------------------
+  #---------------------------------------------
+  ####2 SEARCH FOR REQUIRED COMMENTS
+  $commentText = $requiredComments{$mpsCode};
+  # if ($CommentText) {
+  #   print OUT "mpsCode = $mpsCode\n";
+  #   print OUT "variblec2 = $commentText\n";
+  $reqComment = $commentText;
+  # }
+  #---------------------------------------------
+  #---------------------------------------------
+  #---------------------------------------------
+  #### 3.B. sEARCH FOR OUTLIERS
+  $isLegal = $legalCodes{$mpsCode};
+  # print OUT "varibleisLegal = $isLegal\n";
+  unless ($isLegal) {
+    $commentFlag = $oflag;
+  }
+  #---------------------------------------------
+  #---------------------------------------------
+  #---------------------------------------------
+  #---------------------------------------------
+  #### 4 lINECODEl
+  if ($lineCode =~ /\.\./) {   #END LINE
+  #  print OUT "a;lskdjfl\n";
+  #  print OUT "lineCode = $lineCode\n";
+    $linecode = ")";
+  }
+  if ($lineCode =~ /^\.$/) { #BEGIN LINE
+    $linecode = "(";
+  }
+  if ($lineCode =~ /-/) { #PC or PT (substitiute for OC);Graef Curve 20110610
+    $linecode = "%";
+  }
+  if ($lineCode =~ /@/) { #END LINE
+    $linecode = ")";
+  }
+  # if ($lineCode =~ /-/) { #PC CURVE
+  # $linecode = "-";
+  #}
+  if ($lineCode =~ /\+/) { #CLOSE FIGURE
+    $linecode = "+";
+  }
+  # ----------------------------------------------
+  # ----------------------------------------------
+  # ----------------------------------------------
+  # combine the elements of the final comment
+  $comment = " $reqComment $fieldComment $commentFlag";
+  $checkInCode = "$mpsCodeAndLineNo$linecode$comment";
+  $checkInCode =~ s/  / /g;
+  $checkInCode =~ s/  / /g;
+  #---------------------------------------------
+  #---------------------------------------------
+  #---------------------------------------------
+  #---------------------------------------------
+  # Print Section
+  #
+  print OUT "$pointNo,$northing,$easting,$elevation,$checkInCode\n";
+  #
+  #---------------------------------------------
+  #---------------------------------------------
+  #---------------------------------------------
+  #---------------------------------------------
+  #  TEST SECTION
+  # print OUT "in[0] point number             = $pointNo\n";
+  # print OUT "in[1] northing                 = $northing\n";
+  # print OUT "in[2] easting                  = $easting\n";
+  # print OUT "in[3] elevation                = $elevation\n";
+  # print OUT "fullDescription full code & comment      = $fullDescription\n";
+  # print OUT "fullCode full code no comment = $fullCode\n";
+  # print OUT "$comment comment              = $comment\n";
+  # print OUT "mpsCodeAndLineNo code and line no.    = $mpsCodeAndLineNo\n";
+  # print OUT "lineCode line code            = $lineCode\n";
+  # print OUT "tok[0] line code               = $tok[0]\n";
+  # print OUT "tok[1] code, line no., comment = $tok[1]\n";
+  # print OUT "mpsCode code                 = $mpsCode\n";
+  # print OUT "lineNo line number          = $lineNo\n";
+  # print OUT "possibleMiscCode               = $possibleMiscCode\n";
+  # print OUT "description                    = $description\n";
+  # print OUT "field comment                  = $fieldComment\n";
+  # print OUT "commentFlag                    = $commentFlag\n";
+  # print OUT "cFlag  control                 = $cflag\n";
+  # print OUT "aFlag  alpha                   = $aflag\n";
+  # print OUT "oFlag  outlier                 = $oflag\n";
+  # print OUT "reqComment                       = $reqComment\n";
+  # print OUT "isLegal                             = $isLegal\n";
+  # print OUT "linecode                       = $linecode\n";
+  # print OUT "comment                        = $comment\n";
+  # print OUT "checkInCode                    = $checkInCode\n\n";
+  #---------------------------------------------
+  #---------------------------------------------
+  #---------------------------------------------
+  #---------------------------------------------
+  #prepare for next loop
+  if ($curIsString) {
+   $activeStrings{$figname}=1; #make sure the list contains an entry for this string
+  }
+  $lastWasString=$curIsString;
+  $figname="";
+  $mpsCodeAndLineNo="";
+  $fullCode="";
+  $lineCode="";
+  $comment="";
+  $mpsCode="";
+  $lineNo="";
+  $possibleMiscCode="";
+  $description="";
+  $fieldComment="";
+  $reqComment="";
+  $isLegal="";
+  $linecode="";
+  $comment="";
+  $checkInCode="";
+  $commentFlag="";
+  $commentText="";
 }
 close(IN);
 close(OUT);
