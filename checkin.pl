@@ -838,13 +838,13 @@
 #   "869" => "Wood",
 #   "870" => "Woven Wire",
 #  ) ;
-$cflag = "XXXcontrolXXX";
-$aflag = "XXXalphaXXX";
-$oflag = "XXXoutlierXXX";
 # --------------------------------------------------
 # --------------------------------------------------
 # --------------------------------------------------
 # Some Global Vars
+$cflag = "XXXcontrolXXX";
+$aflag = "XXXalphaXXX";
+$oflag = "XXXoutlierXXX";
 $figname="";
 %activeStrings=();
 $curIsString=0;
@@ -975,9 +975,9 @@ while (<IN>) {
   # ----------------------------------------------
   # ----------------------------------------------
   # ----------------------------------------------
-  # combine the elements of the final comment
-  $comment = " $reqComment $fieldComment $commentFlag";
-  $checkInCode = "$mpsCodeAndLineNo$linecode$comment";
+  # combine the elements of the finalComment
+  $finalComment = " $reqComment $fieldComment $commentFlag";
+  $checkInCode = "$mpsCodeAndLineNo$linecode$finalComment";
   $checkInCode =~ s/  / /g;
   $checkInCode =~ s/  / /g;
   #---------------------------------------------
@@ -999,7 +999,7 @@ while (<IN>) {
   # print OUT "in[3] elevation                = $elevation\n";
   # print OUT "fullDescription full code & comment      = $fullDescription\n";
   # print OUT "fullCode full code no comment = $fullCode\n";
-  # print OUT "$comment comment              = $comment\n";
+  # print OUT "$finalComment finalComment              = $finalComment\n";
   # print OUT "mpsCodeAndLineNo code and line no.    = $mpsCodeAndLineNo\n";
   # print OUT "lineCode line code            = $lineCode\n";
   # print OUT "tok[0] line code               = $tok[0]\n";
@@ -1031,7 +1031,7 @@ while (<IN>) {
   $mpsCodeAndLineNo="";
   $fullCode="";
   $lineCode="";
-  $comment="";
+  $finalComment="";
   $mpsCode="";
   $lineNo="";
   $possibleMiscCode="";
