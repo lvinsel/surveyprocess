@@ -239,7 +239,7 @@ my %legalCodes = (
  "RSG" => "legal", # Riser - Gas
  "RSM" => "legal", # Riser - Storm
  "RSN" => "legal", # Riser - Sanitary
- "RSR" => "legal", # Riser - Traffic 
+ "RSR" => "legal", # Riser - Traffic
  "RSS" => "legal", # Riser - Traffic Fiber Optic
  "RST" => "legal", # Riser - Telephone
  "RSV" => "legal", # Riser - TV
@@ -953,33 +953,50 @@ while (<IN>) {
     my $commentFlag = $oflag;
   }
   #---------------------------------------------
+  #--------------------------------------------
   #---------------------------------------------
   #---------------------------------------------
-  #---------------------------------------------
-  # Handling all line code changes in this switch statement 
+  # Handling all line code changes in this switch statement
   # This is a one time conversion  - the conversion in process.pl is being removed
-  if ($fieldLineCode =  /\.\./ {
-		$processLineCode = "X"; 
-	case  /\.\./ { $processLineCode = "X"; }
-	case  "@"    { $processLineCode = "X"; }
-	case  /\.$/  { $processLineCode = "L"; }
-	case  "-"    { $processLineCode = "C"; }
-	case  "+"    { $processLineCode = "E"; }
-	case  "%PC"  { $processLineCode = "PC"; }
-	case  "%NT"  { $processLineCode = "NTC"; }
-	case  "%SA"  { $processLineCode = "SAP"; }
-	case  "%CC"  { $processLineCode = "CC"; }
-	case  "%TT"  { $processLineCode = "NTT"; }
-	case  "%PT"  { $processLineCode = "PT"; }
-	case  "%OC"  { $processLineCode = "OC*"; }
-	case  "%CS"  { $processLineCode = "CS"; }
-	case  "%CD"  { $processLineCode = "CD*"; }
-	case  "%CR"  { $processLineCode = "CR*"; }
-	case  "%RE"  { $processLineCode = "RECT"; }
-	case  "%DS"  { $processLineCode = "DIST"; }
-	case  "%JP"  { $processLineCode = "JPT"; }
-	case  "%TM"  { $processLineCode = "TMPL"; }
-  }
+	if ($fieldLineCode =  /\.\./) {
+		$processLineCode = "X";
+	} elsif ($fieldLineCode = "@") {
+		$processLineCode = "X";
+	{ elsif ($fieldLineCode = /\.$/) {
+		$processLineCode = "L";
+	{ elsif ($fieldLineCode = "-") {
+		$processLineCode = "C";
+	{ elsif ($fieldLineCode = "+") {
+		$processLineCode = "E";
+	{ elsif ($fieldLineCode = "%PC") {
+		$processLineCode = "PC";
+	{ elsif ($fieldLineCode = "%NT") {
+		$processLineCode = "NTC";
+	{ elsif ($fieldLineCode = "%SA") {
+		$processLineCode = "SAP";
+	{ elsif ($fieldLineCode = "%CC") {
+		$processLineCode = "CC";
+	{ elsif ($fieldLineCode = "%TT") {
+		$processLineCode = "NTT";
+	{ elsif ($fieldLineCode = "%PT") {
+		$processLineCode = "PT";
+	{ elsif ($fieldLineCode = "%OC") {
+		$processLineCode = "OC*";
+	{ elsif ($fieldLineCode = "%CS") {
+		$processLineCode = "CS";
+	{ elsif ($fieldLineCode = "%CD") {
+		$processLineCode = "CD*";
+	{ elsif ($fieldLineCode = "%CR") {
+		$processLineCode = "CR*";
+	{ elsif ($fieldLineCode = "%RE") {
+		$processLineCode = "RECT";
+	{ elsif ($fieldLineCode = "%DS") {
+		$processLineCode = "DIST";
+	{ elsif ($fieldLineCode = "%JP") {
+		$processLineCode = "JPT";
+	{ elsif ($fieldLineCode = "%TM") {
+		$processLineCode = "TMPL";
+	}
   # ----------------------------------------------
   # ----------------------------------------------
   # combine the elements of the finalComment
