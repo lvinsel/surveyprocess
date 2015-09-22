@@ -891,13 +891,13 @@ while (<IN>) {
     #    print OUT "secondSplit[0] = $secondSplit[0]\n";
     #    print OUT "secondSplit[1] = $secondSplit[1]\n";
     $mpsCodeAndLineNo = $secondSplit[0]; # the 3 Letter Code and Line Number
-    $lineCode         = $secondSplit[1]; # the Line Code
+    $fieldLineCode         = $secondSplit[1]; # the Line Code
   #  test to see if a line code exists
-  if ($lineCode) {
+  if ($fieldLineCode) {
   }
   else {
     $mpsCodeAndLineNo = $fullCode;
-    $lineCode = "";
+    $fieldLineCode = "";
   }
   my @thirdSplit = ($mpsCodeAndLineNo =~ /(\w\w\w)(\d*)/);
     $mpsCode  = $thirdSplit[0];
@@ -952,27 +952,29 @@ while (<IN>) {
   #---------------------------------------------
   #---------------------------------------------
   #---------------------------------------------
-  #### 4 lINECODEl
-  if ($lineCode =~ /\.\./) {   #END LINE
-  #  print OUT "lineCode = $lineCode\n";
-    $linecode = ")";
+  # Handling all line code changes in this switch statement 
+  # This is a one time conversion  - the conversion in process.pl is being removed
+  switch ($fieldLineCode) {
+	case ($fieldLineCode =~ /\.\./)     { $processLineCode = "X"; }
+	case ($fieldLineCode =~ /@/)        { $processLineCode = "X"; }
+	case ($fieldLineCode =~ /\.$/)      { $processLineCode = "L"; }
+	case ($fieldLineCode =~ /-/)        { $processLineCode = "C"; }
+	case ($fieldLineCode =~ /+/)        { $processLineCode = "E"; }
+	case ($fieldLineCode =~ /%PC/)      { $processLineCode = "PC"; }
+	case ($fieldLineCode =~ /%NT/)      { $processLineCode = "NTC"; }
+	case ($fieldLineCode =~ /%SA/)      { $processLineCode = "SAP"; }
+	case ($fieldLineCode =~ /%CC/)      { $processLineCode = "CC"; }
+	case ($fieldLineCode =~ /%TT/)      { $processLineCode = "NTT"; }
+	case ($fieldLineCode =~ /%PT/)      { $processLineCode = "PT"; }
+	case ($fieldLineCode =~ /%OC/)      { $processLineCode = "OC*"; }
+	case ($fieldLineCode =~ /%CS/)      { $processLineCode = "CS"; }
+	case ($fieldLineCode =~ /%CD/)      { $processLineCode = "CD*"; }
+	case ($fieldLineCode =~ /%CR/)      { $processLineCode = "CR*"; }
+	case ($fieldLineCode =~ /%RE/)      { $processLineCode = "RECT"; }
+	case ($fieldLineCode =~ /%DS/)      { $processLineCode = "DIST"; }
+	case ($fieldLineCode =~ /%JP/)      { $processLineCode = "JPT"; }
+	case ($fieldLineCode =~ /%TM/)      { $processLineCode = "TMPL"; }
   }
-  if ($lineCode =~ /^\.$/) { #BEGIN LINE
-    $linecode = "(";
-  }
-  if ($lineCode =~ /-/) { #PC or PT (substitiute for OC);Graef Curve 20110610
-    $linecode = "%";
-  }
-  if ($lineCode =~ /@/) { #END LINE
-    $linecode = ")";
-  }
-  # if ($lineCode =~ /-/) { #PC CURVE
-  # $linecode = "-";
-  #}
-  if ($lineCode =~ /\+/) { #CLOSE FIGURE
-    $linecode = "+";
-  }
-  # ----------------------------------------------
   # ----------------------------------------------
   # ----------------------------------------------
   # combine the elements of the finalComment
