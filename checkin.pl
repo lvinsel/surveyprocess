@@ -1,5 +1,7 @@
+use strict;
+use warnings;
 #################################
-%legalCodes = (
+my %legalCodes = (
  "ACU" => "legal", # Air Conditioning Unit
  "AEM" => "legal", # Electric Above Ground Main - Center of Tower
  "B62" => "legal", # B6-24 Curb - added v6 - depreciated
@@ -500,7 +502,7 @@
  "960" => "legal",
  "962" => "legal",
 );
-%requiredComments = (
+my %requiredComments = (
  "ACU" => "AC UNIT",
  "AEM" => "MAIN",
  "BAB" => "ABUTMENT CAP",
@@ -696,7 +698,7 @@
  "WAT" => "TIMBER",
  "WTR" => "TOP ELEV",
 );
-@flagCodes = (
+my @flagCodes = (
  "RANDOM",
  "CKH",
  "CKV",
@@ -842,16 +844,18 @@
 # --------------------------------------------------
 # --------------------------------------------------
 # Some Global Vars
-$cflag = "XXXcontrolXXX";
-$aflag = "XXXalphaXXX";
-$oflag = "XXXoutlierXXX";
-$figname="";
-%activeStrings=();
-$curIsString=0;
-$lastWasString=0;
-$comment=""; #lv added
+my $cflag = "XXXcontrolXXX";
+my $aflag = "XXXalphaXXX";
+my $oflag = "XXXoutlierXXX";
+my $figname="";
+my %activeStrings=();
+my $curIsString=0;
+my $lastWasString=0;
+my $comment=""; #lv added
+my @secondSplit;
 undef @secondSplit;
-##### added lv to make comment $comment available to processpoint()
+my $_nextAutogenPtNum;
+my $processLineCode;
 # --------------------------------------------------
 # --------------------------------------------------
 # --------------------------------------------------
@@ -863,7 +867,7 @@ sub generateNextPtNum {
 if ($#ARGV<0) {
   die "Syntax:\nperl fbk.pl <input file name> <start ptnum for new pts>\n";
 }
-$fname=$ARGV[0];
+my $fname=$ARGV[0];
 $fname =~ s/\.[^.]*$//;
 open(IN,$ARGV[0]);
 open(OUT,">${fname}.csv");
@@ -875,23 +879,23 @@ else {
 }
 while (<IN>) {
   $curIsString=0;
-  @in = split(/,/, substr(uc, 0, -1), 5); #note: forces text to be uppercase
-    $pointNo         = $in[0]; # point number
-    $northing        = $in[1]; # northing
-    $easting         = $in[2]; # easting
-    $elevation       = $in[3]; # elevation
-    $fullDescription = $in[4]; # full description (3 Letter Code-Line Number-Line Code-Comment)
+  my @in = split(/,/, substr(uc, 0, -1), 5); #note: forces text to be uppercase
+    my $pointNo         = $in[0]; # point number
+    my $northing        = $in[1]; # northing
+    my $easting         = $in[2]; # easting
+    my $elevation       = $in[3]; # elevation
+    my $fullDescription = $in[4]; # full description (3 Letter Code-Line Number-Line Code-Comment)
   my @firstSplit = split(/\s+/,$fullDescription,2); #added lv - this separates the code from the comments
     #using the first? whitespace as the separator so:
-    $fullCode    = $firstSplit[0]; # 3 Letter Code-Line Number-Line Code
-    $comment     = $firstSplit[1]; # the Comment
+    my $fullCode    = $firstSplit[0]; # 3 Letter Code-Line Number-Line Code
+    my $comment     = $firstSplit[1]; # the Comment
   my @secondSplit = split(/\W+/,$fullCode,2); # This separates the 3 letter Code and the line
     # number from the line coding symbol
     # using the first non-numeric/non-alpha character as the separator so:
     #    print OUT "secondSplit[0] = $secondSplit[0]\n";
     #    print OUT "secondSplit[1] = $secondSplit[1]\n";
-    $mpsCodeAndLineNo = $secondSplit[0]; # the 3 Letter Code and Line Number
-    $fieldLineCode         = $secondSplit[1]; # the Line Code
+    my $mpsCodeAndLineNo = $secondSplit[0]; # the 3 Letter Code and Line Number
+    my $fieldLineCode    = $secondSplit[1]; # the Line Code
   #  test to see if a line code exists
   if ($fieldLineCode) {
   }
@@ -900,8 +904,8 @@ while (<IN>) {
     $fieldLineCode = "";
   }
   my @thirdSplit = ($mpsCodeAndLineNo =~ /(\w\w\w)(\d*)/);
-    $mpsCode  = $thirdSplit[0];
-    $lineNo   = $thirdSplit[1];
+    my $mpsCode  = $thirdSplit[0];
+    my $lineNo   = $thirdSplit[1];
   #---------------------------------------------------------------
   #---------------------------------------------------------------
   # IDOT MISC CODES
@@ -926,27 +930,27 @@ while (<IN>) {
   #---------------------------------------------
   #####1.B sEARCH FOR DELETEABLE CODES
   if ($fullDescription =~ /RANDOM|CKH|CKV/) {
-    $commentFlag = $cflag;
+    my $commentFlag = $cflag;
   }
   #---------------------------------------------
   #---------------------------------------------
   #---------------------------------------------
   #---------------------------------------------
   ####2 SEARCH FOR REQUIRED COMMENTS
-  $commentText = $requiredComments{$mpsCode};
+  my $commentText = $requiredComments{$mpsCode};
   # if ($CommentText) {
   #   print OUT "mpsCode = $mpsCode\n";
   #   print OUT "variblec2 = $commentText\n";
-  $reqComment = $commentText;
+  my $reqComment = $commentText;
   # }
   #---------------------------------------------
   #---------------------------------------------
   #---------------------------------------------
   #### 3.B. sEARCH FOR OUTLIERS
-  $isLegal = $legalCodes{$mpsCode};
+  my $isLegal = $legalCodes{$mpsCode};
   # print OUT "varibleisLegal = $isLegal\n";
   unless ($isLegal) {
-    $commentFlag = $oflag;
+    my $commentFlag = $oflag;
   }
   #---------------------------------------------
   #---------------------------------------------
@@ -954,32 +958,33 @@ while (<IN>) {
   #---------------------------------------------
   # Handling all line code changes in this switch statement 
   # This is a one time conversion  - the conversion in process.pl is being removed
-  switch ($fieldLineCode) {
-	case ($fieldLineCode =~ /\.\./)     { $processLineCode = "X"; }
-	case ($fieldLineCode =~ /@/)        { $processLineCode = "X"; }
-	case ($fieldLineCode =~ /\.$/)      { $processLineCode = "L"; }
-	case ($fieldLineCode =~ /-/)        { $processLineCode = "C"; }
-	case ($fieldLineCode =~ /+/)        { $processLineCode = "E"; }
-	case ($fieldLineCode =~ /%PC/)      { $processLineCode = "PC"; }
-	case ($fieldLineCode =~ /%NT/)      { $processLineCode = "NTC"; }
-	case ($fieldLineCode =~ /%SA/)      { $processLineCode = "SAP"; }
-	case ($fieldLineCode =~ /%CC/)      { $processLineCode = "CC"; }
-	case ($fieldLineCode =~ /%TT/)      { $processLineCode = "NTT"; }
-	case ($fieldLineCode =~ /%PT/)      { $processLineCode = "PT"; }
-	case ($fieldLineCode =~ /%OC/)      { $processLineCode = "OC*"; }
-	case ($fieldLineCode =~ /%CS/)      { $processLineCode = "CS"; }
-	case ($fieldLineCode =~ /%CD/)      { $processLineCode = "CD*"; }
-	case ($fieldLineCode =~ /%CR/)      { $processLineCode = "CR*"; }
-	case ($fieldLineCode =~ /%RE/)      { $processLineCode = "RECT"; }
-	case ($fieldLineCode =~ /%DS/)      { $processLineCode = "DIST"; }
-	case ($fieldLineCode =~ /%JP/)      { $processLineCode = "JPT"; }
-	case ($fieldLineCode =~ /%TM/)      { $processLineCode = "TMPL"; }
+  if ($fieldLineCode =  /\.\./ {
+		$processLineCode = "X"; 
+	case  /\.\./ { $processLineCode = "X"; }
+	case  "@"    { $processLineCode = "X"; }
+	case  /\.$/  { $processLineCode = "L"; }
+	case  "-"    { $processLineCode = "C"; }
+	case  "+"    { $processLineCode = "E"; }
+	case  "%PC"  { $processLineCode = "PC"; }
+	case  "%NT"  { $processLineCode = "NTC"; }
+	case  "%SA"  { $processLineCode = "SAP"; }
+	case  "%CC"  { $processLineCode = "CC"; }
+	case  "%TT"  { $processLineCode = "NTT"; }
+	case  "%PT"  { $processLineCode = "PT"; }
+	case  "%OC"  { $processLineCode = "OC*"; }
+	case  "%CS"  { $processLineCode = "CS"; }
+	case  "%CD"  { $processLineCode = "CD*"; }
+	case  "%CR"  { $processLineCode = "CR*"; }
+	case  "%RE"  { $processLineCode = "RECT"; }
+	case  "%DS"  { $processLineCode = "DIST"; }
+	case  "%JP"  { $processLineCode = "JPT"; }
+	case  "%TM"  { $processLineCode = "TMPL"; }
   }
   # ----------------------------------------------
   # ----------------------------------------------
   # combine the elements of the finalComment
-  $finalComment = " $reqComment $fieldComment $commentFlag";
-  $checkInCode = "$mpsCodeAndLineNo$linecode$finalComment";
+  my $finalComment = " $reqComment $fieldComment $commentFlag";
+  my $checkInCode = "$mpsCodeAndLineNo$processLineCode$finalComment";
   $checkInCode =~ s/  / /g;
   $checkInCode =~ s/  / /g;
   #---------------------------------------------
@@ -1017,7 +1022,7 @@ while (<IN>) {
   # print OUT "oFlag  outlier                 = $oflag\n";
   # print OUT "reqComment                       = $reqComment\n";
   # print OUT "isLegal                             = $isLegal\n";
-  # print OUT "linecode                       = $linecode\n";
+  # print OUT "processLineCode                       = $processLineCode\n";
   # print OUT "comment                        = $comment\n";
   # print OUT "checkInCode                    = $checkInCode\n\n";
   #---------------------------------------------
@@ -1032,7 +1037,7 @@ while (<IN>) {
   $figname="";
   $mpsCodeAndLineNo="";
   $fullCode="";
-  $lineCode="";
+  $processLineCode="";
   $finalComment="";
   $mpsCode="";
   $lineNo="";
@@ -1049,3 +1054,4 @@ while (<IN>) {
 }
 close(IN);
 close(OUT);
+
