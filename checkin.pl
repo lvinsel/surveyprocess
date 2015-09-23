@@ -901,34 +901,34 @@ while (<IN>) {
 		$elevation       = $in[3]; # elevation
 		$fullDescription = $in[4]; # full description (3 Letter Code-Line Number-Line Code-Comment)
 	my @firstSplit = split(/\s+/,$fullDescription,2); #added lv - this separates the code from the comments
-	  #using the first? whitespace as the separator so:
+		#using the first? whitespace as the separator so:
 		$fullCode    = $firstSplit[0]; # 3 Letter Code-Line Number-Line Code
 		$comment     = $firstSplit[1]; # the Comment
-			print OUT "fullCode = $fullCode\n";
-			print OUT "comment = $comment\n";
+		#	print OUT "fullCode = $fullCode\n";
+		#	print OUT "comment = $comment\n";
 	if ($fullCode =~ m/[^a-zA-Z0-9]/){
 		@secondSplit = ($fullCode =~ /(\w+)(\D*)/); # This separates the 3 letter Code and the line
 		# number from the line coding symbol
 		# using the first non-numeric/non-alpha character as the separator so:
 			$mpsCodeAndLineNo = $secondSplit[0]; # the 3 Letter Code and Line Number
 			$fieldLineCode    = $secondSplit[1]; # the Line Code
-				print OUT "mpsCodeAndLineNo from if = $mpsCodeAndLineNo\n";
-				print OUT "fieldLineCode from if = $fieldLineCode\n";
+			#	print OUT "mpsCodeAndLineNo from if = $mpsCodeAndLineNo\n";
+			#	print OUT "fieldLineCode from if = $fieldLineCode\n";
 	} else {
 			$mpsCodeAndLineNo = $fullCode; # the 3 Letter Code and Line Number
 			$fieldLineCode    = ""; # the Line Code
-				print OUT "mpsCodeAndLineNo from else = $mpsCodeAndLineNo\n";
-				print OUT "fieldLineCode from else = $fieldLineCode\n";
+			#	print OUT "mpsCodeAndLineNo from else = $mpsCodeAndLineNo\n";
+			#	print OUT "fieldLineCode from else = $fieldLineCode\n";
 	}
-				print OUT "mpsCodeAndLineNo before thirdSplit = $mpsCodeAndLineNo\n";
+		#	print OUT "mpsCodeAndLineNo before thirdSplit = $mpsCodeAndLineNo\n";
 	my @thirdSplit = ($mpsCodeAndLineNo =~ /(\w\w\w)(\d*)/);
-			print OUT "thirdSplit[0] = $thirdSplit[0]\n";
-			print OUT "thirdSplit[1] = $thirdSplit[1]\n";
+		#	print OUT "thirdSplit[0] = $thirdSplit[0]\n";
+		#	print OUT "thirdSplit[1] = $thirdSplit[1]\n";
 		$mpsCode  = $thirdSplit[0];
 		$lineNo   = $thirdSplit[1];
-			print OUT "mpsCode = $mpsCode\n";
-			print OUT "lineNo = $lineNo\n";
-				print OUT "mpsCodeAndLineNo after thirdSplit = $mpsCodeAndLineNo\n";
+		#	print OUT "mpsCode = $mpsCode\n";
+		#	print OUT "lineNo = $lineNo\n";
+		#	print OUT "mpsCodeAndLineNo after thirdSplit = $mpsCodeAndLineNo\n";
 	#---------------------------------------------------------------
 	#---------------------------------------------------------------
 	# IDOT MISC CODES
@@ -962,8 +962,8 @@ while (<IN>) {
 	####2 SEARCH FOR REQUIRED COMMENTS
 	my $commentText = $requiredComments{$mpsCode};
 	# if ($CommentText) {
-	#   print OUT "mpsCode = $mpsCode\n";
-	#   print OUT "variblec2 = $commentText\n";
+	#	print OUT "mpsCode = $mpsCode\n";
+	#	print OUT "variblec2 = $commentText\n";
 	my $reqComment = $commentText;
 	# }
 	#---------------------------------------------
@@ -971,7 +971,7 @@ while (<IN>) {
 	#---------------------------------------------
 	#### 3.B. sEARCH FOR OUTLIERS
 	my $isLegal = $legalCodes{$mpsCode};
-	# print OUT "varibleisLegal = $isLegal\n";
+	#	print OUT "varibleisLegal = $isLegal\n";
 	unless ($isLegal) {
 		$commentFlag = $oflag;
 	}
@@ -981,7 +981,7 @@ while (<IN>) {
 	#---------------------------------------------
 	# Handling all line code changes in this switch statement
 	# This is a one time conversion  - the conversion in process.pl is being removed
-		print OUT "fieldLineCode before if-elsif segment = $fieldLineCode\n";
+	#	print OUT "fieldLineCode before if-elsif segment = $fieldLineCode\n";
 	if ($fieldLineCode eq ".." ) { # /\.\./) {
 		$processLineCode = "X";
 	} elsif ($fieldLineCode eq "@") {
@@ -1021,22 +1021,22 @@ while (<IN>) {
 	} elsif ($fieldLineCode eq "%TM") {
 		$processLineCode = "TMPL";
 	}
-	print OUT "fieldLineCode after if-elsif segment = $fieldLineCode\n";
-	print OUT "processLineCode after if-elsif segment = $processLineCode\n";
+	#	print OUT "fieldLineCode after if-elsif segment = $fieldLineCode\n";
+	#	print OUT "processLineCode after if-elsif segment = $processLineCode\n";
 	# ----------------------------------------------
 	# ----------------------------------------------
 	# combine the elements of the finalComment
 	if ($comment) {
 		if ($reqComment) {
-			$finalComment = " $reqComment $comment $commentFlag";
+			$finalComment = "$reqComment $comment $commentFlag";
 		} else {
-			$finalComment = " $comment $commentFlag";
+			$finalComment = "$comment $commentFlag";
 		}
 	} else {
 		if ($reqComment) {
-			$finalComment = " $reqComment $commentFlag";
+			$finalComment = "$reqComment $commentFlag";
 		} else {
-			$finalComment = " $commentFlag";
+			$finalComment = "$commentFlag";
 		}
 	}
 	my $checkInCode = "$mpsCodeAndLineNo$processLineCode$finalComment";
@@ -1048,7 +1048,8 @@ while (<IN>) {
 	#---------------------------------------------
 	# Print Section
 	#
-	print OUT "$pointNo,$northing,$easting,$elevation,$checkInCode\n";
+	# print OUT "$pointNo,$northing,$easting,$elevation,$checkInCode\n";
+	print OUT "$pointNo,$northing,$easting,$elevation,$mpsCode,$lineNo,$processLineCode,$finalComment\n";
 	#
 	#---------------------------------------------
 	#---------------------------------------------
