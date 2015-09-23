@@ -851,14 +851,28 @@ my $figname="";
 my %activeStrings=();
 my $curIsString=0;
 my $lastWasString=0;
-my $comment=""; #lv added
 my @secondSplit;
-undef @secondSplit;
+# undef @secondSplit;
+my @thirdsplit;
+undef @thirdsplit;
 my $_nextAutogenPtNum;
 my $processLineCode;
 my $commentFlag = "";
 my $finalComment = "";
-
+my $mpsCodeAndLineNo = "";
+my $fieldLineCode = "";
+# --------------------------------------------------
+my $pointNo          = "";
+my $northing         = "";
+my $easting          = "";
+my $elevation        = "";
+my $fullDescription  = "";
+my $fullCode         = "";
+my $comment          = "";
+my $mpsCodeAndLineNo = "";
+my $fieldLineCode    = "";
+my $mpsCode          = "";
+my $lineNo           = "";
 # --------------------------------------------------
 # --------------------------------------------------
 # --------------------------------------------------
@@ -881,34 +895,42 @@ else {
   $_nextAutogenPtNum=100000;
 }
 while (<IN>) {
-  $curIsString=0;
-  my @in = split(/,/, substr(uc, 0, -1), 5); #note: forces text to be uppercase
-    my $pointNo         = $in[0]; # point number
-    my $northing        = $in[1]; # northing
-    my $easting         = $in[2]; # easting
-    my $elevation       = $in[3]; # elevation
-    my $fullDescription = $in[4]; # full description (3 Letter Code-Line Number-Line Code-Comment)
-  my @firstSplit = split(/\s+/,$fullDescription,2); #added lv - this separates the code from the comments
-    #using the first? whitespace as the separator so:
-    my $fullCode    = $firstSplit[0]; # 3 Letter Code-Line Number-Line Code
-    my $comment     = $firstSplit[1]; # the Comment
-  my @secondSplit = split(/\W+/,$fullCode,2); # This separates the 3 letter Code and the line
-    # number from the line coding symbol
-    # using the first non-numeric/non-alpha character as the separator so:
-    #    print OUT "secondSplit[0] = $secondSplit[0]\n";
-    #    print OUT "secondSplit[1] = $secondSplit[1]\n";
-    my $mpsCodeAndLineNo = $secondSplit[0]; # the 3 Letter Code and Line Number
-    my $fieldLineCode    = $secondSplit[1]; # the Line Code
-  #  test to see if a line code exists
-  if ($fieldLineCode) {
-  }
-  else {
-    $mpsCodeAndLineNo = $fullCode;
-    $fieldLineCode = "";
-  }
-  my @thirdSplit = ($mpsCodeAndLineNo =~ /(\w\w\w)(\d*)/);
-    my $mpsCode  = $thirdSplit[0];
-    my $lineNo   = $thirdSplit[1];
+	$curIsString=0;
+	my @in = split(/,/, substr(uc, 0, -1), 5); #note: forces text to be uppercase
+		$pointNo         = $in[0]; # point number
+		$northing        = $in[1]; # northing
+		$easting         = $in[2]; # easting
+		$elevation       = $in[3]; # elevation
+		$fullDescription = $in[4]; # full description (3 Letter Code-Line Number-Line Code-Comment)
+	my @firstSplit = split(/\s+/,$fullDescription,2); #added lv - this separates the code from the comments
+	  #using the first? whitespace as the separator so:
+		$fullCode    = $firstSplit[0]; # 3 Letter Code-Line Number-Line Code
+		$comment     = $firstSplit[1]; # the Comment
+			print OUT "fullCode = $fullCode\n";
+			print OUT "comment = $comment\n";
+	if ($fullCode =~ m/[^a-zA-Z0-9]/){
+		@secondSplit = ($fullCode =~ /(\w+)(\D*)/); # This separates the 3 letter Code and the line
+		# number from the line coding symbol
+		# using the first non-numeric/non-alpha character as the separator so:
+			$mpsCodeAndLineNo = $secondSplit[0]; # the 3 Letter Code and Line Number
+			$fieldLineCode    = $secondSplit[1]; # the Line Code
+				print OUT "mpsCodeAndLineNo from if = $mpsCodeAndLineNo\n";
+				print OUT "fieldLineCode from if = $fieldLineCode\n";
+	} else {
+			$mpsCodeAndLineNo = $fullCode; # the 3 Letter Code and Line Number
+			$fieldLineCode    = ""; # the Line Code
+				print OUT "mpsCodeAndLineNo from else = $mpsCodeAndLineNo\n";
+				print OUT "fieldLineCode from else = $fieldLineCode\n";
+	}
+				print OUT "mpsCodeAndLineNo before thirdSplit = $mpsCodeAndLineNo\n";
+	my @thirdSplit = ($mpsCodeAndLineNo =~ /(\w\w\w)(\d*)/);
+			print OUT "thirdSplit[0] = $thirdSplit[0]\n";
+			print OUT "thirdSplit[1] = $thirdSplit[1]\n";
+		$mpsCode  = $thirdSplit[0];
+		$lineNo   = $thirdSplit[1];
+			print OUT "mpsCode = $mpsCode\n";
+			print OUT "lineNo = $lineNo\n";
+				print OUT "mpsCodeAndLineNo after thirdSplit = $mpsCodeAndLineNo\n";
   #---------------------------------------------------------------
   #---------------------------------------------------------------
   # IDOT MISC CODES
@@ -961,45 +983,48 @@ while (<IN>) {
   #---------------------------------------------
   # Handling all line code changes in this switch statement
   # This is a one time conversion  - the conversion in process.pl is being removed
-	if ($fieldLineCode =  "A") { # /\.\./
-		$processLineCode = "Q";
-	} elsif ($fieldLineCode = "@") {
+  	print OUT "fieldLineCode before if-elsif segment = $fieldLineCode\n";
+	if ($fieldLineCode eq ".." ) { # /\.\./) {
 		$processLineCode = "X";
-	} elsif ($fieldLineCode = /\.$/) {
+	} elsif ($fieldLineCode eq "@") {
+		$processLineCode = "X";
+	} elsif ($fieldLineCode eq "." ) { #/\.$/) {
 		$processLineCode = "L";
-	} elsif ($fieldLineCode = "-") {
+	} elsif ($fieldLineCode eq "-") {
 		$processLineCode = "C";
-	} elsif ($fieldLineCode = "+") {
+	} elsif ($fieldLineCode eq "+") {
 		$processLineCode = "E";
-	} elsif ($fieldLineCode = "%PC") {
+	} elsif ($fieldLineCode eq "%PC") {
 		$processLineCode = "PC";
-	} elsif ($fieldLineCode = "%NT") {
+	} elsif ($fieldLineCode eq "%NT") {
 		$processLineCode = "NTC";
-	} elsif ($fieldLineCode = "%SA") {
+	} elsif ($fieldLineCode eq "%SA") {
 		$processLineCode = "SAP";
-	} elsif ($fieldLineCode = "%CC") {
+	} elsif ($fieldLineCode eq "%CC") {
 		$processLineCode = "CC";
-	} elsif ($fieldLineCode = "%TT") {
+	} elsif ($fieldLineCode eq "%TT") {
 		$processLineCode = "NTT";
-	} elsif ($fieldLineCode = "%PT") {
+	} elsif ($fieldLineCode eq "%PT") {
 		$processLineCode = "PT";
-	} elsif ($fieldLineCode = "%OC") {
+	} elsif ($fieldLineCode eq "%OC") {
 		$processLineCode = "OC*";
-	} elsif ($fieldLineCode = "%CS") {
+	} elsif ($fieldLineCode eq "%CS") {
 		$processLineCode = "CS";
-	} elsif ($fieldLineCode = "%CD") {
+	} elsif ($fieldLineCode eq "%CD") {
 		$processLineCode = "CD*";
-	} elsif ($fieldLineCode = "%CR") {
+	} elsif ($fieldLineCode eq "%CR") {
 		$processLineCode = "CR*";
-	} elsif ($fieldLineCode = "%RE") {
+	} elsif ($fieldLineCode eq "%RE") {
 		$processLineCode = "RECT";
-	} elsif ($fieldLineCode = "%DS") {
+	} elsif ($fieldLineCode eq "%DS") {
 		$processLineCode = "DIST";
-	} elsif ($fieldLineCode = "%JP") {
+	} elsif ($fieldLineCode eq "%JP") {
 		$processLineCode = "JPT";
-	} elsif ($fieldLineCode = "%TM") {
+	} elsif ($fieldLineCode eq "%TM") {
 		$processLineCode = "TMPL";
 	}
+  	print OUT "fieldLineCode after if-elsif segment = $fieldLineCode\n";
+  	print OUT "processLineCode after if-elsif segment = $processLineCode\n";
   # ----------------------------------------------
   # ----------------------------------------------
   # combine the elements of the finalComment
