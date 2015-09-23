@@ -1,5 +1,5 @@
 use strict;
-use warnings;
+# use warnings;
 #################################
 my %legalCodes = (
  "ACU" => "legal", # Air Conditioning Unit
@@ -856,6 +856,9 @@ my @secondSplit;
 undef @secondSplit;
 my $_nextAutogenPtNum;
 my $processLineCode;
+my $commentFlag = "";
+my $finalComment = "";
+
 # --------------------------------------------------
 # --------------------------------------------------
 # --------------------------------------------------
@@ -950,7 +953,7 @@ while (<IN>) {
   my $isLegal = $legalCodes{$mpsCode};
   # print OUT "varibleisLegal = $isLegal\n";
   unless ($isLegal) {
-    my $commentFlag = $oflag;
+  	$commentFlag = $oflag;
   }
   #---------------------------------------------
   #--------------------------------------------
@@ -958,49 +961,61 @@ while (<IN>) {
   #---------------------------------------------
   # Handling all line code changes in this switch statement
   # This is a one time conversion  - the conversion in process.pl is being removed
-	if ($fieldLineCode =  /\.\./) {
-		$processLineCode = "X";
+	if ($fieldLineCode =  "A") { # /\.\./
+		$processLineCode = "Q";
 	} elsif ($fieldLineCode = "@") {
 		$processLineCode = "X";
-	{ elsif ($fieldLineCode = /\.$/) {
+	} elsif ($fieldLineCode = /\.$/) {
 		$processLineCode = "L";
-	{ elsif ($fieldLineCode = "-") {
+	} elsif ($fieldLineCode = "-") {
 		$processLineCode = "C";
-	{ elsif ($fieldLineCode = "+") {
+	} elsif ($fieldLineCode = "+") {
 		$processLineCode = "E";
-	{ elsif ($fieldLineCode = "%PC") {
+	} elsif ($fieldLineCode = "%PC") {
 		$processLineCode = "PC";
-	{ elsif ($fieldLineCode = "%NT") {
+	} elsif ($fieldLineCode = "%NT") {
 		$processLineCode = "NTC";
-	{ elsif ($fieldLineCode = "%SA") {
+	} elsif ($fieldLineCode = "%SA") {
 		$processLineCode = "SAP";
-	{ elsif ($fieldLineCode = "%CC") {
+	} elsif ($fieldLineCode = "%CC") {
 		$processLineCode = "CC";
-	{ elsif ($fieldLineCode = "%TT") {
+	} elsif ($fieldLineCode = "%TT") {
 		$processLineCode = "NTT";
-	{ elsif ($fieldLineCode = "%PT") {
+	} elsif ($fieldLineCode = "%PT") {
 		$processLineCode = "PT";
-	{ elsif ($fieldLineCode = "%OC") {
+	} elsif ($fieldLineCode = "%OC") {
 		$processLineCode = "OC*";
-	{ elsif ($fieldLineCode = "%CS") {
+	} elsif ($fieldLineCode = "%CS") {
 		$processLineCode = "CS";
-	{ elsif ($fieldLineCode = "%CD") {
+	} elsif ($fieldLineCode = "%CD") {
 		$processLineCode = "CD*";
-	{ elsif ($fieldLineCode = "%CR") {
+	} elsif ($fieldLineCode = "%CR") {
 		$processLineCode = "CR*";
-	{ elsif ($fieldLineCode = "%RE") {
+	} elsif ($fieldLineCode = "%RE") {
 		$processLineCode = "RECT";
-	{ elsif ($fieldLineCode = "%DS") {
+	} elsif ($fieldLineCode = "%DS") {
 		$processLineCode = "DIST";
-	{ elsif ($fieldLineCode = "%JP") {
+	} elsif ($fieldLineCode = "%JP") {
 		$processLineCode = "JPT";
-	{ elsif ($fieldLineCode = "%TM") {
+	} elsif ($fieldLineCode = "%TM") {
 		$processLineCode = "TMPL";
 	}
   # ----------------------------------------------
   # ----------------------------------------------
   # combine the elements of the finalComment
-  my $finalComment = " $reqComment $fieldComment $commentFlag";
+	if ($comment) {
+		if ($reqComment) {
+			$finalComment = " $reqComment $comment $commentFlag";
+		} else {
+			$finalComment = " $comment $commentFlag";
+		}
+	} else {
+		if ($reqComment) {
+			$finalComment = " $reqComment $commentFlag";
+		} else {
+			$finalComment = " $commentFlag";
+		}
+	}
   my $checkInCode = "$mpsCodeAndLineNo$processLineCode$finalComment";
   $checkInCode =~ s/  / /g;
   $checkInCode =~ s/  / /g;
@@ -1031,7 +1046,6 @@ while (<IN>) {
   # print OUT "mpsCode code                 = $mpsCode\n";
   # print OUT "lineNo line number          = $lineNo\n";
   # print OUT "possibleMiscCode               = $possibleMiscCode\n";
-  # print OUT "description                    = $description\n";
   # print OUT "field comment                  = $fieldComment\n";
   # print OUT "commentFlag                    = $commentFlag\n";
   # print OUT "cFlag  control                 = $cflag\n";
@@ -1058,12 +1072,8 @@ while (<IN>) {
   $finalComment="";
   $mpsCode="";
   $lineNo="";
-  $possibleMiscCode="";
-  $description="";
-  $fieldComment="";
   $reqComment="";
   $isLegal="";
-  $linecode="";
   $comment="";
   $checkInCode="";
   $commentFlag="";
