@@ -2162,10 +2162,18 @@ $lastFigname="";
 %activeStrings=();
 $curIsString=0;
 $lastWasString=0;
-$comment=""; #lv added
 $IdotCode=""; #lv added (Process01)
 $hold = "";
+$comment=""; #lv added
 $noLineCounter=1;
+$pointNo         = "";
+$northing        = "";
+$easting         = "";
+$elevation       = "";
+$mpsCode         = "";
+$lineNo          = "";
+$processLineCode = "";
+$finalComment    = "";
 
 
 # ====================================================================================================
@@ -2195,27 +2203,30 @@ open(OUT4,">${filename}_cell.cor");
 # open(OUT5,">${filename}_qc_spots.cor");
 # open(OUT6,">${filename}_topo.cor");
 while (<IN>) {
- $curIsString=0;
- @in = split(/,/, substr(uc, 0, -1), 5); #note: the substr forces text to be uppercase; the split creates:
-   $pointNo         = $in[0] # point number
-   $northing        = $in[1] # northing
-   $easting         = $in[2] # easting
-   $elevation       = $in[3] # elevation
-   $fullDescription = $in[4] # full description (3 Letter Code-Line Number-Line Code-Comment)
- my @firstSplit = split(/\s+/,$fullDescription,2); #added lv - this separates the Codes from the Comments
-   #using the first whitespace as the separator so:
-   $fullCode    = $firstSplit[0] # 3 Letter Code-Line Number-Line Code
-   $comment     = $firstSplit[1] # the Comment
- my @secondSplit = split(/\W+/,$fullCode,2); #added lv - this separates the 3 Letter Code and
-   # line number from the line coding symbol
-   # using the first non-numeric/non-alpha character as the separator so:
-   $mpsCodeAndLineNo = $secondSplit[0] # the 3 Letter Code and Line Number
-   $lineCode         = $secondSplit[1] # the Line Code
- my @thirdSplit = ($mpsCodeAndLineNo =~ /(\w\w\w)(\d*)/);
-   $mpsCode = $thirdSplit[0] # 3 letter code
-   $lineNo  = $thirdSplit[1] # line number
- if (length($comment)>0) {##############lv
-#  $comment="\;$comment"; ########lv - adds the semi-colon before the Comment
+	$curIsString=0;
+	@in = split(/,/, substr(uc, 0, -1), 8); #note: the substr forces text to be uppercase; the split creates:
+		$pointNo         = $in[0] # point number
+		$northing        = $in[1] # northing
+		$easting         = $in[2] # easting
+		$elevation       = $in[3] # elevation
+		$mpsCode         = $in[4] # full description (3 Letter Code-Line Number-Line Code-Comment)
+		$lineNo          = $in[5] # full description (3 Letter Code-Line Number-Line Code-Comment)
+		$processLineCode = $in[6] # full description (3 Letter Code-Line Number-Line Code-Comment)
+		$finalComment    = $in[7] # full description (3 Letter Code-Line Number-Line Code-Comment)
+# my @firstSplit = split(/\s+/,$fullDescription,2); #added lv - this separates the Codes from the Comments
+#   #using the first whitespace as the separator so:
+#   $fullCode    = $firstSplit[0] # 3 Letter Code-Line Number-Line Code
+#   $comment     = $firstSplit[1] # the Comment
+# my @secondSplit = split(/\W+/,$fullCode,2); #added lv - this separates the 3 Letter Code and
+#   # line number from the line coding symbol
+#   # using the first non-numeric/non-alpha character as the separator so:
+#   $mpsCodeAndLineNo = $secondSplit[0] # the 3 Letter Code and Line Number
+#   $lineCode         = $secondSplit[1] # the Line Code
+# my @thirdSplit = ($mpsCodeAndLineNo =~ /(\w\w\w)(\d*)/);
+#   $mpsCode = $thirdSplit[0] # 3 letter code
+#   $lineNo  = $thirdSplit[1] # line number
+# if (length($comment)>0) {##############lv
+##  $comment="\;$comment"; ########lv - adds the semi-colon before the Comment
  }
  $IdotCode=$pointCodes{$mpsCode}; ## if the three letter code matches any of the codes
 
