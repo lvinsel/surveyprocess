@@ -856,7 +856,6 @@ my @secondSplit;
 my @thirdsplit;
 undef @thirdsplit;
 my $_nextAutogenPtNum;
-my $processLineCode;
 my $commentFlag = "";
 my $finalComment = "";
 # --------------------------------------------------
@@ -871,6 +870,7 @@ my $mpsCodeAndLineNo = "";
 my $fieldLineCode    = "";
 my $mpsCode          = "";
 my $lineNo           = "";
+my $processLineCode  = "";
 # --------------------------------------------------
 # --------------------------------------------------
 # --------------------------------------------------

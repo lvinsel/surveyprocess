@@ -84,7 +84,7 @@ my %pointCodes = (
 	"CNT" => "225", # Traffic Signal Cantilever/Mast Arm
 	"COL" => "609", # Column
 	"CPH" => "103", # Control Point - modified v6
-	"CRB" => "501", # Curb Top - Conc - restored to original meaning 
+	"CRB" => "501", # Curb Top - Conc - restored to original meaning
 	 "CRC" => "501", # Curb Top - Conc - removed after confused period
 	 "CRN" => "501", # Curb Top - Stone - removed after confused period
 	"CRN" => "667", # Crown Line - restored to original meaning
@@ -98,7 +98,7 @@ my %pointCodes = (
 	"DCB" => "652", # ver12 - Driveway/Commercial BIT/HMA
 	"DCC" => "652", # ver12 - Driveway/Commercial Concrete
 	"DCG" => "652", # ver12 - Driveway/Commercial Ground - Field Entrance
-	"DCK" => "608", # Deck 
+	"DCK" => "608", # Deck
 	"DCR" => "652", # ver12 - Driveway/Commercial Brick
 	"DFA" => "654", # ver12 - Driveway/Field Aggregate
 	"DFB" => "654", # ver12 - Driveway/Field BIT/HMA
@@ -259,7 +259,7 @@ my %pointCodes = (
 	"RSG" => "941", # Riser - Gas
 	"RSM" => "963", # Riser - Storm
 	"RSN" => "961", # Riser - Sanitary
-	"RSR" => "951", # Riser - Traffic 
+	"RSR" => "951", # Riser - Traffic
 	"RSS" => "953", # Riser - Traffic Fiber Optic
 	"RST" => "973", # Riser - Telephone
 	"RSV" => "923", # Riser - TV
@@ -318,7 +318,7 @@ my %pointCodes = (
 	"SPR" => "207", # Cotton Picker Spindle
 	"SPS" => "103", # Hub
 	"SPT" => "207", # Cut Square
-	"SPU" => "207", # Rebar 
+	"SPU" => "207", # Rebar
 	"SPV" => "207", # Drill Hole
 	"SPW" => "207", # Brass Marker
 	"SPX" => "207", # Iron Rod/Pin
@@ -1893,19 +1893,19 @@ my %symbolCodes = ( # symbols in IDOTsmd
 #  SS4 Section
 #---------------------------------------------------
 #	"%PC" => "X", # End Line
-#	"%NTC" => "NTC", # 
-#	"%SAP" => "SAP", # 
-#	"%CC" => "CC", # 
-#	"%NTT" => "NTT", # 
-#	"%PT" => "PT", # 
-#	"%OC" => "OC*", # 
-#	"%CS" => "CS", # 
-#	"%CD" => "CD*", # 
-#	"%CR" => "CR*", # 
-#	"%RECT" => "RECT", # 
-#	"%DIST" => "DIST", # 
-#	"%JPT" => "JPT", # 
-#	"%TMPL" => "TMPL", # 
+#	"%NTC" => "NTC", #
+#	"%SAP" => "SAP", #
+#	"%CC" => "CC", #
+#	"%NTT" => "NTT", #
+#	"%PT" => "PT", #
+#	"%OC" => "OC*", #
+#	"%CS" => "CS", #
+#	"%CD" => "CD*", #
+#	"%CR" => "CR*", #
+#	"%RECT" => "RECT", #
+#	"%DIST" => "DIST", #
+#	"%JPT" => "JPT", #
+#	"%TMPL" => "TMPL", #
 #);
 #---------------------------------------------------
 #---------------------------------------------------
@@ -2097,7 +2097,7 @@ my %noLine = (
 	"RSG" => "NOLINE", # Riser - Gas
 	"RSM" => "NOLINE", # Riser - Storm
 	"RSN" => "NOLINE", # Riser - Sanitary
-	"RSR" => "NOLINE", # Riser - Traffic 
+	"RSR" => "NOLINE", # Riser - Traffic
 	"RSS" => "NOLINE", # Riser - Traffic Fiber Optic
 	"RST" => "NOLINE", # Riser - Telephone
 	"RSV" => "NOLINE", # Riser - TV
@@ -2116,7 +2116,6 @@ my $lastFigname="";
 my %activeStrings=();
 my $curIsString=0;
 my $lastWasString=0;
-my $idotCode=""; #lv added (Process01)
 my $noLineCounter=1;
 my $pointNo         = "";
 my $northing        = "";
@@ -2128,6 +2127,7 @@ my $processLineCode = "";
 my $finalComment    = "";
 my $prefix          = "";
 my $lineCode        = "";
+my $idotCode        = "";
 # ----------------------------------------------------------------------------------------------------
 # ----------------------------------------------------------------------------------------------------
 # ====================================================================================================
@@ -2178,19 +2178,15 @@ while (<IN>) {
 	#----------------------------------------------------------------------------
 	#----------------------------------------------------------------------------
 	#------------------------------Test Section---------------------------------
-	#print OUT1 "alksdf;alkdj   $pointCodes{$mpsCode}\n";
-	#print OUT5 "\n\n\n\pointNo point number      = $pointNo\n";
-	#print OUT5 "fullDescription full code & comment      = $fullDescription\n";
-	#print OUT5 "fullCode full code no comment = $fullCode\n";
-	#print OUT5 "comment comment              = $comment\n";
-	#print OUT5 "mpsCodeAndLineNo code and line no.    = $mpsCodeAndLineNo\n";
-	#print OUT5 "lineCode line code            = $lineCode\n";
-	#print OUT5 "lineCode line code               = $lineCode\n";
-	#print OUT5 "mpsCode alpha code           = $mpsCode\n";
-	#print OUT5 "lineNo line number          = $lineNo\n";
-	#print OUT5 "hold                           = $hold\n";
-	#print OUT5 "c linecode                     = $c\n";
-	#print OUT5 "idotCode idot code, line no.      = $idotCode\n\n";
+	print OUT1 "pointNo         = $pointNo        \n";
+	print OUT1 "northing        = $northing       \n";
+	print OUT1 "easting         = $easting        \n";
+	print OUT1 "elevation       = $elevation      \n";
+	print OUT1 "mpsCode         = $mpsCode        \n";
+	print OUT1 "lineNo          = $lineNo         \n";
+	print OUT1 "processLineCode = $processLineCode\n";
+	print OUT1 "finalComment    = $finalComment   \n";
+	print OUT1 "idotCode        = $idotCode       \n\n";
 	#-----------------------------------------------------------
 	#-----------------------------------------------------------
 	#-----------------------------------Material type prefix
@@ -2198,6 +2194,7 @@ while (<IN>) {
 		$prefix = $typePrefix{$mpsCode};
 		$lineNo = "$prefix$lineNo";
 	}
+	print OUT1 "lineNo after material type  = $lineNo         \n\n";
 	#-----------------------------------------------------------
 	#-----------------------------------------------------------
 	#---------------------------------------NoLine fix
@@ -2205,11 +2202,12 @@ while (<IN>) {
 		$lineNo = $noLineCounter;
 		$noLineCounter = $noLineCounter + 1;
 	}
+	print OUT1 "lineNo after noLine fix  = $lineNo         \n\n";
 	#-----------------------------------------------------------
 	#-----------------------------------------------------------
 	#------------------------------Begin sorting and printing
-	if  (exists ($bridgeCodes{$mpsCode})) {
-		if ($processLineCode != "") {
+	if  (exists ($bridgeCodes{$idotCode})) {
+		if ($processLineCode ne "") {
 			print OUT2 "$pointNo,$northing,$easting,$elevation,$idotCode$lineNo,$processLineCode,$finalComment\n";
 			print OUT1 "$pointNo,$northing,$easting,$elevation,$idotCode$lineNo,$processLineCode,$finalComment\n";
 		} else {
@@ -2217,7 +2215,7 @@ while (<IN>) {
 			print OUT1 "$pointNo,$northing,$easting,$elevation,$idotCode$lineNo,,$finalComment\n";
 		}
 	} elsif (exists ($symbolCodes{$idotCode})) {
-		if ($processLineCode != "") {
+		if ($processLineCode ne "") {
 			print OUT4 "$pointNo,$northing,$easting,$elevation,$idotCode$lineNo,$processLineCode,$finalComment\n";
 			print OUT1 "$pointNo,$northing,$easting,$elevation,$idotCode$lineNo,$processLineCode,$finalComment\n";
 		} else {
@@ -2225,7 +2223,7 @@ while (<IN>) {
 			print OUT1 "$pointNo,$northing,$easting,$elevation,$idotCode$lineNo,,$finalComment\n";
 		}
 	} elsif (exists ($lineCodes{$idotCode})) {
-		if ($processLineCode != "") {
+		if ($processLineCode ne "") {
 			print OUT3 "$pointNo,$northing,$easting,$elevation,$idotCode$lineNo,$processLineCode,$finalComment\n";
 			print OUT1 "$pointNo,$northing,$easting,$elevation,$idotCode$lineNo,$processLineCode,$finalComment\n";
 		} else {
@@ -2236,21 +2234,21 @@ while (<IN>) {
 	#-----------------------------------------------------------
 	#-----------------------------------------------------------
 	#-----------------------------TEST SECTION-----------------
-	#print OUT5 "in[0] pointNo             = $pointNo\n";
-	#print OUT5 "in[1] northing                 = $northing\n";
-	#print OUT5 "in[2] easting                  = $easting\n";
-	#print OUT5 "in[3] elevation                = $elevation\n";
-	#print OUT5 "fullDescription full code & comment      = $fullDescription\n";
-	#print OUT5 "fullCode full code no comment = $fullCode\n";
-	#print OUT5 "comment comment              = $comment\n";
-	#print OUT5 "mpsCodeAndLineNo code and line no.    = $mpsCodeAndLineNo\n";
-	#print OUT5 "lineCode line code            = $lineCode\n";
-	#print OUT5 "lineCode line code               = $lineCode\n";
-	#print OUT5 "mpsCode alpha code           = $mpsCode\n";
-	#print OUT5 "lineNo line number          = $lineNo\n";
+	#print OUT1 "in[0] pointNo             = $pointNo\n";
+	#print OUT1 "in[1] northing                 = $northing\n";
+	#print OUT1 "in[2] easting                  = $easting\n";
+	#print OUT1 "in[3] elevation                = $elevation\n";
+	#print OUT1 "fullDescription full code & comment      = $fullDescription\n";
+	#print OUT1 "fullCode full code no comment = $fullCode\n";
+	#print OUT1 "comment comment              = $comment\n";
+	#print OUT1 "mpsCodeAndLineNo code and line no.    = $mpsCodeAndLineNo\n";
+	#print OUT1 "lineCode line code            = $lineCode\n";
+	#print OUT1 "lineCode line code               = $lineCode\n";
+	#print OUT1 "mpsCode alpha code           = $mpsCode\n";
+	#print OUT1 "lineNo line number          = $lineNo\n";
 	#print OUT1 "hold                           = $hold\n";
-	#print OUT5 "c linecode                     = $c\n";
-	#print OUT5 "idotCode idot code, line no.      = $idotCode\n\n\n\n\n";
+	#print OUT1 "c linecode                     = $c\n";
+	#print OUT1 "idotCode idot code, line no.      = $idotCode\n\n\n\n\n";
 	#-----------------------------------------------------------
 	#-----------------------------------------------------------
 	#prepare for next loop
