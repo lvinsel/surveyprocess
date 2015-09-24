@@ -1,4 +1,6 @@
 #!/bin/perl
+# use strict;
+use warnings;
 #########################################################################
 # The following array maps keys used by Field Surveyors
 #
@@ -2156,13 +2158,12 @@
 #####################
 # Some Global Vars
 $figname="";
-$curPtNum="";
 $lastPtNum="";
 $lastFigname="";
 %activeStrings=();
 $curIsString=0;
 $lastWasString=0;
-$IdotCode=""; #lv added (Process01)
+$idotCode=""; #lv added (Process01)
 $hold = "";
 $comment=""; #lv added
 $noLineCounter=1;
@@ -2180,9 +2181,8 @@ $finalComment    = "";
 #                                             Start of Main Program
 # ====================================================================================================
 #                                             Syntax - process ARG1
-if ($#ARGV<0)
-  {
-    print q{
+if ($#ARGV<0) {
+	print q{
 ===================================================================================
 |                                                                                 |
 |                         Process script requires file name                       |
@@ -2190,9 +2190,13 @@ if ($#ARGV<0)
 |                            Syntax:  process filename                            |
 |                                                                                 |
 ===================================================================================
-  };
-    exit;
-  }
+	};
+	exit;
+}
+#-----------------------------------------------
+#-----------------------------------------------
+#-----------------------------------------------
+#-----------------------------------------------
 $filename=$ARGV[0];
 $filename =~ s/\.[^.]*$//;
 open(IN,$ARGV[0]);
@@ -2200,149 +2204,145 @@ open(OUT1,">${filename}_all.cor");
 open(OUT2,">${filename}_bridge.cor");
 open(OUT3,">${filename}_ptln.cor");
 open(OUT4,">${filename}_cell.cor");
-# open(OUT5,">${filename}_qc_spots.cor");
-# open(OUT6,">${filename}_topo.cor");
+#-----------------------------------------------
+#-----------------------------------------------
+#-----------------------------------------------
+#-----------------------------------------------
 while (<IN>) {
 	$curIsString=0;
 	@in = split(/,/, substr(uc, 0, -1), 8); #note: the substr forces text to be uppercase; the split creates:
-		$pointNo         = $in[0] # point number
-		$northing        = $in[1] # northing
-		$easting         = $in[2] # easting
-		$elevation       = $in[3] # elevation
-		$mpsCode         = $in[4] # full description (3 Letter Code-Line Number-Line Code-Comment)
-		$lineNo          = $in[5] # full description (3 Letter Code-Line Number-Line Code-Comment)
-		$processLineCode = $in[6] # full description (3 Letter Code-Line Number-Line Code-Comment)
-		$finalComment    = $in[7] # full description (3 Letter Code-Line Number-Line Code-Comment)
-# my @firstSplit = split(/\s+/,$fullDescription,2); #added lv - this separates the Codes from the Comments
-#   #using the first whitespace as the separator so:
-#   $fullCode    = $firstSplit[0] # 3 Letter Code-Line Number-Line Code
-#   $comment     = $firstSplit[1] # the Comment
-# my @secondSplit = split(/\W+/,$fullCode,2); #added lv - this separates the 3 Letter Code and
-#   # line number from the line coding symbol
-#   # using the first non-numeric/non-alpha character as the separator so:
-#   $mpsCodeAndLineNo = $secondSplit[0] # the 3 Letter Code and Line Number
-#   $lineCode         = $secondSplit[1] # the Line Code
-# my @thirdSplit = ($mpsCodeAndLineNo =~ /(\w\w\w)(\d*)/);
-#   $mpsCode = $thirdSplit[0] # 3 letter code
-#   $lineNo  = $thirdSplit[1] # line number
-# if (length($comment)>0) {##############lv
-##  $comment="\;$comment"; ########lv - adds the semi-colon before the Comment
- }
- $IdotCode=$pointCodes{$mpsCode}; ## if the three letter code matches any of the codes
-
-##############Test Section
-#print OUT1 "alksdf;alkdj   $pointCodes{$mpsCode}\n";
-#print OUT5 "\n\n\n\pointNo point number      = $pointNo\n";
-#print OUT5 "fullDescription full code & comment      = $fullDescription\n";
-#print OUT5 "fullCode full code no comment = $fullCode\n";
-#print OUT5 "comment comment              = $comment\n";
-#print OUT5 "mpsCodeAndLineNo code and line no.    = $mpsCodeAndLineNo\n";
-#print OUT5 "lineCode line code            = $lineCode\n";
-#print OUT5 "lineCode line code               = $lineCode\n";
-#print OUT5 "mpsCode alpha code           = $mpsCode\n";
-#print OUT5 "lineNo line number          = $lineNo\n";
-#print OUT5 "hold                           = $hold\n";
-#print OUT5 "c linecode                     = $c\n";
-#print OUT5 "IdotCode idot code, line no.      = $IdotCode\n\n";
-#####################
-#Material type prefix
-  if  (exists ($typePrefix{$mpsCode})) {
-          $prefix = $typePrefix{$mpsCode};
-          $lineNo = "$prefix$lineNo";
- }
- ########################################
- #NoLine fix
- if  (exists ($noLine{$mpsCode})) {
-          $lineNo = $noLineCounter;
-          $noLineCounter = $noLineCounter + 1;
- }
- ########################################Begin sorting and printing
- #################################################
- if  (exists ($bridgeCodes{$mpsCode}))
-   {
-   if ($c = $idotcommands{$lineCode})
-     {
-     print OUT2 "$pointNo,$northing,$easting,$elevation,$IdotCode$lineNo$comment,$c\n";
-     print OUT1 "$pointNo,$northing,$easting,$elevation, $IdotCode$lineNo, $c, $comment\n";
-     }
-   else
-     {
-     print OUT2 "$pointNo,$northing,$easting,$elevation,$IdotCode$lineNo$comment,\n";
-     print OUT1 "$pointNo,$northing,$easting,$elevation, $IdotCode$lineNo,,$comment\n";
-     }
-   }
- elsif (exists ($symbolCodes{$IdotCode}))  # Check against symbolCodes list for cells
-   {
-   if ($c = $idotcommands{$lineCode})
-     {
-     print OUT4 "$pointNo,$northing,$easting,$elevation,$IdotCode$lineNo$comment,$c\n";
-     print OUT1 "$pointNo,$northing,$easting,$elevation, $IdotCode$lineNo, $c, $comment\n";
-     }
-   else
-     {
-     print OUT4 "$pointNo,$northing,$easting,$elevation,$IdotCode$lineNo$comment,\n";
-     print OUT1 "$pointNo,$northing,$easting,$elevation, $IdotCode$lineNo,,$comment\n";
-     }
-   }
- elsif (exists ($lineCodes{$IdotCode}))
-   {
-   if ($c = $idotcommands{$lineCode})
-     {
-     print OUT3 "$pointNo,$northing,$easting,$elevation,$IdotCode$lineNo$comment,$c\n";
-     print OUT1 "$pointNo,$northing,$easting,$elevation, $IdotCode$lineNo, $c, $comment\n";
-     }
-   else
-     {
-     print OUT3 "$pointNo,$northing,$easting,$elevation,$IdotCode$lineNo$comment,\n";
-     print OUT1 "$pointNo,$northing,$easting,$elevation, $IdotCode$lineNo,,$comment\n";
-     }
-   }
-
-
-
-
-
-####################### TEST SECTION
-#print OUT5 "in[0] pointNo             = $pointNo\n";
-#print OUT5 "in[1] northing                 = $northing\n";
-#print OUT5 "in[2] easting                  = $easting\n";
-#print OUT5 "in[3] elevation                = $elevation\n";
-#print OUT5 "fullDescription full code & comment      = $fullDescription\n";
-#print OUT5 "fullCode full code no comment = $fullCode\n";
-#print OUT5 "comment comment              = $comment\n";
-#print OUT5 "mpsCodeAndLineNo code and line no.    = $mpsCodeAndLineNo\n";
-#print OUT5 "lineCode line code            = $lineCode\n";
-#print OUT5 "lineCode line code               = $lineCode\n";
-#print OUT5 "mpsCode alpha code           = $mpsCode\n";
-#print OUT5 "lineNo line number          = $lineNo\n";
-#print OUT1 "hold                           = $hold\n";
-#print OUT5 "c linecode                     = $c\n";
-#print OUT5 "IdotCode idot code, line no.      = $IdotCode\n\n\n\n\n";
-
-
- #prepare for next loop
- if ($curIsString) {
-  $activeStrings{$figname}=1; #make sure the list contains an entry for this string
- }
- $lastWasString=$curIsString;
- $lastFigname=$figname;
- $lastPtNum=$pointNo;
- $figname="";
- $comment="";  #### added lv
- $IdotCode="";
- $prefix="";
-
-
- $fullCode="";
- $comment="";
- $mpsCodeAndLineNo="";
- $lineCode="";
- $lineCode="";
- # $tok[1]="";
- $mpsCode="";
- $lineNo="";
-
-
+		$pointNo         = $in[0]; # point number
+		$northing        = $in[1]; # northing
+		$easting         = $in[2]; # easting
+		$elevation       = $in[3]; # elevation
+		$mpsCode         = $in[4];
+		$lineNo          = $in[5];
+		$processLineCode = $in[6];
+		$finalComment    = $in[7];
+	# my @firstSplit = split(/\s+/,$fullDescription,2); #added lv - this separates the Codes from the Comments
+	#   #using the first whitespace as the separator so:
+	#   $fullCode    = $firstSplit[0] # 3 Letter Code-Line Number-Line Code
+	#   $comment     = $firstSplit[1] # the Comment
+	# my @secondSplit = split(/\W+/,$fullCode,2); #added lv - this separates the 3 Letter Code and
+	#   # line number from the line coding symbol
+	#   # using the first non-numeric/non-alpha character as the separator so:
+	#   $mpsCodeAndLineNo = $secondSplit[0] # the 3 Letter Code and Line Number
+	#   $lineCode         = $secondSplit[1] # the Line Code
+	# my @thirdSplit = ($mpsCodeAndLineNo =~ /(\w\w\w)(\d*)/);
+	#   $mpsCode = $thirdSplit[0] # 3 letter code
+	#   $lineNo  = $thirdSplit[1] # line number
+	# if (length($comment)>0) {##############lv
+	##  $comment="\;$comment"; ########lv - adds the semi-colon before the Comment
+	# }
+	$idotCode=$pointCodes{$mpsCode}; ## if the three letter code matches any of the codes
+	##############Test Section
+	#print OUT1 "alksdf;alkdj   $pointCodes{$mpsCode}\n";
+	#print OUT5 "\n\n\n\pointNo point number      = $pointNo\n";
+	#print OUT5 "fullDescription full code & comment      = $fullDescription\n";
+	#print OUT5 "fullCode full code no comment = $fullCode\n";
+	#print OUT5 "comment comment              = $comment\n";
+	#print OUT5 "mpsCodeAndLineNo code and line no.    = $mpsCodeAndLineNo\n";
+	#print OUT5 "lineCode line code            = $lineCode\n";
+	#print OUT5 "lineCode line code               = $lineCode\n";
+	#print OUT5 "mpsCode alpha code           = $mpsCode\n";
+	#print OUT5 "lineNo line number          = $lineNo\n";
+	#print OUT5 "hold                           = $hold\n";
+	#print OUT5 "c linecode                     = $c\n";
+	#print OUT5 "idotCode idot code, line no.      = $idotCode\n\n";
+	#-----------------------------------------------------------
+	#-----------------------------------------------------------
+	#-----------------------------------------------------------
+	#-----------------------------------------------------------
+	#-----------------------------------------------------------
+	#-----------------------------------------------------------
+	#-----------------------------------Material type prefix
+	if  (exists ($typePrefix{$mpsCode})) {
+		$prefix = $typePrefix{$mpsCode};
+		$lineNo = "$prefix$lineNo";
+	}
+	#-----------------------------------------------------------
+	#-----------------------------------------------------------
+	#-----------------------------------------------------------
+	#-----------------------------------------------------------
+	#-----------------------------------------------------------
+	#-----------------------------------------------------------
+	#---------------------------------------NoLine fix
+	if  (exists ($noLine{$mpsCode})) {
+		$lineNo = $noLineCounter;
+		$noLineCounter = $noLineCounter + 1;
+	}
+	#-----------------------------------------------------------
+	#-----------------------------------------------------------
+	#-----------------------------------------------------------
+	#-----------------------------------------------------------
+	#------------------------------Begin sorting and printing
+	if  (exists ($bridgeCodes{$mpsCode})) {
+		if ($c = $idotcommands{$lineCode}) {
+			print OUT2 "$pointNo,$northing,$easting,$elevation,$idotCode$lineNo$comment,$c\n";
+			print OUT1 "$pointNo,$northing,$easting,$elevation, $idotCode$lineNo, $c, $comment\n";
+		} else {
+			print OUT2 "$pointNo,$northing,$easting,$elevation,$idotCode$lineNo$comment,\n";
+			print OUT1 "$pointNo,$northing,$easting,$elevation, $idotCode$lineNo,,$comment\n";
+		}
+	} elsif (exists ($symbolCodes{$idotCode})) {
+		if ($c = $idotcommands{$lineCode}) {
+			print OUT4 "$pointNo,$northing,$easting,$elevation,$idotCode$lineNo$comment,$c\n";
+			print OUT1 "$pointNo,$northing,$easting,$elevation, $idotCode$lineNo, $c, $comment\n";
+		} else {
+			print OUT4 "$pointNo,$northing,$easting,$elevation,$idotCode$lineNo$comment,\n";
+			print OUT1 "$pointNo,$northing,$easting,$elevation, $idotCode$lineNo,,$comment\n";
+		}
+	} elsif (exists ($lineCodes{$idotCode})) {
+		if ($c = $idotcommands{$lineCode}) {
+			print OUT3 "$pointNo,$northing,$easting,$elevation,$idotCode$lineNo$comment,$c\n";
+			print OUT1 "$pointNo,$northing,$easting,$elevation, $idotCode$lineNo, $c, $comment\n";
+		} else {
+			print OUT3 "$pointNo,$northing,$easting,$elevation,$idotCode$lineNo$comment,\n";
+			print OUT1 "$pointNo,$northing,$easting,$elevation, $idotCode$lineNo,,$comment\n";
+		}
+	}
+	#-----------------------------------------------------------
+	#-----------------------------------------------------------
+	#-----------------------------------------------------------
+	#-----------------------------------------------------------
+	####################### TEST SECTION
+	#print OUT5 "in[0] pointNo             = $pointNo\n";
+	#print OUT5 "in[1] northing                 = $northing\n";
+	#print OUT5 "in[2] easting                  = $easting\n";
+	#print OUT5 "in[3] elevation                = $elevation\n";
+	#print OUT5 "fullDescription full code & comment      = $fullDescription\n";
+	#print OUT5 "fullCode full code no comment = $fullCode\n";
+	#print OUT5 "comment comment              = $comment\n";
+	#print OUT5 "mpsCodeAndLineNo code and line no.    = $mpsCodeAndLineNo\n";
+	#print OUT5 "lineCode line code            = $lineCode\n";
+	#print OUT5 "lineCode line code               = $lineCode\n";
+	#print OUT5 "mpsCode alpha code           = $mpsCode\n";
+	#print OUT5 "lineNo line number          = $lineNo\n";
+	#print OUT1 "hold                           = $hold\n";
+	#print OUT5 "c linecode                     = $c\n";
+	#print OUT5 "idotCode idot code, line no.      = $idotCode\n\n\n\n\n";
+	#-----------------------------------------------------------
+	#-----------------------------------------------------------
+	#-----------------------------------------------------------
+	#prepare for next loop
+	if ($curIsString) {
+	 $activeStrings{$figname}=1; #make sure the list contains an entry for this string
+	}
+	$lastWasString=$curIsString;
+	$lastFigname=$figname;
+	$lastPtNum=$pointNo;
+	$figname="";
+	$idotCode="";
+	$prefix="";
+	$pointNo         = "";
+	$northing        = "";
+	$easting         = "";
+	$elevation       = "";
+	$mpsCode         = "";
+	$lineNo          = "";
+	$processLineCode = "";
+	$finalComment    = "";
+	
 }
 close(IN);
 close(OUT1);
