@@ -1269,15 +1269,11 @@ use warnings;
  "998" => "998",
  "999" => "999"
 );
-#################################
-# Begin QAQC lists
-#
-# last used scales for field check
-# General = 10
-# Lines = 2
-# Symbols = 40
-########################################
-
+#---------------------------------------------------
+#---------------------------------------------------
+#---------------------------------------------------
+#---------------------------------------------------
+#---------------------------------------------------
 %lineCodes = ( # as of version 18 this list contains lines AND spots
 #                the QA lists are depreciated
  "216" => "Existing Easement",
@@ -1692,7 +1688,11 @@ use warnings;
  "703" => "Topo Survey Point",
  "707" => "Cut Square",
 # );
-#
+ #---------------------------------------------------
+ #---------------------------------------------------
+ #---------------------------------------------------
+ #---------------------------------------------------
+ #---------------------------------------------------
 # %generalCodes = (  # as of version 18 spots are included in the same file as the lines
  "100" => "Backsight Station",
  "101" => "Foresight Station",
@@ -1890,7 +1890,10 @@ use warnings;
  "682" => "Parking Meter",
  "691" => "Flag Pole",
 );
-###############################################################################################3
+ #---------------------------------------------------
+ #---------------------------------------------------
+ #---------------------------------------------------
+ #---------------------------------------------------
 %idotcommands = (
  "." => "L", # Begin Line
  "(" => "L", # Begin Line
@@ -1916,49 +1919,10 @@ use warnings;
  "%JPT" => "JPT", # 
  "%TMPL" => "TMPL", # 
 );
-####################################################################################################
-%notDtmCodes = (
- "BCB" => "NOTDTM", #"611",
- "BAL" => "NOTDTM", #"613",
- "BPR" => "NOTDTM", #"615",
- "BDB" => "NOTDTM", #"619",
- "BDC" => "NOTDTM", #"619",
- "BDP" => "NOTDTM", # 621 Bridge Deck Plate
- "BDT" => "NOTDTM", # 619 Bridge Deck Timber
- "BBS" => "NOTDTM", #"620",
- "BEX" => "NOTDTM", #"623",
- "BHR" => "NOTDTM", #624 Bridge Handrail
- "BPA" => "NOTDTM", #"633",
- "BLC" => "NOTDTM", #"626",
- "BLS" => "NOTDTM", #"627",
- "BLT" => "NOTDTM", #"628",
- "BOR" => "NOTDTM", # 640 Boring / Inspection Well
- "BPC" => "NOTDTM", #"629",
- "BPT" => "NOTDTM", #"631",
- "BSC" => "NOTDTM", # 641 Bridge Scupper
- "BSS" => "NOTDTM", # 633 Bridge Structural Steel
- "BSW" => "NOTDTM", # 291 BRIDGE SIDEWALK
- "BWC" => "NOTDTM", # 619 Bridge Deck Sidewalk Conc
- "BWL" => "NOTDTM", #612 Bridge Backwall
- "DSP" => "NOTDTM", #304 WHEN DOWNSPOUT
- "FFL" => "NOTDTM", #650 Finish Floor
- "JUE" => "NOTDTM", #285 Paint Mark - Electrical
- "JUG" => "NOTDTM", #942 Paint Mark - Gas
- "JUF" => "NOTDTM", #289 Paint Mark - Fiber Optic
- "JUR" => "NOTDTM", #224 Paint Mark - Traffic Signal
- "JUN" => "NOTDTM", #960 Paint Mark - Sanitary
- "JUM" => "NOTDTM", #962 Paint Mark - Storm
- "JUT" => "NOTDTM", #286 Paint Mark - Telephone/Communications
- "JUV" => "NOTDTM", #288 Paint Mark - Cable TV
- "JUW" => "NOTDTM", #689 Paint Mark - Water
- "JUS" => "NOTDTM", #289 Paint Mark - Traffic Signal Fiber Optic
- "PBB" => "NOTDTM", #"666",
- "PBC" => "NOTDTM", #"666",
- "TIL" => "NOTDTM", #304 Tile/Downspout
- "WTR" => "NOTDTM", #867 Top of water elevation
-);
-############################################################################################
-####################################################################################################
+ #---------------------------------------------------
+ #---------------------------------------------------
+ #---------------------------------------------------
+ #---------------------------------------------------
 %bridgeCodes = (
  "BAB" => "615", #The outline of the face and sides of
                  # the bridge abutment.  A 3D line.,LOCATION
