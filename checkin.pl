@@ -880,7 +880,16 @@ sub generateNextPtNum {
 ##########
 ####################################### Start of Main Program
 if ($#ARGV<0) {
-	die "Syntax:\nperl fbk.pl <input file name> <start ptnum for new pts>\n";
+	print q{
+===============================================================================
+|                                                                             |
+|                    Checkin.pl script requires file name                     |
+|                                                                             |
+|                        Syntax:  checkin filename                            |
+|                                                                             |
+===============================================================================
+	};
+	exit;
 }
 my $fname=$ARGV[0];
 $fname =~ s/\.[^.]*$//;
