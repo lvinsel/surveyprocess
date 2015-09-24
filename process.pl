@@ -364,7 +364,7 @@ my %pointCodes = (
 	"WEL" => "379", # Well
 	"WET" => "379",
 	"WTR" => "867",
-	 IDOT Codes Flow Through without change to code  ##################
+	#-------------------- IDOT Codes Flow Through without change to code ------------------
 	"100" => "100",
 	"101" => "101",
 	"102" => "102",
@@ -1882,7 +1882,7 @@ my %symbolCodes = ( # symbols in IDOTsmd
 );
 #---------------------------------------------------
 #---------------------------------------------------
-my %idotcommands = (
+my %idotCommands = (
 	"." => "L", # Begin Line
 	"(" => "L", # Begin Line
 	"-" => "C", # Begin Curve
@@ -1956,7 +1956,7 @@ my %bridgeCodes = (
 );
 #------------------------------------------------------------------------
 #------------------------------------------------------------------------
-%typePrefix = (
+my %typePrefix = (
 	# created to make unique numbers for different material types using the same
 	# IDOT code
 	"JUR" => "1", # 224 - TRAFFIC PAINT MARK QL-B
@@ -2127,12 +2127,14 @@ my $mpsCode         = "";
 my $lineNo          = "";
 my $processLineCode = "";
 my $finalComment    = "";
-
-
+my $c               = "";
+my $prefix          = "";
+my $lineCode        = "";
+# ----------------------------------------------------------------------------------------------------
+# ----------------------------------------------------------------------------------------------------
 # ====================================================================================================
 #                                             Start of Main Program
 # ====================================================================================================
-#                                             Syntax - process ARG1
 if ($#ARGV<0) {
 	print q{
 ===============================================================================
@@ -2149,12 +2151,12 @@ if ($#ARGV<0) {
 #-----------------------------------------------
 #-----------------------------------------------
 #-----------------------------------------------
-$filename=$ARGV[0];
+my $filename=$ARGV[0];
 $filename =~ s/\.[^.]*$//;
 open(IN,$ARGV[0]);
 open(OUT1,">${filename}_all.cor");
 open(OUT2,">${filename}_bridge.cor");
-open(OUT3,">${filename}_ptln.cor")
+open(OUT3,">${filename}_ptln.cor");
 open(OUT4,">${filename}_cell.cor");
 #-----------------------------------------------
 #-----------------------------------------------
@@ -2162,7 +2164,7 @@ open(OUT4,">${filename}_cell.cor");
 #-----------------------------------------------
 while (<IN>) {
 	$curIsString=0;
-	@in = split(/,/, substr(uc, 0, -1), 8); #note: the substr forces text to be uppercase; the split creates:
+	my @in = split(/,/, substr(uc, 0, -1), 8); #note: the substr forces text to be uppercase; the split creates:
 		$pointNo         = $in[0]; # point number
 		$northing        = $in[1]; # northing
 		$easting         = $in[2]; # easting
@@ -2201,7 +2203,7 @@ while (<IN>) {
 	#-----------------------------------------------------------
 	#------------------------------Begin sorting and printing
 	if  (exists ($bridgeCodes{$mpsCode})) {
-		if ($c = $idotcommands{$lineCode}) {
+		if ($c = $idotCommands{$lineCode}) {
 			print OUT2 "$pointNo,$northing,$easting,$elevation,$idotCode$lineNo$comment,$c\n";
 			print OUT1 "$pointNo,$northing,$easting,$elevation, $idotCode$lineNo, $c, $comment\n";
 		} else {
@@ -2209,7 +2211,7 @@ while (<IN>) {
 			print OUT1 "$pointNo,$northing,$easting,$elevation, $idotCode$lineNo,,$comment\n";
 		}
 	} elsif (exists ($symbolCodes{$idotCode})) {
-		if ($c = $idotcommands{$lineCode}) {
+		if ($c = $idotCommands{$lineCode}) {
 			print OUT4 "$pointNo,$northing,$easting,$elevation,$idotCode$lineNo$comment,$c\n";
 			print OUT1 "$pointNo,$northing,$easting,$elevation, $idotCode$lineNo, $c, $comment\n";
 		} else {
@@ -2217,7 +2219,7 @@ while (<IN>) {
 			print OUT1 "$pointNo,$northing,$easting,$elevation, $idotCode$lineNo,,$comment\n";
 		}
 	} elsif (exists ($lineCodes{$idotCode})) {
-		if ($c = $idotcommands{$lineCode}) {
+		if ($c = $idotCommands{$lineCode}) {
 			print OUT3 "$pointNo,$northing,$easting,$elevation,$idotCode$lineNo$comment,$c\n";
 			print OUT1 "$pointNo,$northing,$easting,$elevation, $idotCode$lineNo, $c, $comment\n";
 		} else {
