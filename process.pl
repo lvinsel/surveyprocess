@@ -2178,15 +2178,15 @@ while (<IN>) {
 	#----------------------------------------------------------------------------
 	#----------------------------------------------------------------------------
 	#------------------------------Test Section---------------------------------
-	print OUT1 "pointNo         = $pointNo        \n";
-	print OUT1 "northing        = $northing       \n";
-	print OUT1 "easting         = $easting        \n";
-	print OUT1 "elevation       = $elevation      \n";
-	print OUT1 "mpsCode         = $mpsCode        \n";
-	print OUT1 "lineNo          = $lineNo         \n";
-	print OUT1 "processLineCode = $processLineCode\n";
-	print OUT1 "finalComment    = $finalComment   \n";
-	print OUT1 "idotCode        = $idotCode       \n\n";
+	# print OUT1 "pointNo         = $pointNo        \n";
+	# print OUT1 "northing        = $northing       \n";
+	# print OUT1 "easting         = $easting        \n";
+	# print OUT1 "elevation       = $elevation      \n";
+	# print OUT1 "mpsCode         = $mpsCode        \n";
+	# print OUT1 "lineNo          = $lineNo         \n";
+	# print OUT1 "processLineCode = $processLineCode\n";
+	# print OUT1 "finalComment    = $finalComment   \n";
+	# print OUT1 "idotCode        = $idotCode       \n\n";
 	#-----------------------------------------------------------
 	#-----------------------------------------------------------
 	#-----------------------------------Material type prefix
@@ -2194,7 +2194,7 @@ while (<IN>) {
 		$prefix = $typePrefix{$mpsCode};
 		$lineNo = "$prefix$lineNo";
 	}
-	print OUT1 "lineNo after material type  = $lineNo         \n\n";
+	# print OUT1 "lineNo after material type  = $lineNo         \n\n";
 	#-----------------------------------------------------------
 	#-----------------------------------------------------------
 	#---------------------------------------NoLine fix
@@ -2202,7 +2202,7 @@ while (<IN>) {
 		$lineNo = $noLineCounter;
 		$noLineCounter = $noLineCounter + 1;
 	}
-	print OUT1 "lineNo after noLine fix  = $lineNo         \n\n";
+	# print OUT1 "lineNo after noLine fix  = $lineNo         \n\n";
 	#-----------------------------------------------------------
 	#-----------------------------------------------------------
 	#------------------------------Begin sorting and printing
