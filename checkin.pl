@@ -992,15 +992,15 @@ while (<IN>) {
 	# This is a one time conversion  - the conversion in process.pl is being removed
 	#	print OUT "fieldLineCode before if-elsif segment = $fieldLineCode\n";
 	if ($fieldLineCode eq ".." ) { # /\.\./) {
-		$processLineCode = "X";
+		$processLineCode = "END";
 	} elsif ($fieldLineCode eq "@") {
-		$processLineCode = "X";
+		$processLineCode = "END";
 	} elsif ($fieldLineCode eq "." ) { #/\.$/) {
-		$processLineCode = "L";
+		$processLineCode = "ST";
 	} elsif ($fieldLineCode eq "-") {
-		$processLineCode = "C";
+		$processLineCode = "SC";
 	} elsif ($fieldLineCode eq "+") {
-		$processLineCode = "E";
+		$processLineCode = "CL";
 	} elsif ($fieldLineCode eq "%PC") {
 		$processLineCode = "PC";
 	} elsif ($fieldLineCode eq "%NT") {
